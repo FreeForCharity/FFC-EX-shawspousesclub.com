@@ -29,6 +29,11 @@ async function activateMissionVideo(page: Page) {
 }
 
 test.describe('Mission Video', () => {
+  test.skip(
+    !testConfig.site.isSupporter,
+    "The supporting organization's own content: a charity site does not render it"
+  )
+
   test('should show the click-to-play facade without loading the video', async ({ page }) => {
     await page.goto('/')
 

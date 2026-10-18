@@ -33,6 +33,11 @@ async function holdApplicationForm(page: Page): Promise<() => void> {
 }
 
 test.describe('Application Form Button', () => {
+  test.skip(
+    !testConfig.site.isSupporter,
+    "The supporting organization's own content: a charity site does not render it"
+  )
+
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
     // Wait for page to be loaded
@@ -265,6 +270,11 @@ test.describe('Application Form Button', () => {
 })
 
 test.describe('Application Form Iframe Loading', () => {
+  test.skip(
+    !testConfig.site.isSupporter,
+    "The supporting organization's own content: a charity site does not render it"
+  )
+
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
     await page.waitForLoadState('domcontentloaded')

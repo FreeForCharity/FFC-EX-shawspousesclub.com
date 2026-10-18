@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { testConfig } from './test.config'
 
 for (const viewport of [
   { name: 'desktop', width: 1280, height: 800 },
@@ -6,6 +7,10 @@ for (const viewport of [
 ]) {
   test.describe(`testimonial navigation on ${viewport.name}`, () => {
     test.use({ viewport: { width: viewport.width, height: viewport.height } })
+    test.skip(
+      testConfig.site.testimonialCount < 2,
+      'Navigation needs at least two testimonials; with none the section self-hides'
+    )
 
     test('arrows change the visible testimonial and return to the first one', async ({ page }) => {
       await page.goto('/')

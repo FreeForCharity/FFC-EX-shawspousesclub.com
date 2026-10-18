@@ -3,6 +3,7 @@ import { configuredTeam, team } from '@/data/team'
 import { isPending } from '@/lib/site.config'
 import { faqs } from '@/data/faqs'
 import { results } from '@/data/results'
+import { programs } from '@/data/programs'
 
 // These validate the data contract a forking charity must follow when editing
 // the JSON/TS under src/data/* — every item must carry the fields its component
@@ -74,6 +75,26 @@ describe('data modules', () => {
         expect(s.value).toBeTruthy()
         expect(s.label).toBeTruthy()
       }
+    })
+  })
+
+  // Every other test mocks this module, so this is where the real content is
+  // checked: an entry without a title or text would render an empty panel.
+  describe('programs', () => {
+    it('every program has a title, at least one paragraph, and non-empty text', () => {
+      for (const p of programs) {
+        expect(p.title.trim()).toBeTruthy()
+        expect(p.paragraphs.length).toBeGreaterThan(0)
+        for (const text of p.paragraphs) expect(text.trim()).toBeTruthy()
+        if (p.points !== undefined) {
+          expect(p.points.length).toBeGreaterThan(0)
+          for (const point of p.points) expect(point.trim()).toBeTruthy()
+        }
+      }
+    })
+    it('has unique titles (they key the rendered panels)', () => {
+      const titles = programs.map((p) => p.title)
+      expect(new Set(titles).size).toBe(titles.length)
     })
   })
 })

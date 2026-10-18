@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { testConfig } from './test.config'
 
 /**
  * WCAG 2.3.3 guardrail: when the user has prefers-reduced-motion: reduce,
@@ -13,6 +14,7 @@ import { test, expect } from '@playwright/test'
 
 test.describe('prefers-reduced-motion', () => {
   test.use({ reducedMotion: 'reduce' })
+  test.skip(!testConfig.site.hasResults, 'No results stats yet: the Results section self-hides')
 
   test('Results-2023 stat numbers settle without a multi-frame animation', async ({ page }) => {
     // Test local animation behavior with deterministic external frames. The
