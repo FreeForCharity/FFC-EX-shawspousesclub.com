@@ -1,0 +1,27 @@
+{
+  "domain": "shawspousesclub.com",
+  "charityName": "Shaw Spouses' Club",
+  "websiteSituation": "Existing domain name and existing website (WordPress / formal hosting)",
+  "currentWebsiteUrl": "https://www.shawspousesclub.com",
+  "domainRegistrar": "Other / another registrar",
+  "requesterGitHubUsername": "clarkemoyer",
+  "technicalPocGitHubUsername": "",
+  "cloudflareZoneControlled": false,
+  "footer": {
+    "email": "",
+    "phone": "",
+    "address": "PO Box 52337\nShaw AFB, SC 29152",
+    "ein": "57-0643096",
+    "irsStatus": "501(c)(3) (approved)",
+    "guideStarProfileUrl": "https://app.candid.org/profile/7874261/shaw-spouses-club-57-0643096",
+    "guideStarDirectProfileUrl": "https://app.candid.org/profile/7874261/shaw-spouses-club-57-0643096",
+    "socialLinks": [],
+    "mission": "",
+    "donationUrl": "",
+    "volunteerUrl": ""
+  },
+  "leadership": [],
+  "generatedUtc": "2026-10-18T17:18:59.1426328Z",
+  "pendingFields": ["email", "donationUrl", "volunteerUrl", "phone", "social", "team"],
+  "pendingRendered": true
+}
