@@ -9,11 +9,8 @@ export type ResultStat = {
 }
 
 export const results: { heading: string; stats: ResultStat[] } = {
-  heading: 'Results - 2023',
-  stats: [
-    { value: '221', label: 'Organizational partners' },
-    { value: '3', label: 'Total volunteers' },
-    { value: '221', label: 'Organizations accessing technical assistance offerings' },
-    { value: '25', label: 'Volunteer hours contributed to the organization' },
-  ],
+  heading: 'Results',
+  // Empty until the charity supplies its own impact numbers: the section
+  // self-hides while there are no stats.
+  stats: [],
 }

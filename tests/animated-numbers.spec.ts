@@ -11,6 +11,8 @@ import { testConfig } from './test.config'
  */
 
 test.describe('Results 2023 Animated Numbers', () => {
+  test.skip(!testConfig.site.hasResults, 'No results stats yet: the Results section self-hides')
+
   // Helper selector for ResultCard components - uses the distinctive border class
   // to identify the card containing a specific description
   const getResultCard = (page: import('@playwright/test').Page, description: string) =>

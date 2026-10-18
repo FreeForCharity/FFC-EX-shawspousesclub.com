@@ -17,6 +17,9 @@ jest.mock('@/data/team', () => ({
   team: [{ name: 'Sample Member', role: 'Volunteer' }],
   configuredTeam: [],
 }))
+// A charity with no programs of its own: its Programs link must go with the
+// section. A charity that lists programs keeps the link (charity-programs.test.tsx).
+jest.mock('@/data/programs', () => ({ programs: [], programsIntro: '', programsDisclaimer: '' }))
 
 import { siteConfig } from '@/lib/site.config'
 import Header from '@/components/header'
@@ -41,6 +44,8 @@ describe('nav links respect section visibility', () => {
   })
 
   it('Header drops Team (empty data) and Programs (flag off) links', () => {
+    // Nothing pending: a pending team keeps its section (and link) visible.
+    asCharitySite()
     siteConfig.sections.showPrograms = false
     render(<Header />)
     expect(screen.queryAllByText('Team')).toHaveLength(0)
@@ -86,6 +91,8 @@ describe('nav links respect section visibility', () => {
   })
 
   it('Footer drops Team, Programs, and Events links when hidden', () => {
+    // Nothing pending: a pending team keeps its section (and link) visible.
+    asCharitySite()
     siteConfig.sections.showPrograms = false
     siteConfig.sections.showEvents = false
     // Even with a configured source the flag alone must drop the link.

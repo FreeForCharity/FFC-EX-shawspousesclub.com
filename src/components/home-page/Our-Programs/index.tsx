@@ -4,9 +4,53 @@ import OrangeFaqItem from '@/components/ui/OrangeFaqItem'
 import ApplicationFormButton from '@/components/ui/ApplicationFormButton'
 import { assetPath } from '@/lib/assetPath'
 import { programsSectionVisible } from '@/lib/section-visibility'
+import { isSupportingOrgSite } from '@/lib/site.config'
+import { programs, programsDisclaimer, programsIntro } from '@/data/programs'
 
 const index = () => {
   if (!programsSectionVisible()) return null
+
+  // The block below is the supporting organization's own programs. Any other
+  // site lists its own, from src/data/programs.ts.
+  if (!isSupportingOrgSite()) {
+    return (
+      <div id="programs" className="py-[52px]">
+        <div className="w-[90%] lg:px-[20px] mx-auto max-w-[1280px]">
+          <h2 className="font-[400] text-[40px] lg:text-[48px] tracking-[0] text-center mx-auto mb-[30px] faustina-font">
+            Our Programs
+          </h2>
+          {programsIntro && (
+            <p className="text-[22px] font-[400] leading-[150%] text-center mb-[40px] lato-font">
+              {programsIntro}
+            </p>
+          )}
+          <div>
+            {programs.map((program) => (
+              <OrangeFaqItem key={program.title} title={program.title}>
+                {program.paragraphs.map((text) => (
+                  <p key={text} className="mb-[12px]">
+                    {text}
+                  </p>
+                ))}
+                {program.points && program.points.length > 0 && (
+                  <ul className="list-disc list-inside">
+                    {program.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                )}
+              </OrangeFaqItem>
+            ))}
+          </div>
+          {programsDisclaimer && (
+            <p className="mt-[30px] text-[16px] italic text-center text-gray-700 lato-font">
+              {programsDisclaimer}
+            </p>
+          )}
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div id="programs" className="py-[52px]">

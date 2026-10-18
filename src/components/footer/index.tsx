@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiLink2 } from 'react-icons/fi'
-import { FaFacebookF, FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { FaFacebookF, FaLinkedinIn, FaGithub, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import type { IconType } from 'react-icons'
 import { SaleShareOptOut } from '@/components/sale-share-opt-out'
@@ -32,6 +32,8 @@ const socialIconByLabel: Record<string, IconType> = {
   Twitter: FaXTwitter,
   X: FaXTwitter,
   LinkedIn: FaLinkedinIn,
+  Instagram: FaInstagram,
+  YouTube: FaYoutube,
   GitHub: FaGithub,
 }
 

@@ -7,6 +7,12 @@ import Events from '../../../src/components/home-page/Events'
 import FrequentlyAskedQuestions from '../../../src/components/home-page/FrequentlyAskedQuestions'
 import { asCharitySite, restoreSiteConfig } from '../../helpers/site-identity'
 
+// A charity site shows its OWN programs (src/data/programs.ts) in the Programs
+// section; these cases are about a charity with none, so the section must hide
+// rather than fall back to the supporting organization's copy. The populated
+// charity render is covered in charity-programs.test.tsx.
+jest.mock('@/data/programs', () => ({ programs: [], programsIntro: '', programsDisclaimer: '' }))
+
 // Self-hiding behavior (FFC-Cloudflare-Automation#816 Part B): the FFC-specific
 // marketing sections are gated behind siteConfig.sections.* so a rebranded fork
 // can hide them (they carry FFC copy, not per-charity data). Defaults are true,

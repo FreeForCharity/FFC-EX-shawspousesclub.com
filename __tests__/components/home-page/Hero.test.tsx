@@ -9,6 +9,11 @@ import {
   restoreSiteConfig,
 } from '../../helpers/site-identity'
 
+// A charity with no programs of its own (src/data/programs.ts): no Programs
+// section, so no button to it. One that lists programs keeps the button
+// (charity-programs.test.tsx).
+jest.mock('@/data/programs', () => ({ programs: [], programsIntro: '', programsDisclaimer: '' }))
+
 describe('Hero', () => {
   afterEach(restoreSiteConfig)
 

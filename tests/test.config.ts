@@ -12,9 +12,23 @@
  */
 
 import { analyticsConfig, isConfigured } from '../src/lib/analytics.config'
-import { siteConfig } from '../src/lib/site.config'
+import { isSupportingOrgSite, siteConfig } from '../src/lib/site.config'
+import { results } from '../src/data/results'
+import { configuredTestimonials } from '../src/data/testimonials'
 
 export const testConfig = {
+  /**
+   * What this build renders, so specs about content a site may not have skip
+   * instead of failing. A provisioned charity site has none of the supporting
+   * organization's own content (mission video, application form) and may have
+   * no results or testimonials yet; those sections then self-hide.
+   */
+  site: {
+    isSupporter: isSupportingOrgSite(),
+    hasResults: results.stats.length > 0,
+    testimonialCount: configuredTestimonials.length,
+  },
+
   /**
    * Mission Video Configuration
    * Used in: tests/mission-video.spec.ts
@@ -57,31 +71,16 @@ export const testConfig = {
    * Social Media Links Configuration
    * Used in: tests/social-links.spec.ts
    */
-  socialLinks: {
-    facebook: {
-      url: 'facebook.com/freeforcharity',
-      ariaLabel: 'Facebook',
-    },
-    twitter: {
-      url: 'x.com/freeforcharity1',
-      ariaLabel: 'X (Twitter)',
-    },
-    linkedin: {
-      url: 'linkedin.com/company/freeforcharity',
-      ariaLabel: 'LinkedIn',
-    },
-    github: {
-      url: 'github.com/FreeForCharity/FFC-IN-FFC_Single_Page_Template',
-      ariaLabel: 'GitHub',
-    },
-  },
+  // Sourced from siteConfig.social (links with an href), the list the footer
+  // renders; each link's aria-label is its label.
+  socialLinks: siteConfig.social.filter((link) => link.href.trim()),
 
   /**
    * Copyright Configuration
    * Used in: tests/copyright.spec.ts
    */
   copyright: {
-    text: 'All Rights Are Reserved by Free For Charity a US 501c3 Non Profit',
+    text: `All Rights Are Reserved by ${siteConfig.name} ${siteConfig.taxStatusLabel}`.trim(),
     searchText: 'All Rights Are Reserved',
     // The permanent "Supported by" attribution (FFC footer standard) — sourced
     // from siteConfig.supportedBy, which is required and always rendered.
@@ -97,17 +96,10 @@ export const testConfig = {
    * Animated Numbers Configuration
    * Used in: tests/animated-numbers.spec.ts
    */
+  // Sourced from src/data/results.ts, which the Results section renders.
   animatedNumbers: {
-    sectionHeading: 'Results - 2023',
-    statistics: [
-      { description: 'Organizational partners', value: '221' },
-      { description: 'Total volunteers', value: '3' },
-      {
-        description: 'Organizations accessing technical assistance offerings',
-        value: '221',
-      },
-      { description: 'Volunteer hours contributed to the organization', value: '25' },
-    ],
+    sectionHeading: results.heading,
+    statistics: results.stats.map((stat) => ({ description: stat.label, value: stat.value })),
   },
 
   /**
@@ -131,9 +123,10 @@ export const testConfig = {
    * Used in: tests/logo.spec.ts
    */
   logo: {
-    headerAlt: 'Free For Charity',
+    // The header logo's alt text is the site name (src/components/header).
+    headerAlt: siteConfig.name,
     heroAlt: 'Hero image',
-    navBarAriaLabel: 'Free For Charity home',
+    navBarAriaLabel: `${siteConfig.name} home`,
   },
 
   /**

@@ -1,11 +1,11 @@
 {
   "schemaVersion": "ffc.site-profile.v1",
   "siteId": "https://freeforcharity.github.io",
-  "siteName": "Free For Charity",
+  "siteName": "Shaw Spouses' Club",
   "canonicalUrl": "https://freeforcharity.github.io",
   "organization": {
-    "name": "Free For Charity",
-    "ein": "46-2471893",
+    "name": "Shaw Spouses' Club",
+    "ein": "57-0643096",
     "nonprofitStatus": "https://schema.org/Nonprofit501c3"
   },
   "supportedBy": {
@@ -18,7 +18,7 @@
     "branch": "main"
   },
   "contacts": {
-    "primaryEmail": "clarkemoyer@freeforcharity.org",
+    "primaryEmail": null,
     "vulnerabilityDisclosureUrl": "https://freeforcharity.github.io/vulnerability-disclosure-policy"
   },
   "profileEndpoints": {
