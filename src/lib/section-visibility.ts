@@ -1,5 +1,6 @@
 import { isPending, isSupportingOrgSite, siteConfig } from '@/lib/site.config'
 import { configuredTeam } from '@/data/team'
+import { programs } from '@/data/programs'
 
 /**
  * Self-hide predicates for the home-page sections whose copy is about the
@@ -17,9 +18,14 @@ import { configuredTeam } from '@/data/team'
  * someone remembering to flip three flags.
  */
 
-/** FFC's own three-program (Domains / Hosting / Consulting) block. */
+/**
+ * The Programs section: FFC's own three-program (Domains / Hosting /
+ * Consulting) block on the supporting organization's site, and the charity's
+ * own programs from src/data/programs.ts everywhere else.
+ */
 export function programsSectionVisible(): boolean {
-  return siteConfig.sections.showPrograms && isSupportingOrgSite()
+  if (!siteConfig.sections.showPrograms) return false
+  return isSupportingOrgSite() || programs.length > 0
 }
 
 /** FFC Endowment feature cards. */

@@ -240,14 +240,16 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   name: "Shaw Spouses' Club",
-  tagline: 'Nonprofit Organization',
-  mission: "Shaw Spouses' Club is a nonprofit organization.",
+  tagline: 'Supporting military families at Shaw AFB',
+  mission:
+    "The Shaw Spouses' Club is a non-profit private organization dedicated to promoting a supportive atmosphere to our military families and community through camaraderie, social activities, scholarships, and charitable giving.",
   // Empty = a charity's Donate / Volunteer sections email contactEmail instead.
   donationUrl: '',
   volunteerUrl: '',
   description:
-    "Shaw Spouses' Club is a nonprofit organization. Learn about Shaw Spouses' Club, our team, and how to support our work.",
-  shortDescription: "Shaw Spouses' Club is a nonprofit organization.",
+    "The Shaw Spouses' Club is a non-profit private organization dedicated to promoting a supportive atmosphere to our military families and community through camaraderie, social activities, scholarships, and charitable giving.",
+  shortDescription:
+    'Supporting military families and the Shaw AFB community through camaraderie, social activities, scholarships, and charitable giving.',
   // Bare origin only (drift-check enforced). The template deploys to the
   // GitHub Pages default URL; the /FFC-IN-FFC_Single_Page_Template subpath
   // comes from NEXT_PUBLIC_BASE_PATH, which siteUrl() folds in at build time.
@@ -255,10 +257,23 @@ export const siteConfig: SiteConfig = {
   url: 'https://freeforcharity.github.io',
   twitterHandle: '',
   contactEmail: '',
-  keywords: ['nonprofit', 'charity', 'donate', 'volunteer', "Shaw Spouses' Club"],
+  keywords: [
+    "Shaw Spouses' Club",
+    'Shaw AFB',
+    'military spouses',
+    'spouses club',
+    'Sumter SC',
+    'military scholarships',
+    'nonprofit',
+  ],
   themeColor: '#ffffff',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
-  social: [],
+  social: [
+    { label: 'Facebook', href: 'https://www.facebook.com/shawsc' },
+    { label: 'Instagram', href: 'https://instagram.com/shawspousesclub' },
+    { label: 'YouTube', href: 'https://www.youtube.com/channel/UCF5ssxoB8YrSw7-vyVBP4qw' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/shaw-spouses-club' },
+  ],
   ein: '57-0643096',
   nonprofitStatus: 'https://schema.org/Nonprofit501c3',
   phone: { display: '', tel: '' },
@@ -298,7 +313,7 @@ export const siteConfig: SiteConfig = {
 
   // Footer-standard fields still awaiting the charity; each renders a visible
   // 'awaiting information' placeholder until it is filled in.
-  pending: ['email', 'donationUrl', 'volunteerUrl', 'phone', 'social', 'team'],
+  pending: ['email', 'donationUrl', 'volunteerUrl', 'phone', 'team'],
 }
 
 /**

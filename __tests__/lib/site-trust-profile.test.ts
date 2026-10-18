@@ -19,6 +19,8 @@ describe('public site trust profile', () => {
       ein: '12-3456789',
       nonprofitStatus: 'https://schema.org/Nonprofit501c3',
       contactEmail: 'hello@example.org',
+      // A provisioned fork may check in pending fields; this case supplies them all.
+      pending: [],
     })
     process.env.NEXT_PUBLIC_BASE_PATH = ''
     const profile = getSiteTrustProfile()
@@ -28,6 +30,7 @@ describe('public site trust profile', () => {
       nonprofitStatus: 'https://schema.org/Nonprofit501c3',
     })
     expect(profile.supportedBy.name).toBe(original.supportedBy.name)
+    expect(profile.trust.generatedBy).toBe(`${original.supportedBy.name} template factory`)
     expect(profile.contacts.primaryEmail).toBe('hello@example.org')
     expect(profile.siteId).toBe('https://example.org')
     expect(JSON.stringify(profile)).not.toContain('46-2471893')
