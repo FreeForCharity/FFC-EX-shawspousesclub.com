@@ -254,7 +254,7 @@ export const siteConfig: SiteConfig = {
   // GitHub Pages default URL; the /FFC-IN-FFC_Single_Page_Template subpath
   // comes from NEXT_PUBLIC_BASE_PATH, which siteUrl() folds in at build time.
   // A fork with a custom domain sets its own origin here (and no basePath).
-  url: 'https://freeforcharity.github.io',
+  url: 'https://shawspousesclub.org',
   twitterHandle: '',
   contactEmail: '',
   keywords: [
