@@ -12,7 +12,7 @@
 export const analyticsConfig = {
   // Google Tag Manager container ID, e.g. 'GTM-ABC1234'. GTM is the umbrella
   // that can load the others, so this is the main one most sites set.
-  gtmId: 'GTM-TQ5H8HPR',
+  gtmId: '',
 
   // Google Analytics 4 measurement ID, e.g. 'G-ABC1234567'.
   gaMeasurementId: 'G-XXXXXXXXXX',
