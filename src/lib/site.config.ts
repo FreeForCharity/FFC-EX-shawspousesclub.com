@@ -256,7 +256,7 @@ export const siteConfig: SiteConfig = {
   // A fork with a custom domain sets its own origin here (and no basePath).
   url: 'https://freeforcharity.github.io',
   twitterHandle: '',
-  contactEmail: '',
+  contactEmail: 'shawspousesclub@outlook.com',
   keywords: [
     "Shaw Spouses' Club",
     'Shaw AFB',
@@ -313,7 +313,7 @@ export const siteConfig: SiteConfig = {
 
   // Footer-standard fields still awaiting the charity; each renders a visible
   // 'awaiting information' placeholder until it is filled in.
-  pending: ['email', 'donationUrl', 'volunteerUrl', 'phone', 'team'],
+  pending: ['donationUrl', 'volunteerUrl', 'phone', 'team'],
 }
 
 /**
