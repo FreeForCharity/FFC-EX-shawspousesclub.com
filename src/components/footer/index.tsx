@@ -108,6 +108,25 @@ const Footer: React.FC = () => {
               </p>
             )}
           </div>
+
+          <div className="space-y-3 border-t border-gray-700 pt-5">
+            <h3 className="text-[22px] text-white">Chamber Membership</h3>
+            <a
+              href="https://www.sumterchamber.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit the Greater Sumter Chamber of Commerce website"
+              className="inline-flex rounded-lg bg-white p-2 transition-opacity hover:opacity-85"
+            >
+              <Image
+                src={assetPath('/Images/sumter-chamber-2026-member.png')}
+                alt="Proud 2026 member of the Greater Sumter Chamber of Commerce"
+                width={160}
+                height={160}
+                className="h-36 w-36 object-contain"
+              />
+            </a>
+          </div>
         </div>
 
         {/* Column 2: Quick Links */}
