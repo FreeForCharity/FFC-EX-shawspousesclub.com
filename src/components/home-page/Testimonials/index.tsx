@@ -29,9 +29,9 @@ const TestimonialSlider: React.FC = () => {
   if (configuredTestimonials.length === 0) return null
 
   return (
-    <section id="testimonials" className="py-16 pb-25 bg-[#FCFCFC]">
+    <section id="testimonials" className="py-16 pb-25 bg-[#F4F7FF]">
       <div className="container mx-auto px-4 max-w-[1150px] text-center">
-        <h2 className="font-bold text-[#E16820] text-[40px] leading-[44px] mb-7">Testimonials</h2>
+        <h2 className="font-bold text-[#234F93] text-[40px] leading-[44px] mb-7">Testimonials</h2>
 
         {/* Carousel landmark so assistive tech announces this region and its
             role. aria-live is intentionally omitted: the carousel auto-rotates,
@@ -73,7 +73,7 @@ const TestimonialSlider: React.FC = () => {
                   </p>
 
                   {t.name && (
-                    <p className="text-[14px] font-medium my-2 text-[#666666] aria-font">
+                    <p className="text-[14px] font-medium my-2 text-[#26394D] aria-font">
                       {t.name}
                     </p>
                   )}
@@ -81,12 +81,12 @@ const TestimonialSlider: React.FC = () => {
                   {t.location &&
                     (t.locationUrl ? (
                       <a href={t.locationUrl}>
-                        <p className="text-[14px] font-medium text-[#227AB5] aria-font">
+                        <p className="text-[14px] font-medium text-[#234F93] aria-font">
                           {t.location}
                         </p>
                       </a>
                     ) : (
-                      <p className="text-[14px] font-medium text-[#227AB5] aria-font">
+                      <p className="text-[14px] font-medium text-[#234F93] aria-font">
                         {t.location}
                       </p>
                     ))}
@@ -136,7 +136,7 @@ const TestimonialSlider: React.FC = () => {
               <span
                 className={`block h-2 rounded-full transition-all ${
                   activeIndex === i
-                    ? 'w-8 bg-orange-600'
+                    ? 'w-8 bg-[#376BCD]'
                     : 'w-2 bg-gray-300 group-hover:bg-gray-400'
                 }`}
               />

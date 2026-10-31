@@ -2,10 +2,23 @@ import React from 'react'
 import Image from 'next/image'
 import OrangeFaqItem from '@/components/ui/OrangeFaqItem'
 import ApplicationFormButton from '@/components/ui/ApplicationFormButton'
+import GivingBackCards from '@/components/giving-back/GivingBackCards'
 import { assetPath } from '@/lib/assetPath'
 import { programsSectionVisible } from '@/lib/section-visibility'
-import { isSupportingOrgSite } from '@/lib/site.config'
+import { isSupportingOrgSite, siteConfig } from '@/lib/site.config'
 import { programs, programsDisclaimer, programsIntro } from '@/data/programs'
+
+const programAnchorIds: Record<string, string> = {
+  Membership: 'membership',
+  'Monthly Socials': 'socials',
+  'Special Activity Groups': 'special-activities',
+  Scholarships: 'scholarship',
+  Fundraisers: 'fundraisers',
+  'Charitable Donation Requests': 'charitable',
+  'Shower Shaw': 'shower-shaw',
+}
+
+const membershipProgramTitles = new Set(['Membership', 'Monthly Socials', 'Special Activity Groups'])
 
 const index = () => {
   if (!programsSectionVisible()) return null
@@ -13,6 +26,51 @@ const index = () => {
   // The block below is the supporting organization's own programs. Any other
   // site lists its own, from src/data/programs.ts.
   if (!isSupportingOrgSite()) {
+    const membershipPrograms = programs.filter((program) => membershipProgramTitles.has(program.title))
+    const givingBackPrograms = programs.filter((program) => !membershipProgramTitles.has(program.title))
+
+    const renderClubProgram = (program: (typeof programs)[number]) => (
+      <div key={program.title} id={programAnchorIds[program.title]} className="scroll-mt-[100px]">
+        <OrangeFaqItem title={program.title}>
+          {program.paragraphs.map((text) => (
+            <p key={text} className="mb-[12px]">
+              {text}
+            </p>
+          ))}
+          {program.title === 'Scholarships' && (
+            <p className="mb-[12px]">
+              Application dates and forms vary by cycle. Contact the club at{' '}
+              <a
+                href={`mailto:${siteConfig.contactEmail}`}
+                className="font-semibold text-[#234F93] underline"
+              >
+                {siteConfig.contactEmail}
+              </a>{' '}
+              for current-cycle information.
+            </p>
+          )}
+          {program.points && program.points.length > 0 && (
+            <ul className="list-disc list-inside">
+              {program.points.map((point) => (
+                <li
+                  key={point}
+                  id={
+                    program.title === 'Fundraisers'
+                      ? point === 'Annual Scholarship Auction'
+                        ? 'auction'
+                        : 'golf-tournament'
+                      : undefined
+                  }
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+          )}
+        </OrangeFaqItem>
+      </div>
+    )
+
     return (
       <div id="programs" className="py-[52px]">
         <div className="w-[90%] lg:px-[20px] mx-auto max-w-[1280px]">
@@ -24,28 +82,48 @@ const index = () => {
               {programsIntro}
             </p>
           )}
-          <div>
-            {programs.map((program) => (
-              <OrangeFaqItem key={program.title} title={program.title}>
-                {program.paragraphs.map((text) => (
-                  <p key={text} className="mb-[12px]">
-                    {text}
-                  </p>
-                ))}
-                {program.points && program.points.length > 0 && (
-                  <ul className="list-disc list-inside">
-                    {program.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                )}
-              </OrangeFaqItem>
-            ))}
-          </div>
+          <section aria-labelledby="membership-activities-heading">
+            <h3
+              id="membership-activities-heading"
+              className="mb-6 text-center text-3xl font-semibold text-[#234F93]"
+            >
+              Membership &amp; Activities
+            </h3>
+            <div>{membershipPrograms.map(renderClubProgram)}</div>
+          </section>
+
+          <section
+            id="giving-back"
+            aria-labelledby="giving-back-heading"
+            className="mt-16 scroll-mt-[100px] rounded-2xl bg-[#F4F7FF] px-5 py-10 sm:px-8"
+          >
+            <div className="mx-auto mb-8 max-w-3xl text-center">
+              <h3
+                id="giving-back-heading"
+                className="mb-3 text-3xl font-semibold text-[#234F93]"
+              >
+                Giving Back
+              </h3>
+              <p className="leading-7 text-[#26394D]">
+                Explore the club&apos;s fundraising events, scholarship opportunities, community
+                grants, and service projects.
+              </p>
+            </div>
+
+            <GivingBackCards className="mb-8" />
+
+            <div>{givingBackPrograms.map(renderClubProgram)}</div>
+          </section>
+
           {programsDisclaimer && (
-            <p className="mt-[30px] text-[16px] italic text-center text-gray-700 lato-font">
-              {programsDisclaimer}
-            </p>
+            <section id="governance" className="mt-12 scroll-mt-[100px]">
+              <h3 className="mb-2 text-center text-2xl font-semibold text-[#234F93]">
+                Governance &amp; Organization Status
+              </h3>
+              <p className="text-center text-[16px] italic text-gray-700 lato-font">
+                {programsDisclaimer}
+              </p>
+            </section>
           )}
         </div>
       </div>
@@ -61,7 +139,7 @@ const index = () => {
 
         <div className="lg:pl-[50px]">
           <div className="mb-[40px]  flex items-center gap-[20px]">
-            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#2A6682] rounded-full">
+            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#4F83E5] rounded-full">
               <div className="relative w-[56px] h-[56px]">
                 <Image
                   src={assetPath('/Svgs/FFC-Domains.svg')}
@@ -120,7 +198,7 @@ const index = () => {
 
         <div className="mt-[60px]">
           <div className="lg:pl-[50px] mb-[40px]  flex items-center gap-[20px]">
-            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#2A6682] rounded-full">
+            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#4F83E5] rounded-full">
               <div className="relative w-[56px] h-[56px]">
                 <Image
                   src={assetPath('/Svgs/FFC-Hosting.svg')}
@@ -189,7 +267,7 @@ const index = () => {
 
         <div className="mt-[60px]">
           <div className="lg:pl-[50px] mb-[40px]  flex items-center gap-[20px]">
-            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#2A6682] rounded-full">
+            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#4F83E5] rounded-full">
               <div className="relative w-[56px] h-[56px]">
                 <Image
                   src={assetPath('/Svgs/FFC-Consulting.svg')}

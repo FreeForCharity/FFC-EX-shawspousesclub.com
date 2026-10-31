@@ -5,9 +5,9 @@ import { SOURCE_LABELS } from '@/lib/events/types'
 // Darker text on tinted background — verified ≥ 4.5:1 against the 50-tint bg
 // per WCAG 2.2 AA for small text.
 const SOURCE_STYLES: Record<EventSource, string> = {
-  google: 'bg-[#E8F0FE] text-[#0B57D0] border-[#0B57D0]/40',
-  microsoft: 'bg-[#E5F4FB] text-[#005A9E] border-[#005A9E]/40',
-  facebook: 'bg-[#E7F0FF] text-[#0C4A9E] border-[#0C4A9E]/40',
+  google: 'bg-[#F4F7FF] text-[#234F93] border-[#234F93]/40',
+  microsoft: 'bg-[#F4F7FF] text-[#234F93] border-[#234F93]/40',
+  facebook: 'bg-[#F4F7FF] text-[#234F93] border-[#234F93]/40',
 }
 
 export default function SourceBadge({ source }: { source: EventSource }) {

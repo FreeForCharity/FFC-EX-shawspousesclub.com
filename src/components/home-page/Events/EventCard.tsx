@@ -49,14 +49,14 @@ export default function EventCard({ event }: Props) {
         </div>
       ) : (
         <div
-          className="w-full h-24 bg-gradient-to-r from-[#2B627B] to-[#2A6682]"
+          className="w-full h-24 bg-gradient-to-r from-[#234F93] to-[#4F83E5]"
           aria-hidden="true"
         />
       )}
 
       <div className="flex gap-4 p-5 flex-1">
         <div
-          className="flex flex-col items-center justify-center min-w-[64px] rounded-lg bg-[#2B627B] text-white py-2 px-1 self-start"
+          className="flex flex-col items-center justify-center min-w-[64px] rounded-lg bg-[#234F93] text-white py-2 px-1 self-start"
           aria-hidden="true"
         >
           <span className="text-xs font-semibold tracking-wide lato-font">{month}</span>
@@ -77,7 +77,7 @@ export default function EventCard({ event }: Props) {
           <ul className="space-y-1 text-sm text-gray-600 mb-3 lato-font">
             <li className="flex items-start gap-2">
               <FiCalendar
-                className="w-4 h-4 mt-0.5 text-[#2B627B] flex-shrink-0"
+                className="w-4 h-4 mt-0.5 text-[#234F93] flex-shrink-0"
                 aria-hidden="true"
               />
               <span>
@@ -86,7 +86,7 @@ export default function EventCard({ event }: Props) {
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <FiClock className="w-4 h-4 mt-0.5 text-[#2B627B] flex-shrink-0" aria-hidden="true" />
+              <FiClock className="w-4 h-4 mt-0.5 text-[#234F93] flex-shrink-0" aria-hidden="true" />
               <span>
                 <span className="sr-only">Time: </span>
                 {timeRange}
@@ -95,7 +95,7 @@ export default function EventCard({ event }: Props) {
             {event.location && (
               <li className="flex items-start gap-2">
                 <FiMapPin
-                  className="w-4 h-4 mt-0.5 text-[#2B627B] flex-shrink-0"
+                  className="w-4 h-4 mt-0.5 text-[#234F93] flex-shrink-0"
                   aria-hidden="true"
                 />
                 <span>
@@ -117,7 +117,7 @@ export default function EventCard({ event }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View "${event.title}" on ${sourceLabel} (opens in new tab)`}
-            className="inline-flex items-center justify-center rounded-md bg-[#2B627B] px-4 py-2 text-sm font-[500] text-white hover:bg-[#1f4a5d] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2B627B] lato-font"
+            className="inline-flex items-center justify-center rounded-md bg-[#234F93] px-4 py-2 text-sm font-[500] text-white hover:bg-[#376BCD] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#234F93] lato-font"
           >
             View on {sourceLabel}
           </a>

@@ -8,7 +8,7 @@ const index = () => {
   const href = volunteerHref()
   const hasLink = /^https:/i.test(href) || siteConfig.contactEmail.trim() !== ''
   return (
-    <div id="volunteer" className="bg-[#2A6682] py-[40px]">
+    <div id="volunteer" className="bg-[#4F83E5] py-[40px]">
       <div className="w-[90%] mx-auto lg:px-[20px]">
         <h2 className="mt-[2px] mb-[42px] pb-[10px] text-[30px] md:text-[48px] font-[400] leading-[46px] text-center text-white faustina-font">
           Volunteer with Us
@@ -26,7 +26,7 @@ const index = () => {
             {...(/^https:/i.test(href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             className="w-[216px] h-[62px] top-[261px] left-[611px] rounded-[27px] 
              flex items-center justify-center px-[32px] py-[18px] gap-[10px] 
-             text-[#113563] mx-auto mt-[30px] bg-white text-[20px] font-[400] font-sans text-center lato-font"
+             text-[#26394D] mx-auto mt-[30px] bg-white text-[20px] font-[400] font-sans text-center lato-font"
           >
             Volunteer
           </a>

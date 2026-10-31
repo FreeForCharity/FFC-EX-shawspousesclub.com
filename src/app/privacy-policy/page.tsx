@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
   // organization. The phone follows the footer's rule: shown only when both
   // halves are configured.
   const phone = publishedPhone()
-  const link = 'text-[#0062CC] underline'
+  const link = 'text-[#234F93] underline'
   const contact = (
     <>
       <ContactEmail email={legal.email} className={link} />
@@ -184,7 +184,7 @@ export default function PrivacyPolicy() {
                 href="https://privacy.microsoft.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0062CC] underline"
+                className="text-[#234F93] underline"
               >
                 https://privacy.microsoft.com/
               </a>
@@ -192,7 +192,44 @@ export default function PrivacyPolicy() {
           </ul>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.5. Embedded Content from Other Websites</strong>
+            <strong>3.5. Google Forms - Board Interest Form</strong>
+          </p>
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
+            We embed a Google Form on our Board page to collect expressions of interest in board
+            positions. Information submitted through the form is processed by Google and available
+            to the form owner. Email notifications depend on the form owner&apos;s settings. The
+            form is subject to{' '}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#234F93] underline"
+            >
+              Google&apos;s Privacy Policy
+            </a>
+            .
+          </p>
+
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
+            <strong>3.6. Zeffy - Donations and SSC Merch</strong>
+          </p>
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
+            We embed Zeffy forms for donations and Shaw Spouses&apos; Club T-shirt orders.
+            Information you submit in these forms, including order and payment details, is processed
+            by Zeffy. Review{' '}
+            <a
+              href="https://support.zeffy.com/legal-data-privacy-security"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#234F93] underline"
+            >
+              Zeffy&apos;s privacy information
+            </a>{' '}
+            for details.
+          </p>
+
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
+            <strong>3.7. Embedded Content from Other Websites</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
             Articles on this site may include embedded content (e.g., videos, images, articles).
@@ -417,7 +454,7 @@ export default function PrivacyPolicy() {
             so the ad can still be credited if you accept — until you do, it is stripped from what
             the tags send. You can change your mind at any time via the Cookie Preferences link in
             the footer. See our{' '}
-            <Link href="/cookie-policy" className="text-[#0062CC] underline">
+            <Link href="/cookie-policy" className="text-[#234F93] underline">
               Cookie Policy
             </Link>{' '}
             for details.

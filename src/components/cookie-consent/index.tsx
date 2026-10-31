@@ -619,7 +619,7 @@ export default function CookieConsent() {
   if (showPreferences) {
     return (
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-[#26394D] bg-opacity-50 p-4"
         role="dialog"
         aria-modal="true"
         aria-labelledby="cookie-preferences-title"
@@ -652,7 +652,7 @@ export default function CookieConsent() {
                     type="checkbox"
                     checked={preferences.necessary}
                     disabled
-                    className="w-5 h-5 text-blue-600 bg-gray-300 rounded cursor-not-allowed"
+                    className="w-5 h-5 text-[#234F93] bg-gray-300 rounded cursor-not-allowed"
                   />
                   <span className="ml-2 text-sm text-gray-500">Always Active</span>
                 </div>
@@ -673,7 +673,7 @@ export default function CookieConsent() {
                     type="checkbox"
                     checked={preferences.functional}
                     disabled
-                    className="w-5 h-5 text-blue-600 bg-gray-300 rounded cursor-not-allowed"
+                    className="w-5 h-5 text-[#234F93] bg-gray-300 rounded cursor-not-allowed"
                   />
                   <span className="ml-2 text-sm text-gray-500">Always Active</span>
                 </div>
@@ -703,7 +703,7 @@ export default function CookieConsent() {
                     className="sr-only peer"
                     aria-label="Enable analytics cookies"
                   />
-                  <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                  <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#4F83E5] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#234F93]"></div>
                 </label>
               </div>
               <p className="text-sm text-gray-600 mb-2">
@@ -728,7 +728,7 @@ export default function CookieConsent() {
                     className="sr-only peer"
                     aria-label="Enable marketing cookies"
                   />
-                  <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                  <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#4F83E5] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#234F93]"></div>
                 </label>
               </div>
               <p className="text-sm text-gray-600 mb-2">
@@ -741,7 +741,7 @@ export default function CookieConsent() {
             <div className="flex flex-col sm:flex-row gap-3 mt-6">
               <button
                 onClick={handleSavePreferences}
-                className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                className="flex-1 px-6 py-3 bg-[#234F93] text-white rounded-lg font-semibold hover:bg-[#376BCD] transition-colors"
               >
                 Save Preferences
               </button>
@@ -775,10 +775,10 @@ export default function CookieConsent() {
               decline non-essential cookies.
             </p>
             <div className="flex items-center gap-4 text-xs text-gray-500">
-              <Link href="/privacy-policy" className="text-blue-600 underline">
+              <Link href="/privacy-policy" className="text-[#234F93] underline">
                 Privacy Policy
               </Link>
-              <Link href="/cookie-policy" className="text-blue-600 underline">
+              <Link href="/cookie-policy" className="text-[#234F93] underline">
                 Cookie Policy
               </Link>
             </div>
@@ -798,7 +798,7 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={handleAcceptAll}
-              className="px-6 py-2.5 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm whitespace-nowrap"
+              className="px-6 py-2.5 bg-[#234F93] text-white rounded-lg font-semibold hover:bg-[#376BCD] transition-colors text-sm whitespace-nowrap"
             >
               Accept All
             </button>

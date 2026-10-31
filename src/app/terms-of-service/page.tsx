@@ -107,7 +107,7 @@ export default function TermsOfService() {
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
             All donations made to {name} are voluntary and, except as our Donation Policy provides,
             non-refundable. By making a donation, you agree to our{' '}
-            <Link href="/donation-policy" className="text-[#0062CC] underline">
+            <Link href="/donation-policy" className="text-[#234F93] underline">
               Donation Policy
             </Link>
             , which is incorporated by reference into these Terms.
@@ -249,7 +249,7 @@ export default function TermsOfService() {
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">{name}</p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            Email: <ContactEmail email={legal.email} className="text-[#0062CC] underline" />
+            Email: <ContactEmail email={legal.email} className="text-[#234F93] underline" />
           </p>
           {/* Only a configured number is shown, matching the footer's phone guard. */}
           {phone && (

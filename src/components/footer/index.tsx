@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
   // never points at a missing #events anchor.
   const showEventsLink = eventsSectionVisible()
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-[#26394D] text-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-12 px-4 md:px-6 lg:px-8">
         {/* Column 1: Endorsements */}
         <div className="space-y-6 px-4 sm:px-0">
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
               <Link
                 href={guidestarDirectUrl}
                 className="group relative my-4 flex w-full max-w-[230px] items-center justify-between
-                  border-2 border-[#2ea3f2] bg-black px-5 py-2.5 text-[#2ea3f2]
+                  border-2 border-[#4F83E5] bg-[#26394D] px-5 py-2.5 text-[#4F83E5]
                   transition-all duration-300 hover:border-transparent aria-font"
               >
                 <span className="text-[17px] font-medium leading-tight sm:text-[18px] md:text-[20px] transition-transform duration-300 group-hover:-translate-x-1">
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
                 </span>
 
                 <FiArrowRight
-                  className="h-8 w-8 translate-x-2 opacity-0 text-[#2ea3f2] transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                  className="h-8 w-8 translate-x-2 opacity-0 text-[#4F83E5] transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
                   strokeWidth={2}
                 />
               </Link>
@@ -110,22 +110,24 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="space-y-3 border-t border-gray-700 pt-5">
-            <h3 className="text-[22px] text-white">Chamber Membership</h3>
-            <a
-              href="https://www.sumterchamber.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit the Greater Sumter Chamber of Commerce website"
-              className="inline-flex rounded-lg bg-white p-2 transition-opacity hover:opacity-85"
-            >
-              <Image
-                src={assetPath('/Images/sumter-chamber-2026-member.png')}
-                alt="Proud 2026 member of the Greater Sumter Chamber of Commerce"
-                width={160}
-                height={160}
-                className="h-36 w-36 object-contain"
-              />
-            </a>
+            <div className="w-fit">
+              <h3 className="text-[22px] text-white">Proud Chamber Member</h3>
+              <a
+                href="https://www.sumterchamber.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit the Greater Sumter Chamber of Commerce website"
+                className="mx-auto flex w-fit rounded-lg bg-white p-2 transition-opacity hover:opacity-85"
+              >
+                <Image
+                  src={assetPath('/Images/sumter-chamber-2026-member.png')}
+                  alt="Proud 2026 member of the Greater Sumter Chamber of Commerce"
+                  width={160}
+                  height={160}
+                  className="h-36 w-36 object-contain"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -142,10 +144,9 @@ const Footer: React.FC = () => {
                 // eventsSectionVisible); drop the dead quick-link too.
                 ...(programsSectionVisible() ? [{ name: 'Programs', href: '/#programs' }] : []),
                 ...(showEventsLink ? [{ name: 'Events', href: '/#events' }] : []),
-                // The sections behind these anchors always render; a pending
-                // donation / volunteer URL also shows its placeholder here.
+                // The section behind this anchor always renders; a pending
+                // donation URL also shows its placeholder here.
                 { name: 'Donate', href: '/#donate', pending: isPending('donationUrl') },
-                { name: 'Volunteer', href: '/#volunteer', pending: isPending('volunteerUrl') },
                 ...(faqSectionVisible() ? [{ name: 'FAQ', href: '/#faq' }] : []),
                 ...(teamSectionVisible() ? [{ name: 'Team', href: '/#team' }] : []),
                 // FFC footer standard: every supported charity site links back
@@ -160,7 +161,7 @@ const Footer: React.FC = () => {
                       href={link.href}
                       target={isExternal ? '_blank' : undefined}
                       rel={isExternal ? 'noopener noreferrer' : undefined}
-                      className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
+                      className="hover:text-[#4F83E5] hover:tracking-widest transition-all text-[16px] font-[500]"
                     >
                       {link.name}
                     </Link>
@@ -210,7 +211,7 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
+                      className="hover:text-[#4F83E5] hover:tracking-widest transition-all text-[16px] font-[500]"
                     >
                       {link.name}
                     </Link>
@@ -223,7 +224,7 @@ const Footer: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => window.openCookiePreferences?.()}
-                    className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
+                    className="hover:text-[#4F83E5] hover:tracking-widest transition-all text-[16px] font-[500]"
                   >
                     Cookie Preferences
                   </button>
@@ -233,7 +234,7 @@ const Footer: React.FC = () => {
                       and the Colorado / Connecticut equivalents). Required to
                       be reachable from every page, which is why it lives here
                       rather than only inside the preferences modal. */}
-                  <SaleShareOptOut className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500] text-left" />
+                  <SaleShareOptOut className="hover:text-[#4F83E5] hover:tracking-widest transition-all text-[16px] font-[500] text-left" />
                 </li>
               </ul>
             </nav>
@@ -242,11 +243,13 @@ const Footer: React.FC = () => {
 
         {/* Column 3: Contact Us */}
         <div className="space-y-6 px-4 sm:px-0">
-          <h2 className="text-[28px] text-white">Contact Us</h2>
+          <h2 id="contact" className="scroll-mt-[100px] text-[28px] text-white">
+            Contact Us
+          </h2>
 
           <div className="space-y-4 text-sm">
             <div className="flex items-start gap-3">
-              <FiMail className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+              <FiMail className="w-10 h-10 text-[#4F83E5] flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-[500] text-[22px]">E-mail</p>
                 {isPending('email') ? (
@@ -254,7 +257,7 @@ const Footer: React.FC = () => {
                 ) : (
                   <a
                     href={mailtoHref()}
-                    className="font-[500] text-[15px] hover:text-cyan-400 transition-colors break-all aria-font"
+                    className="font-[500] text-[15px] hover:text-[#234F93] transition-colors break-all aria-font"
                   >
                     {siteConfig.contactEmail}
                   </a>
@@ -267,7 +270,7 @@ const Footer: React.FC = () => {
                 with no tel: link. */}
             {isPending('phone') && (
               <div className="flex items-start gap-3">
-                <FiPhone className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiPhone className="w-10 h-10 text-[#4F83E5] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">Call Us Today</p>
                   <PendingNote className={PENDING_NOTE_CLASS} />
@@ -276,12 +279,12 @@ const Footer: React.FC = () => {
             )}
             {phone && (
               <div className="flex items-start gap-3">
-                <FiPhone className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiPhone className="w-10 h-10 text-[#4F83E5] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">Call Us Today</p>
                   <a
                     href={`tel:${phone.tel}`}
-                    className="font-[500] text-[16px] hover:text-cyan-400 transition-colors aria-font"
+                    className="font-[500] text-[16px] hover:text-[#234F93] transition-colors aria-font"
                   >
                     {phone.display}
                   </a>
@@ -292,7 +295,7 @@ const Footer: React.FC = () => {
             {/* A pending address shows the placeholder, with no map link. */}
             {isPending('address') && (
               <div className="flex items-start gap-3">
-                <FiMapPin className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiMapPin className="w-10 h-10 text-[#4F83E5] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">Address</p>
                   <PendingNote className={PENDING_NOTE_CLASS} />
@@ -308,7 +311,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:opacity-80 transition-opacity"
               >
-                <FiMapPin className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiMapPin className="w-10 h-10 text-[#4F83E5] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">{address.label}</p>
                   <p className="font-[500] text-[16px] aria-font">
@@ -343,7 +346,7 @@ const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="bg-orange-500 p-2 rounded-full hover:bg-orange-600 transition-colors"
+                    className="bg-[#4F83E5] p-2 rounded-full hover:bg-[#376BCD] transition-colors"
                   >
                     <Icon className="w-6 h-6 text-white" />
                   </a>
@@ -352,6 +355,13 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="mx-auto max-w-5xl px-4 pb-2 text-center text-sm leading-6 text-white/85">
+        <p>
+          The Shaw Spouses’ Club is a private organization. It is not part of the Department of
+          Defense or any of its components and it has no governmental status.
+        </p>
       </div>
 
       {/* Bottom Bar */}
@@ -364,7 +374,7 @@ const Footer: React.FC = () => {
           {' | Supported by '}
           <Link
             href={siteConfig.supportedBy.url}
-            className="underline text-[#2EA3F2] hover:text-[#2EA3F2] transition-colors"
+            className="underline text-[#4F83E5] hover:text-[#4F83E5] transition-colors"
           >
             {siteConfig.supportedBy.name}
           </Link>
@@ -373,7 +383,7 @@ const Footer: React.FC = () => {
               {' | A project of '}
               <Link
                 href={siteConfig.parentOrg.url}
-                className="underline text-[#2EA3F2] hover:text-[#2EA3F2] transition-colors"
+                className="underline text-[#4F83E5] hover:text-[#4F83E5] transition-colors"
               >
                 {siteConfig.parentOrg.name}
               </Link>

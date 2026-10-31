@@ -1,6 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
-import { assetPath } from '@/lib/assetPath'
 import { cardDescription, isSupportingOrgSite, siteConfig } from '@/lib/site.config'
 import { programsSectionVisible } from '@/lib/section-visibility'
 
@@ -11,72 +9,32 @@ const CharityHeroBackground = () => {
     ? 'Connecting Students, Professionals, & Businesses with Charities in Need'
     : cardDescription()
   return (
-    <div id="hero" className="relative w-full pb-[100px] overflow-hidden">
-      {/* 1. Base Blue Layer */}
-      <div className="absolute inset-0 bg-[#2E6F8E]" />
-      {/* 2. ULTRA-THIN White Diagonal Strip - HALF HEIGHT */}
-      <div
-        className="absolute inset-0 bg-white"
-        style={{
-          clipPath: 'polygon(0% 108%, 100% 32%, 100% 35%, 0% 111%)',
-        }}
-      />
-
-      {/* 3. Orange Bottom-Right Section - Starts exactly where white ends */}
-      <div
-        className="absolute inset-0 bg-[#E4731E]"
-        style={{
-          clipPath: 'polygon(0% 111%, 100% 35%, 100% 100%, 0% 100%)',
-        }}
-      />
-
-      <div className="hero-container flex flex-col lg:flex-row gap-[40px] lg:gap-[0px] items-center justify-between relative z-10 text-white pt-[130px] w-[90%] mx-auto max-w-[1280px] lg:px-[20px]">
-        <div className="w-full lg:w-[565px]">
-          <h1 className="text-[50px] lg:text-[60px] font-[500] text-[#FFFFFF] leading-[120%] mb-[20px] faustina-font">
+    <section id="hero" className="w-full bg-[#f4f7ff]">
+      <div className="hero-container mx-auto flex w-[90%] max-w-[1280px] flex-col items-start py-[72px] text-[#26394d] lg:px-[20px]">
+        <div className="w-full max-w-[760px]">
+          <h1 className="faustina-font mb-[20px] text-[50px] font-[500] leading-[120%] text-[#234f93] lg:text-[60px]">
             Welcome to <br /> {siteConfig.name}
           </h1>
-          <p className="text-[24px] font-[400] leading-[120%] text-[#FFFFFF] mb-[20px] lato-font">
-            {strapline}
-          </p>
-          <a
-            href="#volunteer"
-            className="top-[378px] w-[300px] lg:w-[351px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] mb-[10px] whitespace-nowrap lato-font"
-          >
-            Volunteer
-          </a>
+          <p className="lato-font mb-[20px] text-[24px] font-[400] leading-[120%]">{strapline}</p>
           <div className="flex gap-[5px]">
             <a
               href="#donate"
-              className="top-[442px] w-[130px] lg:w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] whitespace-nowrap lato-font"
+              className="lato-font flex h-[54px] w-[130px] items-center justify-center gap-[10px] whitespace-nowrap rounded-[27px] bg-[#4f83e5] px-[24px] py-[18px] text-[20px] font-[400] leading-[100%] text-white hover:bg-[#376bcd] lg:w-[173px]"
             >
               Donate
             </a>
             {programsSectionVisible() && (
               <a
                 href="#programs"
-                className="top-[442px] w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] whitespace-nowrap lato-font"
+                className="lato-font flex h-[54px] w-[173px] items-center justify-center gap-[10px] whitespace-nowrap rounded-[27px] bg-[#4f83e5] px-[24px] py-[18px] text-[20px] font-[400] leading-[100%] text-white hover:bg-[#376bcd]"
               >
                 Our Programs
               </a>
             )}
           </div>
         </div>
-
-        {/* Fixed right side image section */}
-        <div className="relative w-full max-w-[445px] aspect-square bg-white rounded-full p-12 flex items-center justify-center">
-          <div className="relative w-full h-full">
-            <Image
-              src={assetPath('/Images/figma-hero-img.webp')}
-              alt="Hero image"
-              fill
-              className="object-contain"
-              priority
-              sizes="(max-width: 1024px) 100vw, 445px"
-            />
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
   )
 }
 

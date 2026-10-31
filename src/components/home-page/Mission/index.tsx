@@ -17,7 +17,7 @@ const index = () => {
           </p>
         </div>
 
-        <div className="w-[95%] mt-[50px] mx-auto border border-[#2B627B]"></div>
+        <div className="w-[95%] mt-[50px] mx-auto border border-[#234F93]"></div>
       </div>
     )
   }
@@ -42,7 +42,7 @@ const index = () => {
         </div>
       </div>
 
-      <div className="w-[95%] mt-[50px] mx-auto border border-[#2B627B]"></div>
+      <div className="w-[95%] mt-[50px] mx-auto border border-[#234F93]"></div>
     </div>
   )
 }

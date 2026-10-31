@@ -244,7 +244,7 @@ export const siteConfig: SiteConfig = {
   mission:
     "The Shaw Spouses' Club is a non-profit private organization dedicated to promoting a supportive atmosphere to our military families and community through camaraderie, social activities, scholarships, and charitable giving.",
   // Empty = a charity's Donate / Volunteer sections email contactEmail instead.
-  donationUrl: '',
+  donationUrl: 'https://www.zeffy.com/en-US/donation-form/donate-to-the-shaw-spouses-club',
   volunteerUrl: '',
   description:
     "The Shaw Spouses' Club is a non-profit private organization dedicated to promoting a supportive atmosphere to our military families and community through camaraderie, social activities, scholarships, and charitable giving.",
@@ -266,7 +266,7 @@ export const siteConfig: SiteConfig = {
     'military scholarships',
     'nonprofit',
   ],
-  themeColor: '#ffffff',
+  themeColor: '#F4F7FF',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
   social: [
     { label: 'Facebook', href: 'https://www.facebook.com/shawsc' },
@@ -313,7 +313,7 @@ export const siteConfig: SiteConfig = {
 
   // Footer-standard fields still awaiting the charity; each renders a visible
   // 'awaiting information' placeholder until it is filled in.
-  pending: ['donationUrl', 'volunteerUrl', 'phone', 'team'],
+  pending: ['volunteerUrl', 'phone', 'team'],
 }
 
 /**

@@ -91,9 +91,9 @@ const ApplicationFormButton: React.FC<ApplicationFormButtonProps> = ({
       <button
         onClick={openPopup}
         className={`
-          rounded-[20px] border-[5px] border-[#2A6682] flex items-center justify-center 
+          rounded-[20px] border-[5px] border-[#4F83E5] flex items-center justify-center
           text-black font-[400] text-[25px] px-[28px] py-[16px] 
-          hover:bg-[#2A6682] hover:text-white transition-all duration-300
+          hover:bg-[#4F83E5] hover:text-white transition-all duration-300
           ${className}
          lato-font`}
       >
@@ -103,7 +103,7 @@ const ApplicationFormButton: React.FC<ApplicationFormButtonProps> = ({
       {/* Popup Modal */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#26394D] bg-opacity-50"
           onClick={closePopup}
           role="dialog"
           aria-modal="true"
@@ -122,7 +122,7 @@ const ApplicationFormButton: React.FC<ApplicationFormButtonProps> = ({
             {/* Close button */}
             <button
               onClick={closePopup}
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-[#4F83E5]"
               aria-label="Close application form"
               type="button"
             >
@@ -147,7 +147,7 @@ const ApplicationFormButton: React.FC<ApplicationFormButtonProps> = ({
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-lg z-20">
                 <div className="relative">
                   {/* Animated spinner */}
-                  <div className="w-16 h-16 border-4 border-[#2A6682] border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-16 h-16 border-4 border-[#4F83E5] border-t-transparent rounded-full animate-spin"></div>
                 </div>
                 <p className="mt-4 text-lg text-gray-600 font-medium">
                   Loading application form...

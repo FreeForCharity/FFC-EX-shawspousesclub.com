@@ -2,12 +2,13 @@
 @import 'tailwindcss';
 
 :root {
-  /* Brand tokens */
-  --ffc-primary: #2a6682;
-  --ffc-accent: #f58629;
-  --ffc-yellow: #f5c045;
-  --ffc-black: #000000;
-  --ffc-white: #ffffff;
+  /* Shaw Spouses' Club brand palette */
+  --club-background: #F4F7FF;
+  --club-heading: #234F93;
+  --club-button: #4F83E5;
+  --club-button-hover: #376BCD;
+  --club-text: #26394D;
+  --club-white: #FFFFFF;
 
   /* Layout */
   --ffc-container: 1248px;
@@ -21,11 +22,11 @@ body {
 
 @theme inline {
   /* Tailwind design tokens mapped to brand variables */
-  --color-primary: var(--ffc-primary);
-  --color-accent: var(--ffc-accent);
-  --color-yellow: var(--ffc-yellow);
-  --color-ink: var(--ffc-black);
-  --color-paper: var(--ffc-white);
+  --color-primary: var(--club-heading);
+  --color-accent: var(--club-button);
+  --color-yellow: var(--club-button-hover);
+  --color-ink: var(--club-text);
+  --color-paper: var(--club-background);
 
   --radius-xl: var(--ffc-radius-xl);
   --container: var(--ffc-container);
@@ -43,6 +44,12 @@ body {
 }
 #header {
   font-family: var(--font-open-sans), sans-serif !important;
+}
+
+/* The fixed, full-width club banner and its navigation occupy this space on
+   every route. The banner uses its source 4:1 ratio and caps at its native size. */
+main {
+  padding-top: calc(min(25vw, 400px) + 55px);
 }
 .aria-font {
   font-family: var(--font-open-sans), sans-serif !important;
@@ -187,11 +194,11 @@ body {
   padding: 0.5rem 1rem;
   margin: 0;
   clip: auto;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--club-white);
+  color: var(--club-text);
   border-radius: 0.375rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  outline: 2px solid #2a6682;
+  outline: 2px solid var(--club-button);
   outline-offset: 2px;
   text-decoration: underline;
 }

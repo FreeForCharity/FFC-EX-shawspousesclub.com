@@ -58,12 +58,14 @@ export const programs: readonly Program[] = [
       'Applicants must be a military dependent or service member.',
       "Applicants must hold an SSC membership, or have a family member who is a member of the Shaw Spouses' Club.",
     ],
+    // Confirm the current award cycle dates and application links before launch.
   },
   {
-    title: 'Annual Scholarship Auction and Fundraisers',
+    title: 'Fundraisers',
     paragraphs: [
-      'We host several fundraisers throughout the year, including our Annual Scholarship Auction. The money raised funds our scholarships and our donations to local and national organizations.',
+      'The club hosts fundraisers, including the Annual Scholarship Auction and Golf Tournament. Proceeds support scholarships and donations to local and national organizations.',
     ],
+    points: ['Annual Scholarship Auction', 'Golf Tournament'],
   },
   {
     title: 'Charitable Donation Requests',
@@ -82,7 +84,7 @@ export const programs: readonly Program[] = [
   {
     title: 'Shower Shaw',
     paragraphs: [
-      "For three decades, Sumter Volunteers Inc., the Sumter community and the Shaw Spouses' Club have thanked the airmen of Shaw AFB together. What began as a homemade cookie drive is now Shower Shaw, a gift of goodies for the dedicated servicemen and women of Shaw.",
+      "For three decades, Sumter Volunteers Inc., the Sumter community and the Shaw Spouses' Club have thanked the military members serving at Shaw AFB together. What began as a homemade cookie drive is now Shower Shaw, a gift of goodies for the dedicated servicemembers serving at Shaw.",
     ],
   },
 ]

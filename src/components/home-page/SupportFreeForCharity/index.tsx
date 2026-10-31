@@ -96,7 +96,7 @@ const Index = () => {
                   {...(/^https:/i.test(donateLink)
                     ? { target: '_blank', rel: 'noopener noreferrer' }
                     : {})}
-                  className="rounded-[27px] flex items-center justify-center px-[32px] py-[18px] text-white bg-[#2A6682] text-[20px] font-[400] lato-font"
+                  className="rounded-[27px] flex items-center justify-center px-[32px] py-[18px] text-white bg-[#4F83E5] text-[20px] font-[400] lato-font"
                 >
                   Donate to {siteConfig.name}
                 </a>

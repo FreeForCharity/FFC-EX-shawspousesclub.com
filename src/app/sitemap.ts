@@ -25,6 +25,18 @@ type SitemapEntry = {
 // changeFrequency: 'monthly' for content pages, 'yearly' for policy pages.
 export const routes: readonly SitemapEntry[] = [
   { path: '/', changeFrequency: 'weekly', priority: 1.0 },
+  { path: '/membership', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/ssc-merch', changeFrequency: 'monthly', priority: 0.6 },
+  { path: '/socials', changeFrequency: 'weekly', priority: 0.8 },
+  { path: '/special-activities', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/giving-back', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/giving-back/fundraisers', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/giving-back/scholarships', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/giving-back/charitable-requests', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/giving-back/shower-shaw', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/governance', changeFrequency: 'monthly', priority: 0.6 },
+  { path: '/board', changeFrequency: 'monthly', priority: 0.6 },
+  { path: '/contact-us', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/privacy-policy', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/cookie-policy', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/terms-of-service', changeFrequency: 'yearly', priority: 0.2 },
