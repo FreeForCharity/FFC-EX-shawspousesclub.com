@@ -10,9 +10,6 @@ on:
 
   # Allows manual deployment from Actions tab
   workflow_dispatch:
-  # Automatically publish preview changes from the working branch
-  push:
-    branches: ['chore/preview-launch-contact']
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -31,7 +28,7 @@ jobs:
     name: Build for GitHub Pages
     runs-on: ubuntu-latest
     # Only run if CI workflow succeeded or if manually triggered
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
 
     steps:
       - name: Checkout repository
