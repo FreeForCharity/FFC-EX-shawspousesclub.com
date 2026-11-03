@@ -24,7 +24,7 @@ const CharityHeroBackground = () => {
 
       {/* 3. Orange Bottom-Right Section - Starts exactly where white ends */}
       <div
-        className="absolute inset-0 bg-[#5599fe]"
+        className="absolute inset-0 bg-[#3570c8]"
         style={{
           clipPath: 'polygon(0% 111%, 100% 35%, 100% 100%, 0% 100%)',
         }}
