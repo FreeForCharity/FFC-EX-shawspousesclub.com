@@ -150,7 +150,7 @@ You can choose among available AI models using Copilot's model selector feature.
 
 ### What is a Fresh Review?
 
-A fresh review is a comprehensive evaluation of the live Free For Charity website from a new user's perspective. As a new reviewer, your first contribution will be to:
+A fresh review is a comprehensive evaluation of the live Shaw Spouses' Club website from a new user's perspective. As a new reviewer, your first contribution will be to:
 
 1. **Explore the live application** thoroughly
 2. **Document your findings** - both positive and negative
@@ -168,7 +168,7 @@ This approach helps you:
 
 #### Step 1: Visit the Live Site
 
-Start by exploring the live Free For Charity website:
+Start by exploring the live Shaw Spouses' Club website:
 
 - **Production Site:** [https://shawspousesclub.org/](https://shawspousesclub.org/) (GitHub Pages, custom domain)
 
@@ -334,7 +334,7 @@ Starting your contribution journey with a fresh review:
 
 1. Visit [https://shawspousesclub.org/](https://shawspousesclub.org/)
 2. Explore thoroughly and take notes
-3. [Create your review issue](https://github.com/FreeForCharity/FFC-IN-FFC_Single_Page_Template/issues/new?assignees=&labels=documentation%2Creview%2Conboarding&template=reviewer-onboarding.md)
+3. [Create your review issue](https://github.com/FreeForCharity/FFC-EX-shawspousesclub.org/issues/new?assignees=&labels=documentation%2Creview%2Conboarding&template=reviewer-onboarding.md)
 4. Report individual issues you discover
 5. Engage with the team on your findings
 

@@ -298,7 +298,7 @@ The site is live and fully functional with the following features:
 - Footer links fully functional with proper destinations
 - Contact information complete (email, phone, addresses)
 - Deployed to GitHub Pages at [https://shawspousesclub.org/](https://shawspousesclub.org/)
-- No custom domain required: build, deploy, smoke test, and footer checks all run against the default URL
+- Served from the custom domain `shawspousesclub.org` (`public/CNAME`); the post-deploy smoke check runs against it
 
 ⚠️ **Known Limitations:**
 
