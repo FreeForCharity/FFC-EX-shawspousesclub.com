@@ -183,11 +183,11 @@ export type SiteConfig = {
    * the template's Volunteer button as the large hero call to action, and
    * Volunteer moves into the smaller button row beside Donate.
    */
-  heroPrimaryCta?: { label: string; href: string }
+  heroPrimaryCta?: { label: string; href: SitePath }
   /** Extra header menu items, e.g. a Join page. Site paths (`/membership`). */
-  headerLinks?: readonly { label: string; path: string }[]
+  headerLinks?: readonly { label: string; path: SitePath }[]
   /** Extra footer Quick Links, e.g. the site's content pages. Site paths. */
-  footerLinks?: readonly { name: string; href: string }[]
+  footerLinks?: readonly { name: string; href: SitePath }[]
   /** Optional intro for the Volunteer section; the template's generic copy otherwise. */
   volunteerIntro?: string
   /**
@@ -261,6 +261,9 @@ export type SiteConfig = {
     microsoftFormUrl: string
   }
 }
+
+/** A same-site path such as '/membership' (never a full URL or a bare slug). */
+export type SitePath = `/${string}`
 
 export const siteConfig: SiteConfig = {
   name: "Shaw Spouses' Club",

@@ -69,7 +69,7 @@ const ZEFFY_AUCTION = 'https://www.zeffy.com/en-US/ticketing/ssc-auction-donatio
 // The club's PayPal donate button from the .com Charitable Giving page
 // (hosted_button_id VGJBWZYWR5J2G). PayPal reports the receiving account as
 // "Shaw Spouses' Club" and eligible to receive donations (checked 2026-11-03).
-export const PAYPAL_DONATE = 'https://www.paypal.com/donate/?hosted_button_id=VGJBWZYWR5J2G'
+const PAYPAL_DONATE = 'https://www.paypal.com/donate/?hosted_button_id=VGJBWZYWR5J2G'
 // The club's Google Form RSVP for the November 12 social (from the .com
 // Social page), titled "SSC Movie Night on the Lawn RSVP".
 const RSVP_MOVIE_ON_THE_LAWN =

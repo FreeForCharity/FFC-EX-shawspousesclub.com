@@ -34,11 +34,21 @@ export function buildEventSchema(event: ClubEvent): Record<string, unknown> {
   }
 }
 
-/** One <script type="application/ld+json"> per event. Server component. */
+/**
+ * Events still to come at build time. An event whose end (or start, when it
+ * has no end) has passed is dropped, so the page never advertises a past event
+ * as EventScheduled. The site rebuilds on every deploy, so this tracks the
+ * calendar as closely as the content does.
+ */
+export function upcomingEvents(events: readonly ClubEvent[], now: Date = new Date()): ClubEvent[] {
+  return events.filter((e) => Date.parse(e.endDate ?? e.startDate) >= now.getTime())
+}
+
+/** One <script type="application/ld+json"> per upcoming event. Server component. */
 export default function EventSchema({ events }: { events: readonly ClubEvent[] }) {
   return (
     <>
-      {events.map((event) => (
+      {upcomingEvents(events).map((event) => (
         <script
           key={`${event.page}-${event.section}-${event.startDate}`}
           type="application/ld+json"
