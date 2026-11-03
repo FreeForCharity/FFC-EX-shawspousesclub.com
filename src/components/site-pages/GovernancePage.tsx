@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { programsDisclaimer } from '@/data/programs'
 import { siteConfig } from '@/lib/site.config'
+import GovernanceCards from '@/components/site-pages/GovernanceCards'
 
 export default function GovernancePage() {
   return (
@@ -13,21 +14,21 @@ export default function GovernancePage() {
           Governance
         </h1>
         <p className="leading-7 text-[#26394D]">{programsDisclaimer}</p>
-        <div className="mt-8 rounded-xl border border-[#D9E5FA] bg-[#F4F7FF] p-6">
-          <h2 className="mb-2 text-xl font-semibold text-[#234F93]">Board &amp; committees</h2>
-          <p className="mb-5 leading-7 text-[#26394D]">
-            View the current governing board roster and available volunteer positions.
-          </p>
-          <Link
-            href="/board"
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#4F83E5] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
-          >
-            Meet the board
-          </Link>
+        <div className="mt-8">
+          <GovernanceCards />
         </div>
         <p className="mt-5 leading-7 text-[#26394D]">
+          <Link href="/legal-documents" className="font-semibold text-[#234F93] underline">
+            Visit Legal Documents
+          </Link>{' '}
+          for the club’s governing documents and tax-exempt documentation.
+        </p>
+        <p className="mt-5 leading-7 text-[#26394D]">
           For current governing documents, contact the club at{' '}
-          <a href={`mailto:${siteConfig.contactEmail}`} className="font-semibold text-[#234F93] underline">
+          <a
+            href={`mailto:${siteConfig.contactEmail}`}
+            className="font-semibold text-[#234F93] underline"
+          >
             {siteConfig.contactEmail}
           </a>
           .

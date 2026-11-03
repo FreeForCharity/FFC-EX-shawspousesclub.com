@@ -1,8 +1,17 @@
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 import { programs } from '@/data/programs'
 import { siteConfig } from '@/lib/site.config'
 
-export default function ClubProgramPage({ title }: { title: string }) {
+export default function ClubProgramPage({
+  title,
+  children,
+  showPoints = true,
+}: {
+  title: string
+  children?: ReactNode
+  showPoints?: boolean
+}) {
   const program = programs.find((item) => item.title === title)
   if (!program) return null
 
@@ -13,7 +22,9 @@ export default function ClubProgramPage({ title }: { title: string }) {
           Home
         </Link>
         <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#4F83E5]">
-          {title === 'Membership' || title === 'Monthly Socials' || title === 'Special Activity Groups'
+          {title === 'Membership' ||
+          title === 'Monthly Socials' ||
+          title === 'Special Activity Groups'
             ? 'Membership & Activities'
             : 'Giving Back'}
         </p>
@@ -30,14 +41,17 @@ export default function ClubProgramPage({ title }: { title: string }) {
         {title === 'Scholarships' && (
           <p className="mt-5 text-base leading-7 text-[#26394D]">
             Application dates and forms vary by cycle. Contact the club at{' '}
-            <a href={`mailto:${siteConfig.contactEmail}`} className="font-semibold text-[#234F93] underline">
+            <a
+              href={`mailto:${siteConfig.contactEmail}`}
+              className="font-semibold text-[#234F93] underline"
+            >
               {siteConfig.contactEmail}
             </a>{' '}
             for current-cycle information.
           </p>
         )}
 
-        {program.points && program.points.length > 0 && (
+        {showPoints && program.points && program.points.length > 0 && (
           <ul className="mt-6 list-disc space-y-2 pl-6 text-base leading-7 text-[#26394D] sm:text-lg">
             {program.points.map((point) => (
               <li key={point}>{point}</li>
@@ -45,11 +59,21 @@ export default function ClubProgramPage({ title }: { title: string }) {
           </ul>
         )}
 
+        {children}
+
         <Link
-          href={title === 'Membership' || title === 'Monthly Socials' || title === 'Special Activity Groups' ? '/' : '/giving-back'}
+          href={
+            title === 'Membership' ||
+            title === 'Monthly Socials' ||
+            title === 'Special Activity Groups'
+              ? '/'
+              : '/giving-back'
+          }
           className="mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-[#4F83E5] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
         >
-          {title === 'Membership' || title === 'Monthly Socials' || title === 'Special Activity Groups'
+          {title === 'Membership' ||
+          title === 'Monthly Socials' ||
+          title === 'Special Activity Groups'
             ? 'Back to Home'
             : 'Back to Giving Back'}
         </Link>

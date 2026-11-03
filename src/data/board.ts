@@ -114,7 +114,7 @@ export const boardGroups: readonly BoardGroup[] = [
       },
       {
         role: 'Retiree Liaison',
-        name: 'Alysha Murphy',
+        name: 'Alysha Gilbert',
         documentPath: '/board-positions/retiree-liaison-position-description.docx',
         overview:
           'Builds connections with retired military spouses and veteran families, encourages their involvement, and shares relevant resources.',
@@ -150,7 +150,7 @@ export const boardGroups: readonly BoardGroup[] = [
         name: 'April Johns',
         documentPath: '/board-positions/auction-position-description.docx',
         overview:
-          'Leads planning for the annual Scholarship Auction, including event logistics, volunteers, promotion, sponsors, and donated items.',
+          'Leads planning for the annual Charity Auction, including event logistics, volunteers, promotion, sponsors, and donated items.',
       },
       {
         role: 'Cookie Drive Chair',

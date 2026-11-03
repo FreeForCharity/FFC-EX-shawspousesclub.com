@@ -59,12 +59,12 @@ export default function CookiePolicy() {
               Remember your cookie consent preferences
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              Understand how you use our website (in the EEA, the UK and Switzerland only after you
+              Understand how you use our website (in the EEA, the UK, and Switzerland only after you
               accept; elsewhere from your first visit — see &quot;When we ask permission first&quot;
               in Section 3.3)
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              Analyze website traffic and user behavior (in the EEA, the UK and Switzerland only
+              Analyze website traffic and user behavior (in the EEA, the UK, and Switzerland only
               after you accept; elsewhere from your first visit — see &quot;When we ask permission
               first&quot; in Section 3.3)
             </li>
@@ -267,7 +267,7 @@ export default function CookiePolicy() {
             </p>
             <p className="text-sm text-[#666] mb-2">
               We use Google Consent Mode, and what it does depends on where you are. In the European
-              Economic Area, the United Kingdom and Switzerland, Google&apos;s tags set{' '}
+              Economic Area, the United Kingdom, and Switzerland, Google&apos;s tags set{' '}
               <strong>
                 no analytics or advertising cookies and collect no identifiers from your device
               </strong>{' '}
@@ -595,7 +595,7 @@ export default function CookiePolicy() {
             the <em>Do Not Sell or Share My Personal Information</em> link in the footer. Do Not
             Track is a separate, deprecated signal with no agreed meaning, and we do not act on it.
             GPC does not switch off basic analytics, which you control separately: outside the EEA,
-            the UK and Switzerland analytics cookies are set automatically (see &quot;When we ask
+            the UK, and Switzerland analytics cookies are set automatically (see &quot;When we ask
             permission first&quot; in Section 3.3), and any visitor can turn them off at any time
             via the Cookie Preferences link in the footer — we delete the cookies we set when you
             do. Microsoft Clarity and the Meta Pixel stay off everywhere unless you explicitly opt

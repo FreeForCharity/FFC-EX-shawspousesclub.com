@@ -46,10 +46,30 @@ body {
   font-family: var(--font-open-sans), sans-serif !important;
 }
 
-/* The fixed, full-width club banner and its navigation occupy this space on
-   every route. The banner uses its source 4:1 ratio and caps at its native size. */
+:root {
+  --club-banner-height: clamp(240px, 25vw, 400px);
+}
+
+.club-header {
+  height: calc(var(--club-banner-height) + 85px);
+  top: calc(-1 * var(--club-banner-height));
+}
+
+.club-banner {
+  height: 100%;
+  overflow: hidden;
+  background: #7099eb;
+}
+
+.club-banner-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* The header occupies normal page space; only its navigation band remains
+   visible once the full banner has scrolled beyond the top of the viewport. */
 main {
-  padding-top: calc(min(25vw, 400px) + 55px);
+  padding-top: 0;
 }
 .aria-font {
   font-family: var(--font-open-sans), sans-serif !important;

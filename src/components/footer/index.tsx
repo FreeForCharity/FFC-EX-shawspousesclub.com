@@ -9,14 +9,10 @@ import { FaXTwitter } from 'react-icons/fa6'
 import type { IconType } from 'react-icons'
 import { SaleShareOptOut } from '@/components/sale-share-opt-out'
 
-import { isPending, mailtoHref, publishedPhone, siteConfig } from '@/lib/site.config'
+import { donateHref, isPending, mailtoHref, publishedPhone, siteConfig } from '@/lib/site.config'
 import { assetPath } from '@/lib/assetPath'
 import { eventsSectionVisible } from '@/lib/events/visibility'
-import {
-  faqSectionVisible,
-  programsSectionVisible,
-  teamSectionVisible,
-} from '@/lib/section-visibility'
+import { faqSectionVisible, teamSectionVisible } from '@/lib/section-visibility'
 import PendingNote from '@/components/ui/PendingNote'
 
 // Footer-standard placeholder styling on the black footer background.
@@ -142,13 +138,12 @@ const Footer: React.FC = () => {
                 { name: 'Mission', href: '/#mission' },
                 // Programs / Events / FAQ self-hide (section-visibility.ts /
                 // eventsSectionVisible); drop the dead quick-link too.
-                ...(programsSectionVisible() ? [{ name: 'Programs', href: '/#programs' }] : []),
                 ...(showEventsLink ? [{ name: 'Events', href: '/#events' }] : []),
                 // The section behind this anchor always renders; a pending
                 // donation URL also shows its placeholder here.
-                { name: 'Donate', href: '/#donate', pending: isPending('donationUrl') },
+                { name: 'Donate', href: donateHref(), pending: isPending('donationUrl') },
                 ...(faqSectionVisible() ? [{ name: 'FAQ', href: '/#faq' }] : []),
-                ...(teamSectionVisible() ? [{ name: 'Team', href: '/#team' }] : []),
+                ...(teamSectionVisible() ? [{ name: 'Team', href: '/board' }] : []),
                 // FFC footer standard: every supported charity site links back
                 // to the supporting org's hub. Always rendered — keep this
                 // entry when customizing a fork.
@@ -183,6 +178,7 @@ const Footer: React.FC = () => {
                     like the rest; the supporting organization's separate
                     donation policy page and link were retired. */}
                 {[
+                  { name: 'Legal Documents', href: '/legal-documents' },
                   {
                     name: `${siteConfig.name} Donation Policy`,
                     href: '/donation-policy',

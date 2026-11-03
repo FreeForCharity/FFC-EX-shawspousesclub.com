@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -10,6 +10,7 @@ import { RxCross2 } from 'react-icons/rx'
 import { assetPath } from '@/lib/assetPath'
 import { siteConfig } from '@/lib/site.config'
 import GivingBackCards from '@/components/giving-back/GivingBackCards'
+import GovernanceCards, { governancePages } from '@/components/site-pages/GovernanceCards'
 
 interface MenuItem {
   label: string
@@ -19,6 +20,8 @@ interface MenuItem {
 
 const GIVING_BACK_MENU_ITEMS: MenuItem[] = [
   { label: 'Fundraisers', path: '/giving-back/fundraisers' },
+  { label: 'Charity Auction', path: '/giving-back/auction' },
+  { label: 'Golf Tournament', path: '/giving-back/golf-tournament' },
   { label: 'Scholarships', path: '/giving-back/scholarships' },
   { label: 'Charitable Requests', path: '/giving-back/charitable-requests' },
   { label: 'Shower Shaw', path: '/giving-back/shower-shaw' },
@@ -31,22 +34,19 @@ const ALL_MENU_ITEMS: MenuItem[] = [
   { label: 'Socials', path: '/socials' },
   { label: 'Special Activities', path: '/special-activities' },
   { label: 'Giving Back', path: '/giving-back', children: GIVING_BACK_MENU_ITEMS },
-  { label: 'Governance', path: '/governance' },
+  {
+    label: 'Governance',
+    path: '/governance',
+    children: governancePages.map((page) => ({ label: page.title, path: page.href })),
+  },
   { label: 'Contact Us', path: '/contact-us' },
 ]
 
 const Header: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
   const menuItems = ALL_MENU_ITEMS
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const handleSearchToggle = () => setIsSearchOpen(!isSearchOpen)
   const handleLinkClick = () => {
@@ -57,19 +57,12 @@ const Header: React.FC = () => {
     pathname === item.path || Boolean(item.children?.some((child) => pathname === child.path))
 
   return (
-    <header
-      id="header"
-      className={`w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'h-[85px]' : 'h-[calc(min(25vw,400px)_+_55px)]'
-      }`}
-    >
+    <header id="header" className="club-header sticky z-50 w-full bg-white shadow-sm">
       <Link
         href="/"
         onClick={handleLinkClick}
         aria-label={`${siteConfig.name} home`}
-        className={`absolute inset-x-0 top-0 block w-full ${
-          isScrolled ? 'h-full' : 'aspect-[4/1]'
-        }`}
+        className="club-banner absolute inset-x-0 top-0 block w-full"
       >
         <Image
           src={assetPath('/Images/shaw-spouses-club-banner.png')}
@@ -77,15 +70,11 @@ const Header: React.FC = () => {
           fill
           priority
           sizes="100vw"
-          className={`object-cover ${isScrolled ? 'object-top' : ''}`}
+          className="club-banner-image"
         />
       </Link>
 
-      <div
-        className={`absolute inset-x-0 h-[55px] w-full bg-white/95 shadow-sm ${
-          isScrolled ? 'top-[15px]' : 'bottom-0'
-        }`}
-      >
+      <div className="absolute inset-x-0 bottom-[15px] h-[55px] w-full bg-white/95 shadow-sm">
         <div className="mx-auto flex h-full max-w-[1080px] items-center px-2">
           {/* Menu or Search */}
           {!isSearchOpen ? (
@@ -93,11 +82,11 @@ const Header: React.FC = () => {
               {/* Desktop Menu */}
               <nav
                 aria-label="Primary navigation"
-                className="hidden h-full lg:block transition-all duration-300"
+                className="relative hidden h-full lg:block transition-all duration-300"
               >
                 <ul className="flex h-full items-center space-x-[1px] font-navbar font-[600]">
                   {menuItems.map((item) => (
-                    <li key={item.path} className="group relative flex h-full items-center">
+                    <li key={item.path} className="group flex h-full items-center">
                       <Link
                         href={item.path}
                         onClick={handleLinkClick}
@@ -111,9 +100,29 @@ const Header: React.FC = () => {
                       </Link>
                       {item.children && (
                         <div className="invisible pointer-events-none absolute left-1/2 top-full z-[60] w-[calc(100vw_-_32px)] max-w-[1100px] -translate-x-1/2 rounded-2xl bg-[#F4F7FF] p-4 opacity-0 shadow-xl ring-1 ring-[#D9E5FA] transition-opacity duration-200 group-hover:visible group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:opacity-100">
-                          <div role="group" aria-label="Giving Back pages">
-                            <GivingBackCards />
-                          </div>
+                          {item.path === '/governance' ? (
+                            <div role="group" aria-label="Governance pages">
+                              <GovernanceCards onNavigate={handleLinkClick} />
+                            </div>
+                          ) : (
+                            <div role="group" aria-label="Giving Back pages">
+                              <GivingBackCards />
+                              <Link
+                                href="/giving-back/auction"
+                                onClick={handleLinkClick}
+                                className="mt-4 inline-block font-semibold text-[#234F93] underline"
+                              >
+                                Explore the Charity Auction
+                              </Link>
+                              <Link
+                                href="/giving-back/golf-tournament"
+                                onClick={handleLinkClick}
+                                className="ml-6 mt-4 inline-block font-semibold text-[#234F93] underline"
+                              >
+                                Explore the Golf Tournament
+                              </Link>
+                            </div>
+                          )}
                         </div>
                       )}
                     </li>
@@ -174,9 +183,7 @@ const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <div
           id="mobile-menu"
-          className={`lg:hidden absolute left-0 z-40 w-full animate-menuExpand overflow-hidden ${
-            isScrolled ? 'top-[85px]' : 'top-[calc(min(25vw,400px)_+_53px)]'
-          }`}
+          className="lg:hidden absolute left-0 top-full z-40 w-full animate-menuExpand overflow-hidden"
         >
           <div
             className={`max-w-[700px] mx-auto px-6 py-4 bg-white border-t-[3px] border-[#4F83E5] shadow-[0_2px_5px_rgba(0,0,0,0.1)] max-h-[80vh] overflow-auto`}

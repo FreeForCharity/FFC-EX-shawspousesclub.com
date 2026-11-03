@@ -1,0 +1,69 @@
+[
+  {
+    "title": "King of the Jungle Sponsors",
+    "sponsors": [
+      {
+        "name": "BlueCross BlueShield of South Carolina",
+        "src": "/Images/auction/sponsors/bcbssc_orig.png"
+      }
+    ],
+    "theme": {
+      "background": "linear-gradient(180deg, #D4AF37 0%, #EBE5C3 100%)",
+      "accent": "#A77D15",
+      "heading": "#49300A"
+    }
+  },
+  {
+    "title": "Ruby Rainforest Sponsors",
+    "sponsors": [],
+    "theme": {
+      "background": "linear-gradient(180deg, #9E1010 46%, #E28181 100%)",
+      "accent": "#790D0D",
+      "heading": "#FFFFFF"
+    }
+  },
+  {
+    "title": "Emerald Anaconda Sponsors",
+    "sponsors": [
+      {
+        "name": "FTC",
+        "src": "/Images/auction/sponsors/ftc_orig.jpeg"
+      },
+      {
+        "name": "SAFE",
+        "src": "/Images/auction/sponsors/safe_orig.png"
+      }
+    ],
+    "theme": {
+      "background": "linear-gradient(180deg, #1C8101 0%, #7FED61 100%)",
+      "accent": "#155D04",
+      "heading": "#FFFFFF"
+    }
+  },
+  {
+    "title": "Sapphire Safari Sponsors",
+    "sponsors": [
+      {
+        "name": "Curtis & Croft",
+        "src": "/Images/auction/sponsors/curtis-croft-logo_orig.png"
+      },
+      {
+        "name": "First Command",
+        "src": "/Images/auction/sponsors/first-command_orig.png"
+      },
+      {
+        "name": "Jones Chevrolet",
+        "src": "/Images/auction/sponsors/jones-chevrolet_orig.png"
+      },
+      {
+        "name": "Global Tax",
+        "src": "/Images/auction/sponsors/global-tax_orig.webp"
+      }
+    ],
+    "theme": {
+      "background": "linear-gradient(180deg, #0523BA 0%, #3271D0 100%)",
+      "accent": "#061C85",
+      "heading": "#FFFFFF"
+    }
+  }
+]

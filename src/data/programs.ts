@@ -39,20 +39,20 @@ export const programs: readonly Program[] = [
       'Special Activities, often called sub-clubs, are a great way to connect with other spouses who share your hobbies and interests.',
     ],
     points: [
-      'Book Club',
       'Cookbook Club',
-      'Craft Club',
-      'Golf',
+      'Pickleball Club',
+      'Wine Night',
       'Lunch Bunch',
-      'Pickleball',
-      'Wine Club',
+      'Craft Club',
+      'Book Club',
+      'Spouses with Kids',
     ],
   },
   {
     title: 'Scholarships',
     paragraphs: [
-      'Part of our mission is to award scholarships every year to graduating high school seniors and to military spouses, service members and dependents who plan to attend or are already enrolled in college.',
-      'There are two applications: one for current high school seniors, and one for military spouses, service members and dependents.',
+      'Part of our mission is to award scholarships every year to graduating high school seniors and to military spouses, service members, and dependents who plan to attend or are already enrolled in college.',
+      'There are two applications: one for current high school seniors, and one for military spouses, service members, and dependents.',
     ],
     points: [
       'Applicants must be a military dependent or service member.',
@@ -63,20 +63,20 @@ export const programs: readonly Program[] = [
   {
     title: 'Fundraisers',
     paragraphs: [
-      'The club hosts fundraisers, including the Annual Scholarship Auction and Golf Tournament. Proceeds support scholarships and donations to local and national organizations.',
+      'The club hosts fundraisers, including the Annual Charity Auction and Golf Tournament. Proceeds support scholarships and donations to local and national organizations.',
     ],
-    points: ['Annual Scholarship Auction', 'Golf Tournament'],
+    points: ['Annual Charity Auction', 'Golf Tournament'],
   },
   {
     title: 'Charitable Donation Requests',
     paragraphs: [
-      "We are proud to have provided thousands of dollars in grants to organizations and events such as The Shaw Airmen's Attic, Spouse Appreciation Day, the Library Summer Reading Program, Angel Tree, the Dorm Airmen Cookie Drive, Girl Scouts, Sumter United Ministries and the Sumter HS Gamecock Poppers.",
+      "We are proud to have provided thousands of dollars in grants to organizations and events such as The Shaw Airmen's Attic, Spouse Appreciation Day, the Library Summer Reading Program, Angel Tree, the Dorm Airmen Cookie Drive, Girl Scouts, Sumter United Ministries, and the Sumter HS Gamecock Poppers.",
       'Organizations that serve the military or the local community are encouraged to request funding. The board meets on the first Tuesday of each month from August to May to review requests.',
     ],
     points: [
-      'Requesting organizations must be a nonprofit, school or military organization. Funds cannot be given to individuals or for-profit businesses.',
-      'Priority goes to projects that support the welfare of Shaw AFB military members, their families and veterans, then our local community.',
-      'Funds support specific programs, events or services. They cannot be used for general operating funds, salaries, alcohol, or any political candidate or partisan cause.',
+      'Requesting organizations must be a nonprofit, school, or military organization. Funds cannot be given to individuals or for-profit businesses.',
+      'Priority goes to projects that support the welfare of Shaw AFB military members, their families, and veterans, then our local community.',
+      'Funds support specific programs, events, or services. They cannot be used for general operating funds, salaries, alcohol, or any political candidate or partisan cause.',
       'Organizations may normally receive funds once per fiscal year (1 June to 31 May).',
       "Submit requests at least 10 days before the board's monthly meeting.",
     ],
@@ -84,7 +84,7 @@ export const programs: readonly Program[] = [
   {
     title: 'Shower Shaw',
     paragraphs: [
-      "For three decades, Sumter Volunteers Inc., the Sumter community and the Shaw Spouses' Club have thanked the military members serving at Shaw AFB together. What began as a homemade cookie drive is now Shower Shaw, a gift of goodies for the dedicated servicemembers serving at Shaw.",
+      "For three decades, Sumter Volunteers Inc., the Sumter community, and the Shaw Spouses' Club have come together to express heartfelt gratitude to the service members at Shaw AFB. This tradition has evolved beyond homemade cookies into Shower Shaw, sharing a variety of goodies and thoughtful gifts with our military community. Local children add a special touch with sweet, handmade cards, reminding service members how much their community appreciates and supports them.",
     ],
   },
 ]

@@ -145,13 +145,13 @@ export default function MembershipPage() {
         >
           <div>
             <p className="mb-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#DCE8FF]">
-              Club apparel
+              Club Merch
             </p>
             <h2 id="membership-merch-heading" className="faustina-font text-2xl font-semibold">
               Interested in Shaw Spouses&apos; Club merch?
             </h2>
             <p className="mt-2 max-w-2xl leading-6 text-white/85">
-              Visit the merch page to browse available T-shirts and place an order.
+              Show your club spirit! Visit the merch page to explore our current selection and place an order. Check back for new items as our collection grows.
             </p>
           </div>
           <Link

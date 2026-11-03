@@ -6,7 +6,7 @@ import GivingBackCards from '@/components/giving-back/GivingBackCards'
 import { assetPath } from '@/lib/assetPath'
 import { programsSectionVisible } from '@/lib/section-visibility'
 import { isSupportingOrgSite, siteConfig } from '@/lib/site.config'
-import { programs, programsDisclaimer, programsIntro } from '@/data/programs'
+import { programs, programsIntro } from '@/data/programs'
 
 const programAnchorIds: Record<string, string> = {
   Membership: 'membership',
@@ -18,7 +18,11 @@ const programAnchorIds: Record<string, string> = {
   'Shower Shaw': 'shower-shaw',
 }
 
-const membershipProgramTitles = new Set(['Membership', 'Monthly Socials', 'Special Activity Groups'])
+const membershipProgramTitles = new Set([
+  'Membership',
+  'Monthly Socials',
+  'Special Activity Groups',
+])
 
 const index = () => {
   if (!programsSectionVisible()) return null
@@ -26,8 +30,12 @@ const index = () => {
   // The block below is the supporting organization's own programs. Any other
   // site lists its own, from src/data/programs.ts.
   if (!isSupportingOrgSite()) {
-    const membershipPrograms = programs.filter((program) => membershipProgramTitles.has(program.title))
-    const givingBackPrograms = programs.filter((program) => !membershipProgramTitles.has(program.title))
+    const membershipPrograms = programs.filter((program) =>
+      membershipProgramTitles.has(program.title)
+    )
+    const givingBackPrograms = programs.filter(
+      (program) => !membershipProgramTitles.has(program.title)
+    )
 
     const renderClubProgram = (program: (typeof programs)[number]) => (
       <div key={program.title} id={programAnchorIds[program.title]} className="scroll-mt-[100px]">
@@ -56,7 +64,7 @@ const index = () => {
                   key={point}
                   id={
                     program.title === 'Fundraisers'
-                      ? point === 'Annual Scholarship Auction'
+                      ? point === 'Annual Charity Auction'
                         ? 'auction'
                         : 'golf-tournament'
                       : undefined
@@ -98,10 +106,7 @@ const index = () => {
             className="mt-16 scroll-mt-[100px] rounded-2xl bg-[#F4F7FF] px-5 py-10 sm:px-8"
           >
             <div className="mx-auto mb-8 max-w-3xl text-center">
-              <h3
-                id="giving-back-heading"
-                className="mb-3 text-3xl font-semibold text-[#234F93]"
-              >
+              <h3 id="giving-back-heading" className="mb-3 text-3xl font-semibold text-[#234F93]">
                 Giving Back
               </h3>
               <p className="leading-7 text-[#26394D]">
@@ -114,17 +119,6 @@ const index = () => {
 
             <div>{givingBackPrograms.map(renderClubProgram)}</div>
           </section>
-
-          {programsDisclaimer && (
-            <section id="governance" className="mt-12 scroll-mt-[100px]">
-              <h3 className="mb-2 text-center text-2xl font-semibold text-[#234F93]">
-                Governance &amp; Organization Status
-              </h3>
-              <p className="text-center text-[16px] italic text-gray-700 lato-font">
-                {programsDisclaimer}
-              </p>
-            </section>
-          )}
         </div>
       </div>
     )
