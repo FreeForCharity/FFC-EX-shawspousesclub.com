@@ -593,10 +593,6 @@ export const clubPages: readonly ClubPage[] = [
               'How I would like to help',
             ]),
           },
-          {
-            label: 'WLTX: Volunteers gather to Shower Shaw with goodies',
-            href: 'https://www.wltx.com/article/news/local/street-squad/sumter/volunteers-gather-shower-shaw-with-goodies/101-ada7a304-3e2e-4355-b00b-74f194e47481',
-          },
         ],
         images: [
           img(
