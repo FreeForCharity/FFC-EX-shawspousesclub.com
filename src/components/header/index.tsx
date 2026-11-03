@@ -51,12 +51,15 @@ const Header: React.FC = () => {
   // guard the Team section uses).
   // Built directly each render so it reflects the current config; the scroll-spy
   // uses the stable module-level SCROLL_SPY_SECTIONS instead.
-  const menuItems: MenuItem[] = ALL_MENU_ITEMS.filter((item) => {
+  const baseMenuItems: MenuItem[] = ALL_MENU_ITEMS.filter((item) => {
     if (item.path === '/#programs') return programsSectionVisible()
     if (item.path === '/#faq') return faqSectionVisible()
     if (item.path === '/#team') return teamSectionVisible()
     return true
   })
+  // Site-specific pages (e.g. Join) follow the in-page sections. They are not
+  // scroll-spy targets, so they never read as the active section.
+  const menuItems: MenuItem[] = [...baseMenuItems, ...(siteConfig.headerLinks ?? [])]
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)

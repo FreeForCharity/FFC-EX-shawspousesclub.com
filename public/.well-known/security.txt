@@ -18,7 +18,7 @@
 # `Contact: mailto:<address>` once the charity supplies one.
 
 Contact: mailto:publicrelations.ShawSC@gmail.com
-Expires: 2027-01-01T00:00:00.000Z
+Expires: 2027-11-01T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://shawspousesclub.org/.well-known/security.txt
 Canonical: https://shawspousesclub.org/security.txt

@@ -158,6 +158,8 @@ const Footer: React.FC = () => {
                 { name: 'Volunteer', href: '/#volunteer', pending: isPending('volunteerUrl') },
                 ...(faqSectionVisible() ? [{ name: 'FAQ', href: '/#faq' }] : []),
                 ...(teamSectionVisible() ? [{ name: 'Team', href: '/#team' }] : []),
+                // The site's own content pages, when it has any.
+                ...(siteConfig.footerLinks ?? []),
                 // FFC footer standard: every supported charity site links back
                 // to the supporting org's hub. Always rendered — keep this
                 // entry when customizing a fork.

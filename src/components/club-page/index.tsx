@@ -3,8 +3,11 @@ import Image from 'next/image'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import { assetPath } from '@/lib/assetPath'
 import { configuredTeam } from '@/data/team'
+import { clubEvents } from '@/data/club-pages'
 import type { ClubLink, ClubPage as ClubPageData, ClubSection } from '@/data/club-pages'
+import EventSchema from '@/components/seo/EventSchema'
 import { programsDisclaimer } from '@/data/programs'
+import YouTubeFacade from '@/components/ui/YouTubeFacade'
 
 /** Site paths go through assetPath(); mailto/https links are used as-is. */
 function resolveHref(href: string): string {
@@ -21,23 +24,6 @@ function LinkButton({ link }: { link: ClubLink }) {
     >
       {link.label}
     </a>
-  )
-}
-
-function YouTube({ id, title }: { id: string; title: string }) {
-  if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return null
-  return (
-    <div className="mx-auto mt-[24px] w-full max-w-[800px] aspect-video">
-      <iframe
-        className="h-full w-full rounded-lg shadow-lg"
-        src={`https://www.youtube-nocookie.com/embed/${id}`}
-        title={title}
-        loading="lazy"
-        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        referrerPolicy="strict-origin-when-cross-origin"
-      />
-    </div>
   )
 }
 
@@ -66,7 +52,7 @@ function Section({ section }: { section: ClubSection }) {
           ))}
         </div>
       )}
-      {section.youtubeId && <YouTube id={section.youtubeId} title={section.heading} />}
+      {section.youtubeId && <YouTubeFacade id={section.youtubeId} title={section.heading} />}
       {section.showBoard && configuredTeam.length > 0 && (
         <ul className="grid grid-cols-1 gap-x-[24px] gap-y-[10px] sm:grid-cols-2 text-[19px] lato-font">
           {configuredTeam.map((m) => (
@@ -143,6 +129,7 @@ export default function ClubPage({ page }: { page: ClubPageData }) {
   return (
     <div className="pt-[130px] pb-[54px]">
       <BreadcrumbSchema name={page.title} path={path} />
+      <EventSchema events={clubEvents.filter((e) => e.page === page.slug)} />
       <div className="mx-auto w-[90%] max-w-[1080px]">
         <h1 className="mb-[16px] text-[44px] lg:text-[54px] leading-[115%] faustina-font">
           {page.title}

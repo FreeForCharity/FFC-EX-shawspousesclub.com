@@ -3,7 +3,8 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import { clubPages, formMailto } from '@/data/club-pages'
+import { clubEvents, clubPages, formMailto } from '@/data/club-pages'
+import { siteConfig } from '@/lib/site.config'
 import { programs } from '@/data/programs'
 import { routes } from '@/app/sitemap'
 
@@ -66,6 +67,29 @@ describe('club pages are fully localised', () => {
     for (const p of clubPages) {
       const ids = p.sections.map((s) => s.id)
       expect(new Set(ids).size).toBe(ids.length)
+    }
+  })
+})
+
+describe('videos and events', () => {
+  it('ships a local thumbnail for every YouTube video, so nothing loads from YouTube until play', () => {
+    const ids = [
+      ...clubPages.flatMap((p) => p.sections.map((s) => s.youtubeId).filter(Boolean)),
+      siteConfig.missionYouTubeId,
+    ].filter((id): id is string => Boolean(id))
+    expect(ids.length).toBeGreaterThan(0)
+    for (const id of ids) {
+      expect(fs.existsSync(path.join(PUBLIC, 'Images', 'club', `video-${id}.webp`))).toBe(true)
+    }
+  })
+
+  it('attaches every dated event to a real page and section', () => {
+    for (const e of clubEvents) {
+      const page = clubPages.find((p) => p.slug === e.page)
+      expect(page).toBeDefined()
+      expect(page!.sections.some((s) => s.id === e.section)).toBe(true)
+      expect(Number.isNaN(Date.parse(e.startDate))).toBe(false)
+      expect(e.startDate).toMatch(/[+-]\d\d:\d\d$/)
     }
   })
 })

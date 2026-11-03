@@ -178,6 +178,16 @@ export type SiteConfig = {
    * (embedded via youtube-nocookie.com, which the CSP already allows).
    */
   missionYouTubeId?: string
+  /**
+   * Optional primary hero button (e.g. "Join the Club"). When set it replaces
+   * the template's Volunteer button as the large hero call to action, and
+   * Volunteer moves into the smaller button row beside Donate.
+   */
+  heroPrimaryCta?: { label: string; href: SitePath }
+  /** Extra header menu items, e.g. a Join page. Site paths (`/membership`). */
+  headerLinks?: readonly { label: string; path: SitePath }[]
+  /** Extra footer Quick Links, e.g. the site's content pages. Site paths. */
+  footerLinks?: readonly { name: string; href: SitePath }[]
   /** Optional intro for the Volunteer section; the template's generic copy otherwise. */
   volunteerIntro?: string
   /**
@@ -252,6 +262,9 @@ export type SiteConfig = {
   }
 }
 
+/** A same-site path such as '/membership' (never a full URL or a bare slug). */
+export type SitePath = `/${string}`
+
 export const siteConfig: SiteConfig = {
   name: "Shaw Spouses' Club",
   tagline: 'Supporting military families at Shaw AFB',
@@ -320,6 +333,17 @@ export const siteConfig: SiteConfig = {
   taxStatusLabel: 'a US 501c3 Non Profit',
   // The "About Us" video embedded on the club's .com home page.
   missionYouTubeId: 'jxdcAdVtVdE',
+  // Membership is the club's primary ask, so it leads the hero and header.
+  heroPrimaryCta: { label: 'Join the Club', href: '/membership' },
+  headerLinks: [{ label: 'Join', path: '/membership' }],
+  footerLinks: [
+    { name: 'Membership', href: '/membership' },
+    { name: 'Socials', href: '/socials' },
+    { name: 'Scholarships', href: '/scholarships' },
+    { name: 'Auction and Fundraisers', href: '/auction' },
+    { name: 'Charitable Giving', href: '/giving' },
+    { name: 'Board and Governance', href: '/board' },
+  ],
   volunteerIntro:
     'Lend a hand at our Annual Scholarship Auction, Shower Shaw and our monthly socials, or serve on the board. Several 2026-2027 board positions are open. Email us and we will find the right fit for you.',
   endorsements: [
