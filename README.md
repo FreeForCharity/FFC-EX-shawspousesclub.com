@@ -277,8 +277,8 @@ The site features two primary CTAs accessible throughout the experience via glob
 
 ## Deployment
 
-- **Live Site (GitHub Pages default URL)**: [https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/](https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/)
-- **Custom domain**: none — the template deliberately deploys, tests, and smoke-checks on the default URL; forks add their own domain via `public/CNAME`
+- **Live Site**: [https://shawspousesclub.org/](https://shawspousesclub.org/)
+- **Custom domain**: `shawspousesclub.org` (`public/CNAME`), DNS in the Free For Charity Cloudflare account, HTTPS enforced in GitHub Pages. `www` redirects to the apex. The old `freeforcharity.github.io/FFC-EX-shawspousesclub.com/` URL no longer serves this site
 - **Hosting**: GitHub Pages
 - **Deployment**: Automated via GitHub Actions on push to `main` branch
 
@@ -297,7 +297,7 @@ The site is live and fully functional with the following features:
 - Social media links configured (Facebook, Twitter/X, LinkedIn, GitHub)
 - Footer links fully functional with proper destinations
 - Contact information complete (email, phone, addresses)
-- Deployed to the GitHub Pages default URL: [https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/](https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/)
+- Deployed to GitHub Pages at [https://shawspousesclub.org/](https://shawspousesclub.org/)
 - No custom domain required: build, deploy, smoke test, and footer checks all run against the default URL
 
 ⚠️ **Known Limitations:**
@@ -806,7 +806,7 @@ The site is configured for static export and deployed to GitHub Pages:
 
 **Production:**
 
-- Live at the GitHub Pages default URL: [https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/](https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/)
+- Live at [https://shawspousesclub.org/](https://shawspousesclub.org/)
 - No custom domain is configured — this proves the full pipeline (build, deploy, post-deploy smoke, live footer checks) works without one
 - Deployment: Automatic via GitHub Actions (`.github/workflows/deploy.yml`)
 - Trigger: Push to `main` branch
@@ -844,7 +844,7 @@ We welcome new contributors and believe fresh perspectives are invaluable! **You
 
 #### How to Get Started
 
-1. **Explore the live site:** [https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/](https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/)
+1. **Explore the live site:** [https://shawspousesclub.org/](https://shawspousesclub.org/)
 2. **Test thoroughly:** Try all features, navigation, and responsive behavior
 3. **Document findings:** Create a review issue using our template
 4. **Report issues:** File separate issues for bugs and enhancements you discover

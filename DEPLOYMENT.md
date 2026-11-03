@@ -17,10 +17,14 @@ This document explains how the Free For Charity website is deployed to GitHub Pa
 
 ## Overview
 
-The Free For Charity website is a static Next.js application deployed to GitHub Pages. The site is accessible at:
+The Shaw Spouses' Club website is a static Next.js application deployed to GitHub Pages. The site is accessible at:
 
-- **GitHub Pages URL**: https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/
-- **Custom Domain**: none — the template deploys, smoke-tests, and runs live footer checks entirely on the default URL. Forks can add one (see Custom Domain Setup below).
+- **Custom Domain**: https://shawspousesclub.org/ (`public/CNAME` = `shawspousesclub.org`, live since 2026-11-03)
+- **DNS**: Free For Charity Cloudflare zone, apex A/AAAA to the GitHub Pages IPs and `www` CNAME to `freeforcharity.github.io`, all DNS-only (not proxied)
+- **HTTPS**: Enforced in Settings → Pages. `http://` and `www` both 301 to `https://shawspousesclub.org/`
+- **Email**: none on `shawspousesclub.org` yet. The club's existing `shawspousesclub.com` domain and its mail stay at register.com
+
+The repository was renamed from `FFC-EX-shawspousesclub.com` to `FFC-EX-shawspousesclub.org` at cutover. GitHub redirects the old name. Because a custom domain is set, the build uses an empty basePath and the `freeforcharity.github.io/<repo>/` URL is not a working copy of the site.
 
 ### Technology Stack
 
