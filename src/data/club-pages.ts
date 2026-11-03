@@ -66,6 +66,14 @@ export function formMailto(to: string, subject: string, fields: readonly string[
 const ZEFFY_MEMBERSHIP =
   'https://www.zeffy.com/en-US/ticketing/shaw-spouses-clubs-26-27-memberships'
 const ZEFFY_AUCTION = 'https://www.zeffy.com/en-US/ticketing/ssc-auction-donations'
+// The club's PayPal donate button from the .com Charitable Giving page
+// (hosted_button_id VGJBWZYWR5J2G). PayPal reports the receiving account as
+// "Shaw Spouses' Club" and eligible to receive donations (checked 2026-11-03).
+export const PAYPAL_DONATE = 'https://www.paypal.com/donate/?hosted_button_id=VGJBWZYWR5J2G'
+// The club's Google Form RSVP for the November 12 social (from the .com
+// Social page), titled "SSC Movie Night on the Lawn RSVP".
+const RSVP_MOVIE_ON_THE_LAWN =
+  'https://docs.google.com/forms/d/e/1FAIpQLSeY7x2tBBBQ3t-HsReylDhLz4POBIcDmepmorWUco-y4bLeyg/viewform'
 
 const img = (file: string, width: number, height: number, alt: string): ClubImage => ({
   file,
@@ -126,12 +134,14 @@ export const clubPages: readonly ClubPage[] = [
           'RSVP is requested. If you are not feeling well, please do not attend the social.',
         ],
         links: [
+          // The club's own Google Form (from the .com Social page). It lives in
+          // the club's Google account, not on the retired Weebly site.
+          { label: 'RSVP for Movie on the Lawn', href: RSVP_MOVIE_ON_THE_LAWN },
           {
-            label: 'RSVP by email',
-            href: formMailto(CLUB_EMAILS.president, 'RSVP: Movie on the Lawn (November 12)', [
+            label: 'Questions? Email the president',
+            href: formMailto(CLUB_EMAILS.president, 'Question: Movie on the Lawn (November 12)', [
               'Name',
-              'Number attending',
-              'Member or guest',
+              'Question',
             ]),
           },
           { label: 'Not a member yet? Join here', href: '/membership' },
@@ -531,6 +541,8 @@ export const clubPages: readonly ClubPage[] = [
         ],
         youtubeId: 'pAPtf5yOQSM',
         links: [
+          { label: 'Donate through PayPal', href: PAYPAL_DONATE },
+          { label: 'Donate through Zeffy', href: ZEFFY_AUCTION },
           { label: 'Our scholarships', href: '/scholarships' },
           { label: 'Partner with us', href: '/auction#become-a-sponsor' },
         ],
