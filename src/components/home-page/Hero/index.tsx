@@ -10,6 +10,8 @@ const CharityHeroBackground = () => {
   const strapline = isSupportingOrgSite()
     ? 'Connecting Students, Professionals, & Businesses with Charities in Need'
     : cardDescription()
+  // A charity's own primary ask (e.g. membership) leads when configured.
+  const primary = isSupportingOrgSite() ? undefined : siteConfig.heroPrimaryCta
   return (
     <div id="hero" className="relative w-full pb-[100px] overflow-hidden">
       {/* 1. Base Blue Layer */}
@@ -39,18 +41,26 @@ const CharityHeroBackground = () => {
             {strapline}
           </p>
           <a
-            href="#volunteer"
+            href={primary ? assetPath(primary.href) : '#volunteer'}
             className="top-[378px] w-[300px] lg:w-[351px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] mb-[10px] whitespace-nowrap lato-font"
           >
-            Volunteer
+            {primary ? primary.label : 'Volunteer'}
           </a>
-          <div className="flex gap-[5px]">
+          <div className="flex flex-wrap gap-[5px]">
             <a
               href="#donate"
               className="top-[442px] w-[130px] lg:w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] whitespace-nowrap lato-font"
             >
               Donate
             </a>
+            {primary && (
+              <a
+                href="#volunteer"
+                className="top-[442px] w-[150px] lg:w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] whitespace-nowrap lato-font"
+              >
+                Volunteer
+              </a>
+            )}
             {programsSectionVisible() && (
               <a
                 href="#programs"

@@ -736,6 +736,69 @@ export const clubPages: readonly ClubPage[] = [
   },
 ]
 
+/**
+ * Dated events, emitted as schema.org Event JSON-LD on the page that describes
+ * them so search engines can show them as events. Only details printed on the
+ * club's own flyers are used; nothing is filled in by guesswork. Times are
+ * Eastern (Shaw AFB, SC).
+ */
+export type ClubEvent = {
+  page: string
+  name: string
+  description: string
+  startDate: string
+  endDate?: string
+  location: {
+    name: string
+    streetAddress?: string
+    addressLocality?: string
+    addressRegion?: string
+  }
+  isAccessibleForFree?: boolean
+  /** In-page anchor of the section describing the event. */
+  section: string
+}
+
+export const clubEvents: readonly ClubEvent[] = [
+  {
+    page: 'socials',
+    section: 'upcoming',
+    name: 'Movie Night on the Lawn',
+    description:
+      "The Shaw Spouses' Club November social: a Friendsgiving-themed movie night featuring The Devil Wears Prada 2. Free entry, RSVP requested.",
+    startDate: '2026-11-12T18:00:00-05:00',
+    location: {
+      name: 'The Cabin at Alice Drive Baptist Church',
+      streetAddress: '1305 Loring Mill Road',
+    },
+    isAccessibleForFree: true,
+  },
+  {
+    page: 'giving',
+    section: 'shower-shaw',
+    name: '2025 Dorm Airmen Cookie Drive',
+    description:
+      "Shower Shaw with Cookies, hosted by the Shaw Spouses' Club: drop-off 8 to 10 AM, assembly 10 AM to 2 PM.",
+    startDate: '2025-12-09T08:00:00-05:00',
+    endDate: '2025-12-09T14:00:00-05:00',
+    location: {
+      name: 'Shaw AFB Palmetto Chapel',
+      streetAddress: '433 Shaw Dr.',
+      addressLocality: 'Shaw AFB',
+      addressRegion: 'SC',
+    },
+  },
+  {
+    page: 'auction',
+    section: 'annual-auction',
+    name: "Shaw Spouses' Club Annual Charity Auction",
+    description:
+      'Jungle Safari themed silent and live auction raising grants and scholarships for military families and the Shaw community. Doors open at 5 PM.',
+    startDate: '2027-02-20T17:00:00-05:00',
+    location: { name: 'The Magnolia Club' },
+  },
+]
+
 export function clubPage(slug: string): ClubPage {
   const page = clubPages.find((p) => p.slug === slug)
   if (!page) throw new Error(`No club page with slug "${slug}"`)
