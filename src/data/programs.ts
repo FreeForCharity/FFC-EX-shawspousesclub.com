@@ -18,6 +18,8 @@ export type Program = {
   points?: readonly string[]
   /** Calls to action shown under the program (join, apply, download a form). */
   links?: readonly ProgramLink[]
+  /** Site path of the program's full page, linked as "Learn more". */
+  more?: string
 }
 
 /** A site-relative path (served from public/), as opposed to an external URL. */
@@ -31,6 +33,7 @@ export const programsIntro =
 export const programs: readonly Program[] = [
   {
     title: 'Membership',
+    more: '/membership',
     paragraphs: [
       "The Shaw Spouses' Club is open to spouses of active duty military members (enlisted and officer ranks, all branches), spouses of Reserve or National Guard members, and spouses of retired military members.",
       'We also welcome spouses of DoD employees, widowed spouses, adult dependents (18 or older) who are DoD ID holders, unmarried active duty service members, and mil-to-mil spouses.',
@@ -48,6 +51,7 @@ export const programs: readonly Program[] = [
   },
   {
     title: 'Monthly Socials',
+    more: '/socials',
     paragraphs: [
       'Members gather every month for a themed membership social. Socials are open to SSC members and their guests, and prospective members may attend one social before paying membership dues.',
     ],
@@ -55,6 +59,7 @@ export const programs: readonly Program[] = [
   },
   {
     title: 'Special Activity Groups',
+    more: '/socials#special-activities',
     paragraphs: [
       'Special Activities, often called sub-clubs, are a great way to connect with other spouses who share your hobbies and interests.',
     ],
@@ -76,6 +81,7 @@ export const programs: readonly Program[] = [
   },
   {
     title: 'Scholarships',
+    more: '/scholarships',
     paragraphs: [
       'Part of our mission is to award scholarships every year to graduating high school seniors and to military spouses, service members and dependents who plan to attend or are already enrolled in college.',
       'There are two applications: one for current high school seniors, and one for military spouses, service members and dependents.',
@@ -88,6 +94,7 @@ export const programs: readonly Program[] = [
   },
   {
     title: 'Annual Scholarship Auction and Fundraisers',
+    more: '/auction',
     paragraphs: [
       'We host several fundraisers throughout the year, including our Annual Scholarship Auction and our Golf Tournament. The money raised funds our scholarships and our donations to local and national organizations.',
       'Proceeds from the generous local businesses and individuals who sponsor our annual auction directly fund our scholarship and community grant programs. Thank you to every one of our sponsors and donors.',
@@ -106,6 +113,7 @@ export const programs: readonly Program[] = [
   },
   {
     title: 'Charitable Donation Requests',
+    more: '/giving#donation-requests',
     paragraphs: [
       "We are proud to have provided thousands of dollars in grants to organizations and events such as The Shaw Airmen's Attic, Spouse Appreciation Day, the Library Summer Reading Program, Angel Tree, the Dorm Airmen Cookie Drive, Girl Scouts, Sumter United Ministries and the Sumter HS Gamecock Poppers.",
       'Organizations that serve the military or the local community are encouraged to request funding. The board meets on the first Tuesday of each month from August to May to review requests.',
@@ -126,12 +134,14 @@ export const programs: readonly Program[] = [
   },
   {
     title: 'Shower Shaw',
+    more: '/giving#shower-shaw',
     paragraphs: [
       "For three decades, Sumter Volunteers Inc., the Sumter community and the Shaw Spouses' Club have thanked the airmen of Shaw AFB together. What began as a homemade cookie drive is now Shower Shaw, a gift of goodies for the dedicated servicemen and women of Shaw.",
     ],
   },
   {
     title: 'Serve on the Board',
+    more: '/board',
     paragraphs: [
       'Interest forms are open for 2026-2027 board positions, including Parliamentarian, Social Media Manager, Ways and Means and Golf Tournament Chair. If you have thought about joining the board, now is your chance.',
     ],
@@ -144,6 +154,7 @@ export const programs: readonly Program[] = [
   },
   {
     title: 'Governance',
+    more: '/board#governance',
     paragraphs: [
       'The club operates under its approved Constitution and Bylaws. A signed copy of the Constitution is on file with the Shaw AFB Force Support Squadron.',
     ],

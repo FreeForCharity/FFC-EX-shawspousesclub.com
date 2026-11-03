@@ -40,6 +40,16 @@ const index = () => {
                     ))}
                   </ul>
                 )}
+                {program.more && (
+                  <p className="mt-[12px]">
+                    <a
+                      href={assetPath(program.more)}
+                      className="text-[#0b6cb8] underline font-[700]"
+                    >
+                      Learn more about {program.title.toLowerCase()}
+                    </a>
+                  </p>
+                )}
                 {program.links && program.links.length > 0 && (
                   <ul className="mt-[12px] flex flex-wrap gap-x-[20px] gap-y-[8px]">
                     {program.links.map((link) => {
