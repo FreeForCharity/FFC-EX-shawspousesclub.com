@@ -15,9 +15,23 @@ const index = () => {
           <p className="font-[500] text-[25px] leading-[150%] tracking-[0] text-center lato-font">
             {siteConfig.description}
           </p>
+          {siteConfig.missionYouTubeId &&
+            /^[A-Za-z0-9_-]{11}$/.test(siteConfig.missionYouTubeId) && (
+              <div className="mt-[50px] mx-auto w-full max-w-[800px] aspect-video">
+                <iframe
+                  className="w-full h-full rounded-lg shadow-lg"
+                  src={`https://www.youtube-nocookie.com/embed/${siteConfig.missionYouTubeId}`}
+                  title={`About ${siteConfig.name}`}
+                  loading="lazy"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+            )}
         </div>
 
-        <div className="w-[95%] mt-[50px] mx-auto border border-[#2B627B]"></div>
+        <div className="w-[95%] mt-[50px] mx-auto border border-[#0b6cb8]"></div>
       </div>
     )
   }
@@ -42,7 +56,7 @@ const index = () => {
         </div>
       </div>
 
-      <div className="w-[95%] mt-[50px] mx-auto border border-[#2B627B]"></div>
+      <div className="w-[95%] mt-[50px] mx-auto border border-[#0b6cb8]"></div>
     </div>
   )
 }

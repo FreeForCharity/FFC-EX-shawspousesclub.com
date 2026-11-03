@@ -17,7 +17,7 @@
 # out entirely rather than list another organization's address, and add
 # `Contact: mailto:<address>` once the charity supplies one.
 
-Contact: mailto:clarkemoyer@freeforcharity.org
+Contact: mailto:publicrelations.ShawSC@gmail.com
 Expires: 2027-01-01T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://shawspousesclub.org/.well-known/security.txt

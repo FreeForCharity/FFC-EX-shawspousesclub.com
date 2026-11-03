@@ -12,7 +12,10 @@
 export const analyticsConfig = {
   // Google Tag Manager container ID, e.g. 'GTM-ABC1234'. GTM is the umbrella
   // that can load the others, so this is the main one most sites set.
-  gtmId: 'GTM-TQ5H8HPR',
+  // Placeholder until the club has its own container (hub workflows 505 + 503).
+  // The template default was the supporting organization's own container,
+  // which would have sent this site's visitors to its analytics.
+  gtmId: 'GTM-XXXXXXX',
 
   // Google Analytics 4 measurement ID, e.g. 'G-ABC1234567'.
   gaMeasurementId: 'G-XXXXXXXXXX',
