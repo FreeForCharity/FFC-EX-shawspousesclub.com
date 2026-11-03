@@ -10,6 +10,7 @@ import { openSans, lato, faustina } from '@/lib/fonts'
 import { AT_POLYFILL_JS } from '@/lib/at-polyfill'
 import { CONSENT_MODE_BOOTSTRAP } from '@/lib/consent-mode'
 import { OG_IMAGE } from '@/lib/page-metadata'
+import { analyticsConfig, isConfigured } from '@/lib/analytics.config'
 
 const defaultTitle = `${siteConfig.name} | ${siteConfig.tagline}`
 
@@ -93,10 +94,16 @@ export default function RootLayout({
         <meta name="theme-color" content={siteConfig.themeColor} />
 
         {/* Preconnect to external domains that load on first paint */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* Only when a real GTM container is configured: a placeholder ID loads
+            no GTM, so there is nothing to warm a connection for. */}
+        {isConfigured(analyticsConfig.gtmId) && (
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
+        )}
         <link rel="preconnect" href="https://www.zeffy.com" />
         <link rel="preconnect" href="https://widgets.guidestar.org" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {isConfigured(analyticsConfig.gtmId) && (
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        )}
         <link rel="dns-prefetch" href="https://www.zeffy.com" />
         <link rel="dns-prefetch" href="https://www.idealist.org" />
         {/* Analytics endpoints load conditionally through GTM — dns-prefetch

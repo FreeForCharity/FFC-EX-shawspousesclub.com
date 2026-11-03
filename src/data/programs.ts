@@ -8,7 +8,7 @@
 
 export type ProgramLink = {
   label: string
-  /** An `https://` URL, or a site-relative path such as `/docs/<file>.pdf`. */
+  /** An `https://` URL, a `mailto:` link, or a site-relative path such as `/docs/<file>.pdf`. */
   href: string
 }
 
