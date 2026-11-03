@@ -65,7 +65,7 @@ const Events = () => {
           <div className="space-y-12">
             {buckets.map((bucket) => (
               <div key={bucket.monthKey}>
-                <h3 className="mb-6 border-b border-gray-200 pb-2 text-2xl font-semibold text-[#2B627B] lato-font">
+                <h3 className="mb-6 border-b border-gray-200 pb-2 text-2xl font-semibold text-[#0b6cb8] lato-font">
                   {bucket.monthLabel}
                 </h3>
                 <ul
@@ -119,7 +119,7 @@ const Events = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View all events on Facebook (opens in new tab)"
-                className="text-[#2B627B] underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2B627B]"
+                className="text-[#0b6cb8] underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0b6cb8]"
               >
                 View all events on Facebook
               </a>
@@ -128,7 +128,7 @@ const Events = () => {
         </p>
       </div>
 
-      <div className="w-[95%] mt-[50px] mx-auto border border-[#2B627B]"></div>
+      <div className="w-[95%] mt-[50px] mx-auto border border-[#0b6cb8]"></div>
     </section>
   )
 }

@@ -4,7 +4,14 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiLink2 } from 'react-icons/fi'
-import { FaFacebookF, FaLinkedinIn, FaGithub, FaInstagram, FaYoutube } from 'react-icons/fa'
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaGithub,
+  FaInstagram,
+  FaPinterestP,
+  FaYoutube,
+} from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import type { IconType } from 'react-icons'
 import { SaleShareOptOut } from '@/components/sale-share-opt-out'
@@ -34,6 +41,7 @@ const socialIconByLabel: Record<string, IconType> = {
   LinkedIn: FaLinkedinIn,
   Instagram: FaInstagram,
   YouTube: FaYoutube,
+  Pinterest: FaPinterestP,
   GitHub: FaGithub,
 }
 
@@ -73,6 +81,27 @@ const Footer: React.FC = () => {
                 />
               </a>
             )}
+            {(siteConfig.endorsements ?? []).map((e) => {
+              const badge = (
+                <Image
+                  src={assetPath(`/Images/${e.imageFile}`)}
+                  alt={e.name}
+                  width={108}
+                  height={108}
+                />
+              )
+              return (
+                <div key={e.name}>
+                  {e.href ? (
+                    <a href={e.href} target="_blank" rel="noopener noreferrer" aria-label={e.name}>
+                      {badge}
+                    </a>
+                  ) : (
+                    badge
+                  )}
+                </div>
+              )
+            })}
             {isPending('guidestar') && (
               <div>
                 <p className="font-[500] text-[22px]">GuideStar / Candid Profile</p>
@@ -141,7 +170,7 @@ const Footer: React.FC = () => {
                       href={link.href}
                       target={isExternal ? '_blank' : undefined}
                       rel={isExternal ? 'noopener noreferrer' : undefined}
-                      className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
+                      className="hover:text-[#5599fe] hover:tracking-widest transition-all text-[16px] font-[500]"
                     >
                       {link.name}
                     </Link>
@@ -191,7 +220,7 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
+                      className="hover:text-[#5599fe] hover:tracking-widest transition-all text-[16px] font-[500]"
                     >
                       {link.name}
                     </Link>
@@ -204,7 +233,7 @@ const Footer: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => window.openCookiePreferences?.()}
-                    className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500]"
+                    className="hover:text-[#5599fe] hover:tracking-widest transition-all text-[16px] font-[500]"
                   >
                     Cookie Preferences
                   </button>
@@ -214,7 +243,7 @@ const Footer: React.FC = () => {
                       and the Colorado / Connecticut equivalents). Required to
                       be reachable from every page, which is why it lives here
                       rather than only inside the preferences modal. */}
-                  <SaleShareOptOut className="hover:text-[#F58C23] hover:tracking-widest transition-all text-[16px] font-[500] text-left" />
+                  <SaleShareOptOut className="hover:text-[#5599fe] hover:tracking-widest transition-all text-[16px] font-[500] text-left" />
                 </li>
               </ul>
             </nav>
@@ -227,7 +256,7 @@ const Footer: React.FC = () => {
 
           <div className="space-y-4 text-sm">
             <div className="flex items-start gap-3">
-              <FiMail className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+              <FiMail className="w-10 h-10 text-[#5599fe] flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-[500] text-[22px]">E-mail</p>
                 {isPending('email') ? (
@@ -248,7 +277,7 @@ const Footer: React.FC = () => {
                 with no tel: link. */}
             {isPending('phone') && (
               <div className="flex items-start gap-3">
-                <FiPhone className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiPhone className="w-10 h-10 text-[#5599fe] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">Call Us Today</p>
                   <PendingNote className={PENDING_NOTE_CLASS} />
@@ -257,7 +286,7 @@ const Footer: React.FC = () => {
             )}
             {phone && (
               <div className="flex items-start gap-3">
-                <FiPhone className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiPhone className="w-10 h-10 text-[#5599fe] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">Call Us Today</p>
                   <a
@@ -273,7 +302,7 @@ const Footer: React.FC = () => {
             {/* A pending address shows the placeholder, with no map link. */}
             {isPending('address') && (
               <div className="flex items-start gap-3">
-                <FiMapPin className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiMapPin className="w-10 h-10 text-[#5599fe] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">Address</p>
                   <PendingNote className={PENDING_NOTE_CLASS} />
@@ -289,7 +318,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 hover:opacity-80 transition-opacity"
               >
-                <FiMapPin className="w-10 h-10 text-orange-500 flex-shrink-0 mt-0.5" />
+                <FiMapPin className="w-10 h-10 text-[#5599fe] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-[500] text-[22px]">{address.label}</p>
                   <p className="font-[500] text-[16px] aria-font">
@@ -324,7 +353,7 @@ const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="bg-orange-500 p-2 rounded-full hover:bg-orange-600 transition-colors"
+                    className="bg-[#0b6cb8] p-2 rounded-full hover:bg-[#08528f] transition-colors"
                   >
                     <Icon className="w-6 h-6 text-white" />
                   </a>

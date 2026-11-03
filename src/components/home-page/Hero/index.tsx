@@ -13,7 +13,7 @@ const CharityHeroBackground = () => {
   return (
     <div id="hero" className="relative w-full pb-[100px] overflow-hidden">
       {/* 1. Base Blue Layer */}
-      <div className="absolute inset-0 bg-[#2E6F8E]" />
+      <div className="absolute inset-0 bg-[#0b6cb8]" />
       {/* 2. ULTRA-THIN White Diagonal Strip - HALF HEIGHT */}
       <div
         className="absolute inset-0 bg-white"
@@ -24,7 +24,7 @@ const CharityHeroBackground = () => {
 
       {/* 3. Orange Bottom-Right Section - Starts exactly where white ends */}
       <div
-        className="absolute inset-0 bg-[#E4731E]"
+        className="absolute inset-0 bg-[#3570c8]"
         style={{
           clipPath: 'polygon(0% 111%, 100% 35%, 100% 100%, 0% 100%)',
         }}
@@ -63,11 +63,11 @@ const CharityHeroBackground = () => {
         </div>
 
         {/* Fixed right side image section */}
-        <div className="relative w-full max-w-[445px] aspect-square bg-white rounded-full p-12 flex items-center justify-center">
+        <div className="relative w-full max-w-[445px] aspect-square bg-white rounded-full p-3 flex items-center justify-center">
           <div className="relative w-full h-full">
             <Image
               src={assetPath('/Images/figma-hero-img.webp')}
-              alt="Hero image"
+              alt={`${siteConfig.name} logo`}
               fill
               className="object-contain"
               priority

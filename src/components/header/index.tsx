@@ -112,18 +112,16 @@ const Header: React.FC = () => {
         <div className="mx-auto max-w-[1080px]">
           <div className="flex items-center px-2 transition-all duration-300">
             {/* Logo */}
-            <div
-              className={`transition-all duration-300 ${isScrolled ? 'w-[110px]' : 'w-[150px]'}`}
-            >
+            <div className={`transition-all duration-300 ${isScrolled ? 'w-[70px]' : 'w-[100px]'}`}>
               <Link href="/" onClick={handleLinkClick} className="block">
                 <Image
                   src={assetPath('/Images/logo.webp')}
                   alt={siteConfig.name}
-                  width={686}
-                  height={234}
+                  width={740}
+                  height={504}
                   priority
                   className={`w-auto max-w-none object-contain transition-all duration-300 ${
-                    isScrolled ? 'h-7' : 'h-11'
+                    isScrolled ? 'h-[46px]' : 'h-[66px]'
                   }`}
                 />
               </Link>

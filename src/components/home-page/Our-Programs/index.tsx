@@ -3,6 +3,7 @@ import Image from 'next/image'
 import OrangeFaqItem from '@/components/ui/OrangeFaqItem'
 import ApplicationFormButton from '@/components/ui/ApplicationFormButton'
 import { assetPath } from '@/lib/assetPath'
+import { isInternalPath } from '@/data/programs'
 import { programsSectionVisible } from '@/lib/section-visibility'
 import { isSupportingOrgSite } from '@/lib/site.config'
 import { programs, programsDisclaimer, programsIntro } from '@/data/programs'
@@ -39,6 +40,36 @@ const index = () => {
                     ))}
                   </ul>
                 )}
+                {program.more && (
+                  <p className="mt-[12px]">
+                    <a
+                      href={assetPath(program.more)}
+                      className="text-[#0b6cb8] underline font-[700]"
+                    >
+                      Learn more about {program.title.toLowerCase()}
+                    </a>
+                  </p>
+                )}
+                {program.links && program.links.length > 0 && (
+                  <ul className="mt-[12px] flex flex-wrap gap-x-[20px] gap-y-[8px]">
+                    {program.links.map((link) => {
+                      const internal = isInternalPath(link.href)
+                      return (
+                        <li key={link.href}>
+                          <a
+                            href={internal ? assetPath(link.href) : link.href}
+                            {...(/^https:/i.test(link.href)
+                              ? { target: '_blank', rel: 'noopener noreferrer' }
+                              : {})}
+                            className="text-[#0b6cb8] underline font-[600]"
+                          >
+                            {link.label}
+                          </a>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                )}
               </OrangeFaqItem>
             ))}
           </div>
@@ -61,7 +92,7 @@ const index = () => {
 
         <div className="lg:pl-[50px]">
           <div className="mb-[40px]  flex items-center gap-[20px]">
-            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#2A6682] rounded-full">
+            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#0b6cb8] rounded-full">
               <div className="relative w-[56px] h-[56px]">
                 <Image
                   src={assetPath('/Svgs/FFC-Domains.svg')}
@@ -120,7 +151,7 @@ const index = () => {
 
         <div className="mt-[60px]">
           <div className="lg:pl-[50px] mb-[40px]  flex items-center gap-[20px]">
-            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#2A6682] rounded-full">
+            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#0b6cb8] rounded-full">
               <div className="relative w-[56px] h-[56px]">
                 <Image
                   src={assetPath('/Svgs/FFC-Hosting.svg')}
@@ -189,7 +220,7 @@ const index = () => {
 
         <div className="mt-[60px]">
           <div className="lg:pl-[50px] mb-[40px]  flex items-center gap-[20px]">
-            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#2A6682] rounded-full">
+            <div className="w-[100px] flex items-center justify-center p-2 h-[100px] bg-[#0b6cb8] rounded-full">
               <div className="relative w-[56px] h-[56px]">
                 <Image
                   src={assetPath('/Svgs/FFC-Consulting.svg')}
