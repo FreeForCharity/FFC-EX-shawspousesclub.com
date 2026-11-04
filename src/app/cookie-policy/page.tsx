@@ -106,7 +106,7 @@ export default function CookiePolicy() {
             </table>
           </div>
 
-          {/* 3.2 Functional Cookies */}
+          {/* 3.2 Payment, sign-up and RSVP providers (linked) */}
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
             <strong>3.2 Payment, Sign-Up and RSVP Providers (Linked)</strong>
           </p>

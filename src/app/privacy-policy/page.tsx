@@ -168,7 +168,9 @@ export default function PrivacyPolicy() {
             <strong>3.5. Cookies and Analytics</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            The cookies and analytics this site uses, and how to control them, are described in our{' '}
+            Analytics (Google Analytics, through Google Tag Manager) loads only once it has been set
+            up for this site, and only as your consent choices allow. The cookies involved, and how
+            to control them, are described in our{' '}
             <Link href="/cookie-policy" className="text-[#0062CC] underline">
               Cookie Policy
             </Link>
