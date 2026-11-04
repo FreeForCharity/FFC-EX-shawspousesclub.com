@@ -123,9 +123,7 @@ export const testConfig = {
    * Used in: tests/logo.spec.ts
    */
   logo: {
-    // The header logo's alt text is the site name (src/components/header).
-    headerAlt: siteConfig.name,
-    heroAlt: 'Hero image',
+    headerAlt: "Shaw Spouses' Club banner",
     navBarAriaLabel: `${siteConfig.name} home`,
   },
 

@@ -109,7 +109,6 @@ The configuration file is organized by sections. Here's what each section contro
 #### Logo and Images (logo.spec.ts, image-loading.spec.ts)
 
 - `logo.headerAlt`: Alt text for header logo
-- `logo.heroAlt`: Alt text for hero section image
 - `logo.navBarAriaLabel`: Aria label for navbar home link
 
 #### Cookie Consent (cookie-consent.spec.ts)
@@ -277,7 +276,6 @@ export const testConfig = {
 
   logo: {
     headerAlt: 'Acme Charity',
-    heroAlt: 'Hero image',
     navBarAriaLabel: 'Acme Charity home',
   },
 
