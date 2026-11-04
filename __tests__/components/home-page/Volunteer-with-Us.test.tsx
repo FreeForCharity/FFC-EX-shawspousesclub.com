@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import Volunteer from '../../../src/components/home-page/Volunteer-with-Us'
-import { siteConfig } from '@/lib/site.config'
+import { siteConfig, volunteerHref } from '@/lib/site.config'
 import {
   asCharitySite,
   asSupporterSite,
@@ -29,6 +29,32 @@ describe('Volunteer-with-Us', () => {
       'href',
       siteConfig.integrations.idealistUrl
     )
+  })
+
+  it('uses a pre-filled mailto: volunteerUrl as-is, opening in the mail app (no new tab)', () => {
+    const href = 'mailto:club@example.org?subject=Volunteering&body=Name%3A%20'
+    asCharitySite({ volunteerUrl: href })
+    render(<Volunteer />)
+    const link = screen.getByRole('link', { name: 'Volunteer' })
+    expect(link).toHaveAttribute('href', href)
+    expect(link).not.toHaveAttribute('target')
+  })
+
+  it("accepts the club's own pre-filled volunteer email as-is", () => {
+    expect(volunteerHref()).toBe(siteConfig.volunteerUrl)
+  })
+
+  it.each([
+    ['no recipient', 'mailto:?subject=Hi'],
+    ['two recipients', 'mailto:a@example.org,b@example.org?subject=Hi'],
+    ['an extra header', 'mailto:club@example.org?subject=Hi&bcc=x@example.org'],
+    ['an encoded address', 'mailto:club%40example.org?subject=Hi'],
+    ['a repeated key', 'mailto:club@example.org?subject=a&subject=b'],
+  ])('falls back to the contact email for a mailto: volunteerUrl with %s', (_case, href) => {
+    asCharitySite({ volunteerUrl: href })
+    render(<Volunteer />)
+    const got = screen.getByRole('link', { name: 'Volunteer' }).getAttribute('href') ?? ''
+    expect(got.startsWith(`mailto:${CHARITY.contactEmail}?subject=`)).toBe(true)
   })
 
   it("links a charity's site to its own volunteer page, never the supporter's", () => {
