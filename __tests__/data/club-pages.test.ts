@@ -116,10 +116,21 @@ describe('currentSections', () => {
     expect(ids).toEqual(['always'])
   })
 
+  it('accepts a UTC (Z) date', () => {
+    const utc = { ...page, sections: [{ id: 'z', heading: 'Z', until: '2026-11-13T04:59:00Z' }] }
+    expect(currentSections(utc, new Date('2026-11-13T04:00:00Z'))).toHaveLength(1)
+    expect(currentSections(utc, new Date('2026-11-13T05:00:00Z'))).toHaveLength(0)
+  })
+
+  it('throws on an unparsable date instead of silently hiding the section', () => {
+    const bad = { ...page, sections: [{ id: 'bad', heading: 'Bad', until: 'next Tuesday' }] }
+    expect(() => currentSections(bad)).toThrow(/Invalid "until" on \/x#bad/)
+  })
+
   it('gives every dated section in the real data a valid, timezone-qualified date', () => {
     for (const s of clubPages.flatMap((p) => p.sections).filter((s) => s.until)) {
       expect(Number.isNaN(Date.parse(s.until!))).toBe(false)
-      expect(s.until).toMatch(/[+-]\d\d:\d\d$/)
+      expect(s.until).toMatch(/(Z|[+-]\d\d:\d\d)$/)
     }
   })
 })

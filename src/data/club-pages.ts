@@ -33,9 +33,10 @@ export type ClubSection = {
   /** Show the Governing Board roster (src/data/team.ts) here. */
   showBoard?: boolean
   /**
-   * ISO date-time after which this section is out of date. It is left out of
-   * the page from the first build after that moment, so an "Upcoming" notice
-   * never outlives its event. Use for one-off announcements only.
+   * ISO 8601 date-time, with a timezone (`-05:00` or `Z`), after which this
+   * section is out of date. It is left out of the page from the first build
+   * after that moment, so an "Upcoming" notice never outlives its event. Use
+   * for one-off announcements only. An unparsable value fails the build.
    */
   until?: string
 }
@@ -808,8 +809,16 @@ export const clubEvents: readonly ClubEvent[] = [
 ]
 
 /** The page's sections that are still current at build time (see `until`). */
-export function currentSections(page: ClubPage, now: Date = new Date()): ClubSection[] {
-  return page.sections.filter((s) => !s.until || Date.parse(s.until) >= now.getTime())
+export function currentSections(page: ClubPage, now: Date = new Date()): readonly ClubSection[] {
+  return page.sections.filter((s) => {
+    if (!s.until) return true
+    const until = Date.parse(s.until)
+    // A typo must not silently hide content: fail loudly instead.
+    if (Number.isNaN(until)) {
+      throw new Error(`Invalid "until" on /${page.slug}#${s.id}: ${s.until}`)
+    }
+    return until >= now.getTime()
+  })
 }
 
 export function clubPage(slug: string): ClubPage {
