@@ -122,6 +122,11 @@ describe('currentSections', () => {
     expect(currentSections(utc, new Date('2026-11-13T05:00:00Z'))).toHaveLength(0)
   })
 
+  it('throws on a date with no timezone', () => {
+    const local = { ...page, sections: [{ id: 'tz', heading: 'TZ', until: '2026-11-12T23:59:00' }] }
+    expect(() => currentSections(local)).toThrow(/Invalid "until" on \/x#tz/)
+  })
+
   it('throws on an unparsable date instead of silently hiding the section', () => {
     const bad = { ...page, sections: [{ id: 'bad', heading: 'Bad', until: 'next Tuesday' }] }
     expect(() => currentSections(bad)).toThrow(/Invalid "until" on \/x#bad/)

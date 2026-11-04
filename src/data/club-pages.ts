@@ -813,8 +813,9 @@ export function currentSections(page: ClubPage, now: Date = new Date()): readonl
   return page.sections.filter((s) => {
     if (!s.until) return true
     const until = Date.parse(s.until)
-    // A typo must not silently hide content: fail loudly instead.
-    if (Number.isNaN(until)) {
+    // A typo must not silently hide content, and a date with no timezone would
+    // expire at a time that depends on the build machine: fail loudly instead.
+    if (Number.isNaN(until) || !/(Z|[+-]\d\d:\d\d)$/.test(s.until)) {
       throw new Error(`Invalid "until" on /${page.slug}#${s.id}: ${s.until}`)
     }
     return until >= now.getTime()
