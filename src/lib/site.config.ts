@@ -188,6 +188,12 @@ export type SiteConfig = {
   headerLinks?: readonly { label: string; path: SitePath }[]
   /** Extra footer Quick Links, e.g. the site's content pages. Site paths. */
   footerLinks?: readonly { name: string; href: SitePath }[]
+  /**
+   * Optional home-page team preview. When set, the home Team section shows only
+   * the first `count` members of src/data/team.ts (put the officers first) and
+   * a link to the page carrying the full roster. Unset shows everyone.
+   */
+  teamPreview?: { count: number; label: string; href: SitePath }
   /** Optional intro for the Volunteer section; the template's generic copy otherwise. */
   volunteerIntro?: string
   /**
@@ -344,6 +350,9 @@ export const siteConfig: SiteConfig = {
     { name: 'Charitable Giving', href: '/giving' },
     { name: 'Board and Governance', href: '/board' },
   ],
+  // The 16-member board is listed in full on /board; the home page shows the
+  // executive board (the first four entries in src/data/team.ts).
+  teamPreview: { count: 4, label: 'Meet the full board', href: '/board#governing-board' },
   volunteerIntro:
     'Lend a hand at our Annual Scholarship Auction, Shower Shaw and our monthly socials, or serve on the board. Several 2026-2027 board positions are open. Email us and we will find the right fit for you.',
   endorsements: [
