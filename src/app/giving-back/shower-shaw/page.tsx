@@ -5,7 +5,8 @@ import cookieDriveGalleries from '@/data/cookie-drive-galleries.json'
 
 export const metadata = pageMetadata({
   title: 'Shower Shaw',
-  description: 'Explore Shaw Spouses’ Club community service and Annual Cookie Drive memories.',
+  description:
+    'See how the Shower Shaw community effort supports the Shaw Spouses’ Club Annual Cookie Drive.',
   canonical: '/giving-back/shower-shaw',
 })
 
@@ -14,9 +15,9 @@ export default function ShowerShawPage() {
     <ClubProgramPage title="Shower Shaw">
       <PhotoReels
         collections={cookieDriveGalleries}
-        title="Annual Cookie Drive Memories"
+        title="Shaw Spouses' Club's Annual Cookie Drive"
         headingId="cookie-drive-photos-heading"
-        intro="Celebrating the volunteers, homemade treats, and community spirit behind the Annual Cookie Drive. Choose a year to explore photos from this Shaw tradition."
+        intro="Celebrate the volunteers, homemade treats, and community spirit behind the Shaw Spouses’ Club’s Annual Cookie Drive. The club organizes the drive with support from the wider community, which contributes goodies and donations through Shower Shaw. Choose a year to explore photos from this Shaw tradition."
       />
     </ClubProgramPage>
   )

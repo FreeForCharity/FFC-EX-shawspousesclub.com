@@ -84,7 +84,7 @@ export const programs: readonly Program[] = [
   {
     title: 'Shower Shaw',
     paragraphs: [
-      "For three decades, Sumter Volunteers Inc., the Sumter community, and the Shaw Spouses' Club have come together to express heartfelt gratitude to the service members at Shaw AFB. This tradition has evolved beyond homemade cookies into Shower Shaw, sharing a variety of goodies and thoughtful gifts with our military community. Local children add a special touch with sweet, handmade cards, reminding service members how much their community appreciates and supports them.",
+      "Shower Shaw is a community-wide effort to thank service members at Shaw Air Force Base. The Shaw Spouses' Club organizes the Annual Cookie Drive. Through Shower Shaw, Sumter Volunteers Inc. and the wider Sumter community help the club put on the drive by contributing homemade treats, other goodies, and donations. Local children also make handmade cards for service members.",
     ],
   },
 ]
