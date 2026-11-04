@@ -25,7 +25,8 @@ describe('FrequentlyAskedQuestions', () => {
   })
 
   it('splits an answer into paragraphs on blank lines', () => {
-    const multi = faqs.find((f) => /\n\s*\n/.test(f.answer))!
+    const multi = faqs.find((f) => /\n\s*\n/.test(f.answer))
+    if (!multi) throw new Error('Expected at least one FAQ answer with two paragraphs')
     const { container } = render(<FAQ />)
     const firstPara = multi.answer.split(/\n\s*\n/)[0]
     const p = Array.from(container.querySelectorAll('p')).find((el) => el.textContent === firstPara)
