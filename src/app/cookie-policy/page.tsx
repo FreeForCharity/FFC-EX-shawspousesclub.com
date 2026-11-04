@@ -111,73 +111,17 @@ export default function CookiePolicy() {
             <strong>3.2 Functional Cookies (Always Active)</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            These cookies enable essential functionality such as donation processing and application
-            forms. They are necessary for these services to work and cannot be disabled if you wish
-            to use these features.
+            These cookies enable essential functionality such as membership sign-up and donation
+            processing. They are necessary for these services to work and cannot be disabled if you
+            wish to use these features.
           </p>
-
-          {/* Microsoft Forms */}
-          <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <h3 className="font-semibold mb-2 text-[#333]">Microsoft Forms</h3>
-            <p className="text-sm mb-2 text-[#666]">
-              Used for our charity application form. Microsoft Forms may load additional third-party
-              services (including HubSpot) for form analytics and feedback collection. These
-              services are controlled by Microsoft.
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-2 pr-4 text-[#333]">Service</th>
-                    <th className="text-left py-2 pr-4 text-[#333]">Purpose</th>
-                    <th className="text-left py-2 text-[#333]">Load Trigger</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="py-2 pr-4 font-mono text-[#666]">Microsoft Forms</td>
-                    <td className="py-2 pr-4 text-[#666]">Charity application form processing</td>
-                    <td className="py-2 text-[#666]">When application modal opened</td>
-                  </tr>
-                  <tr>
-                    <td className="py-2 pr-4 font-mono text-[#666]">
-                      HubSpot (via Microsoft Forms)
-                    </td>
-                    <td className="py-2 pr-4 text-[#666]">Form analytics and feedback</td>
-                    <td className="py-2 text-[#666]">Loaded by Microsoft Forms</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-xs mt-2 text-gray-600">
-              Privacy Policy:{' '}
-              <a
-                href="https://privacy.microsoft.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline"
-              >
-                https://privacy.microsoft.com/
-              </a>
-            </p>
-            <p className="text-xs mt-1 text-gray-600">
-              HubSpot Privacy:{' '}
-              <a
-                href="https://legal.hubspot.com/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline"
-              >
-                https://legal.hubspot.com/privacy-policy
-              </a>
-            </p>
-          </div>
 
           {/* Zeffy */}
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
             <h3 className="font-semibold mb-2 text-[#333]">Zeffy Donation Platform</h3>
             <p className="text-sm mb-2 text-[#666]">
-              Zero-fee donation processing platform embedded on our website to accept donations.
+              Zero-fee platform for membership sign-up, auction tickets and donations. We link to
+              Zeffy; its cookies are set on zeffy.com, not on this site.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -191,8 +135,10 @@ export default function CookiePolicy() {
                 <tbody>
                   <tr>
                     <td className="py-2 pr-4 font-mono text-[#666]">Zeffy</td>
-                    <td className="py-2 pr-4 text-[#666]">Donation form and payment processing</td>
-                    <td className="py-2 text-[#666]">Embedded on donation section</td>
+                    <td className="py-2 pr-4 text-[#666]">
+                      Membership, auction and donation payments
+                    </td>
+                    <td className="py-2 text-[#666]">When you follow a Zeffy link</td>
                   </tr>
                 </tbody>
               </table>
