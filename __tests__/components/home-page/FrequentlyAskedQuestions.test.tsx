@@ -1,13 +1,11 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import FAQ from '../../../src/components/home-page/FrequentlyAskedQuestions'
-import { siteConfig } from '@/lib/site.config'
-import { asSupporterSite, restoreSiteConfig } from '../../helpers/site-identity'
+import { faqs } from '@/data/faqs'
+import { asCharitySite, restoreSiteConfig } from '../../helpers/site-identity'
 
-// The populated render is the supporting organization's own site; the hidden
-// path (a charity site) is covered in section-visibility.test.tsx.
 describe('FrequentlyAskedQuestions', () => {
-  beforeEach(asSupporterSite)
+  beforeEach(asCharitySite)
   afterEach(restoreSiteConfig)
 
   it('renders the section heading', () => {
@@ -20,13 +18,24 @@ describe('FrequentlyAskedQuestions', () => {
     expect(container.querySelector('#faq')).not.toBeNull()
   })
 
-  it('names the supporting organization and quotes its EIN from siteConfig', () => {
+  it('renders every question in src/data/faqs.ts, in order', () => {
+    render(<FAQ />)
+    const titles = screen.getAllByRole('button').map((b) => b.textContent?.trim())
+    expect(titles).toEqual(faqs.map((f) => f.question))
+  })
+
+  it('splits an answer into paragraphs on blank lines', () => {
+    const multi = faqs.find((f) => /\n\s*\n/.test(f.answer))!
     const { container } = render(<FAQ />)
-    expect(container.textContent).toContain(
-      `${siteConfig.supportedBy.name} is all about efficiency`
-    )
-    expect(container.textContent).toContain(`(EIN) is ${siteConfig.ein}`)
-    // A name substituted at a JSX line break must not run into the next word.
-    expect(container.textContent).not.toMatch(new RegExp(`${siteConfig.name}[a-z]`))
+    const firstPara = multi.answer.split(/\n\s*\n/)[0]
+    const p = Array.from(container.querySelectorAll('p')).find((el) => el.textContent === firstPara)
+    expect(p).toBeDefined()
+  })
+})
+
+describe('faqs data', () => {
+  it('carries none of the template sample FAQ', () => {
+    const all = faqs.map((f) => f.question + f.answer).join(' ')
+    expect(all).not.toMatch(/Are you really a charity|46-2471893|domain name/i)
   })
 })

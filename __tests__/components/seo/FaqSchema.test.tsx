@@ -43,9 +43,9 @@ describe('FaqSchema', () => {
     expect((parsed.mainEntity as unknown[]).length).toBe(faqs.length)
   })
 
-  it("emits no FAQPage on a charity's site, where the FAQ section does not render", () => {
+  it("emits the FAQPage on a charity's site too, since the questions are its own", () => {
     asCharitySite()
     const { container } = render(<FaqSchema />)
-    expect(container.querySelectorAll('script[type="application/ld+json"]')).toHaveLength(0)
+    expect(container.querySelectorAll('script[type="application/ld+json"]')).toHaveLength(1)
   })
 })

@@ -1,6 +1,7 @@
 import { isPending, isSupportingOrgSite, siteConfig } from '@/lib/site.config'
 import { configuredTeam } from '@/data/team'
 import { programs } from '@/data/programs'
+import { faqs } from '@/data/faqs'
 
 /**
  * Self-hide predicates for the home-page sections whose copy is about the
@@ -33,9 +34,13 @@ export function endowmentSectionVisible(): boolean {
   return siteConfig.sections.showEndowment && isSupportingOrgSite()
 }
 
-/** The FAQ section and its FAQPage JSON-LD, whose answers are FFC's. */
+/**
+ * The FAQ section, its #faq nav links and its FAQPage JSON-LD. The questions
+ * are this site's own (src/data/faqs.ts), so the section shows whenever there
+ * are any; empty the list to hide it.
+ */
 export function faqSectionVisible(): boolean {
-  return isSupportingOrgSite()
+  return faqs.length > 0
 }
 
 /**
