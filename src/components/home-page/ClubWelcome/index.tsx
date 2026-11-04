@@ -37,7 +37,7 @@ export default function ClubWelcome() {
     <section aria-labelledby="club-welcome-heading" className="bg-white px-5 py-14 sm:py-16">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-10 max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#4F83E5]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#2F5FB8]">
             Shaw AFB · Sumter, South Carolina
           </p>
           <h2
@@ -83,7 +83,7 @@ export default function ClubWelcome() {
                 href={facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#4F83E5] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#2F5FB8] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
               >
                 Visit our Facebook page
               </a>
@@ -99,7 +99,7 @@ export default function ClubWelcome() {
             </p>
             <Link
               href="/membership"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#4F83E5] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#2F5FB8] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
             >
               Explore membership
             </Link>

@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
               <Link
                 href={guidestarDirectUrl}
                 className="group relative my-4 flex w-full max-w-[230px] items-center justify-between
-                  border-2 border-[#4F83E5] bg-[#26394D] px-5 py-2.5 text-[#4F83E5]
+                  border-2 border-[#4F83E5] bg-[#26394D] px-5 py-2.5 text-[#9CBFFF]
                   transition-all duration-300 hover:border-transparent aria-font"
               >
                 <span className="text-[17px] font-medium leading-tight sm:text-[18px] md:text-[20px] transition-transform duration-300 group-hover:-translate-x-1">
@@ -370,7 +370,7 @@ const Footer: React.FC = () => {
           {' | Supported by '}
           <Link
             href={siteConfig.supportedBy.url}
-            className="underline text-[#4F83E5] hover:text-[#4F83E5] transition-colors"
+            className="underline text-[#9CBFFF] hover:text-white transition-colors"
           >
             {siteConfig.supportedBy.name}
           </Link>
@@ -379,7 +379,7 @@ const Footer: React.FC = () => {
               {' | A project of '}
               <Link
                 href={siteConfig.parentOrg.url}
-                className="underline text-[#4F83E5] hover:text-[#4F83E5] transition-colors"
+                className="underline text-[#9CBFFF] hover:text-white transition-colors"
               >
                 {siteConfig.parentOrg.name}
               </Link>

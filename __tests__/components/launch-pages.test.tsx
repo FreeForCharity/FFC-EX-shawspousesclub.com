@@ -37,8 +37,8 @@ it('lets visitors browse photos and pauses playback when they select a thumbnail
   jest.useFakeTimers()
   try {
     const photos = [
-      { src: '/Images/first.webp', caption: 'First photo' },
-      { src: '/Images/second.webp', caption: '' },
+      { src: '/Images/first.webp', caption: 'First photo', width: 800, height: 600 },
+      { src: '/Images/second.webp', caption: '', width: 800, height: 600 },
     ]
     const { unmount } = render(
       <SocialPhotoReels

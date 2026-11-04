@@ -18,7 +18,7 @@ const CharityHeroBackground = () => {
           <div className="flex gap-[5px]">
             <a
               href={donateHref()}
-              className="lato-font flex h-[54px] w-[130px] items-center justify-center gap-[10px] whitespace-nowrap rounded-[27px] bg-[#4f83e5] px-[24px] py-[18px] text-[20px] font-[400] leading-[100%] text-white hover:bg-[#376bcd] lg:w-[173px]"
+              className="lato-font flex h-[54px] w-[130px] items-center justify-center gap-[10px] whitespace-nowrap rounded-[27px] bg-[#2F5FB8] px-[24px] py-[18px] text-[20px] font-[400] leading-[100%] text-white hover:bg-[#376bcd] lg:w-[173px]"
             >
               Donate
             </a>

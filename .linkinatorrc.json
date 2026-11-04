@@ -4,6 +4,8 @@
     "^https://www.linkedin.com/.*",
     "^https://twitter.com/.*",
     "^https://www.facebook.com/.*",
+    "^https://instagram[.]com/shawspousesclub/?$",
+    "^https://www[.]zeffy[.]com/embed/ticketing/shaw-spouses-club-t-shirts/?$",
     "^https://forms.monday.com/.*",
     "^mailto:.*",
     "^tel:.*"
