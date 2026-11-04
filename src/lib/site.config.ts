@@ -471,13 +471,6 @@ export function isPending(field: PendingField): boolean {
 }
 
 /**
- * The configured link when it is an https URL or a complete `mailto:` link
- * (e.g. a pre-filled email), used as-is. Otherwise a `mailto:` to
- * `contactEmail` with `subject`: anything else (including a `javascript:`
- * value) falls back to that email, so a bad config can never ship a dangerous
- * or dead link.
- */
-/**
  * A complete mailto: link to exactly one plain address, carrying at most a
  * `subject` and a `body`. Anything else (no or several recipients, an encoded
  * address, cc/bcc or other headers, whitespace) is rejected, so a pre-filled
@@ -487,9 +480,19 @@ export function isPrefilledMailto(value: string): boolean {
   const m = /^mailto:([A-Za-z0-9._+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+)(?:\?(\S*))?$/i.exec(value)
   if (!m) return false
   if (m[2] === undefined) return true
-  return m[2].split('&').every((pair) => /^(subject|body)=[^&]*$/i.test(pair))
+  const keys = m[2]
+    .split('&')
+    .map((pair) => /^(subject|body)=[^&]*$/i.exec(pair)?.[1].toLowerCase())
+  return keys.every(Boolean) && new Set(keys).size === keys.length
 }
 
+/**
+ * The configured link when it is an https URL or a complete `mailto:` link
+ * (e.g. a pre-filled email), used as-is. Otherwise a `mailto:` to
+ * `contactEmail` with `subject`: anything else (including a `javascript:`
+ * value) falls back to that email, so a bad config can never ship a dangerous
+ * or dead link.
+ */
 function linkOrEmail(url: string, subject: string): string {
   const trimmed = url.trim()
   // An https page, or a complete mailto: link the site composed itself (for

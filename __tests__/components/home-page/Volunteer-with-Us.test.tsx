@@ -49,12 +49,12 @@ describe('Volunteer-with-Us', () => {
     ['two recipients', 'mailto:a@example.org,b@example.org?subject=Hi'],
     ['an extra header', 'mailto:club@example.org?subject=Hi&bcc=x@example.org'],
     ['an encoded address', 'mailto:club%40example.org?subject=Hi'],
+    ['a repeated key', 'mailto:club@example.org?subject=a&subject=b'],
   ])('falls back to the contact email for a mailto: volunteerUrl with %s', (_case, href) => {
     asCharitySite({ volunteerUrl: href })
     render(<Volunteer />)
-    expect(screen.getByRole('link', { name: 'Volunteer' }).getAttribute('href')).toMatch(
-      new RegExp(`^mailto:${CHARITY.contactEmail}\\?subject=`)
-    )
+    const got = screen.getByRole('link', { name: 'Volunteer' }).getAttribute('href') ?? ''
+    expect(got.startsWith(`mailto:${CHARITY.contactEmail}?subject=`)).toBe(true)
   })
 
   it("links a charity's site to its own volunteer page, never the supporter's", () => {
