@@ -1,5 +1,4 @@
-const googleFormUrl =
-  'https://docs.google.com/forms/d/e/1FAIpQLScgHRRrgx7Xj_3X93-tJlIIDMDLxfi2XXiPY2_EkvnGQ0mqaA/viewform?embedded=true'
+import Link from 'next/link'
 
 export default function BoardInterestForm() {
   return (
@@ -19,24 +18,11 @@ export default function BoardInterestForm() {
         </h2>
       </header>
 
-      <iframe
-        title="Shaw Spouses’ Club Board Position Interest Form"
-        src={googleFormUrl}
-        className="min-h-[1000px] w-full rounded-lg border-0"
-        loading="lazy"
-        referrerPolicy="strict-origin-when-cross-origin"
-      />
-
-      <p className="mt-4 text-center text-sm leading-6 text-[#26394D]">
-        If the form does not appear,{' '}
-        <a
-          href={googleFormUrl.replace('?embedded=true', '')}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold text-[#234F93] underline"
-        >
-          open it in a new tab
-        </a>
+      <p className="text-center text-sm leading-6 text-[#26394D]">
+        To express interest in a board position,{' '}
+        <Link href="/contact-us" className="font-semibold text-[#234F93] underline">
+          contact the Shaw Spouses’ Club
+        </Link>
         .
       </p>
     </section>

@@ -29,14 +29,14 @@ async function openFromFooter(page: Page, path: string) {
 }
 
 test.describe('footer policy pages', () => {
-  test('the footer links exactly the six policy pages', async ({ page }) => {
+  test('the footer links to Legal Documents and the six policy pages', async ({ page }) => {
     await page.goto('/')
     const policyNav = page.getByRole('navigation', { name: 'Policy links' })
     await expect(policyNav).toBeVisible()
     const hrefs = await policyNav
       .locator('a')
       .evaluateAll((links) => links.map((a) => a.getAttribute('href')?.replace(/\/$/, '')))
-    expect(hrefs).toEqual(POLICIES.map((p) => p.path))
+    expect(hrefs).toEqual(['/legal-documents', ...POLICIES.map((p) => p.path)])
     await expect(page.locator('footer a[href*="free-for-charity-donation-policy"]')).toHaveCount(0)
   })
 
