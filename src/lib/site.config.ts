@@ -271,9 +271,11 @@ export const siteConfig: SiteConfig = {
   mission:
     "The Shaw Spouses' Club is a non-profit private organization dedicated to promoting a supportive atmosphere to our military families and community through camaraderie, social activities, scholarships, and charitable giving.",
   // Empty = a charity's Donate / Volunteer sections email contactEmail instead.
-  // The club's own Zeffy page for auction and scholarship donations (linked
-  // from the .com Sponsors page). No volunteer page: Volunteer emails the club.
-  donationUrl: 'https://www.zeffy.com/en-US/ticketing/ssc-auction-donations',
+  // General donations go to the club's PayPal donate button (from the .com
+  // Charitable Giving page; account "Shaw Spouses' Club", verified live
+  // 2026-11-03). Auction donations and sponsorships stay on the club's Zeffy
+  // auction page, linked from /auction. Volunteer emails the club.
+  donationUrl: 'https://www.paypal.com/donate/?hosted_button_id=VGJBWZYWR5J2G',
   volunteerUrl: '',
   description:
     "The Shaw Spouses' Club is a non-profit private organization dedicated to promoting a supportive atmosphere to our military families and community through camaraderie, social activities, scholarships, and charitable giving.",

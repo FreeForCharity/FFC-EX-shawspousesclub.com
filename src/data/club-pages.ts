@@ -542,7 +542,7 @@ export const clubPages: readonly ClubPage[] = [
         youtubeId: 'pAPtf5yOQSM',
         links: [
           { label: 'Donate through PayPal', href: PAYPAL_DONATE },
-          { label: 'Donate through Zeffy', href: ZEFFY_AUCTION },
+          { label: 'Give to the auction through Zeffy', href: ZEFFY_AUCTION },
           { label: 'Our scholarships', href: '/scholarships' },
           { label: 'Partner with us', href: '/auction#become-a-sponsor' },
         ],
