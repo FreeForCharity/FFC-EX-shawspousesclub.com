@@ -274,7 +274,12 @@ export const siteConfig: SiteConfig = {
   // The club's own Zeffy page for auction and scholarship donations (linked
   // from the .com Sponsors page). No volunteer page: Volunteer emails the club.
   donationUrl: 'https://www.zeffy.com/en-US/ticketing/ssc-auction-donations',
-  volunteerUrl: '',
+  // A pre-filled email listing the club's real volunteer opportunities, so the
+  // message arrives with what the club needs to place a volunteer.
+  // (Subject "Volunteering with the Shaw Spouses' Club"; body asks for name,
+  // phone, which opportunity, and availability.)
+  volunteerUrl:
+    'mailto:publicrelations.ShawSC@gmail.com?subject=Volunteering%20with%20the%20Shaw%20Spouses%27%20Club&body=Name%3A%20%0APhone%20(optional)%3A%20%0AI%20would%20like%20to%20help%20with%20(Annual%20Scholarship%20Auction%20%2F%20Shower%20Shaw%20cookie%20drive%20%2F%20monthly%20socials%20%2F%20special%20activity%20groups%20%2F%20a%20board%20position)%3A%20%0AWhen%20I%20am%20available%3A%20%0A',
   description:
     "The Shaw Spouses' Club is a non-profit private organization dedicated to promoting a supportive atmosphere to our military families and community through camaraderie, social activities, scholarships, and charitable giving.",
   shortDescription:
@@ -472,7 +477,9 @@ export function isPending(field: PendingField): boolean {
  */
 function linkOrEmail(url: string, subject: string): string {
   const trimmed = url.trim()
-  if (/^https:\/\/\S+$/i.test(trimmed)) return trimmed
+  // An https page, or a complete mailto: link the site composed itself (for
+  // example one that pre-fills the fields a volunteer email should carry).
+  if (/^https:\/\/\S+$/i.test(trimmed) || /^mailto:\S+$/i.test(trimmed)) return trimmed
   return mailtoHref(subject)
 }
 

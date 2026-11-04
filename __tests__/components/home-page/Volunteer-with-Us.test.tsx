@@ -31,6 +31,15 @@ describe('Volunteer-with-Us', () => {
     )
   })
 
+  it('uses a pre-filled mailto: volunteerUrl as-is, opening in the mail app (no new tab)', () => {
+    const href = 'mailto:club@example.org?subject=Volunteering&body=Name%3A%20'
+    asCharitySite({ volunteerUrl: href })
+    render(<Volunteer />)
+    const link = screen.getByRole('link', { name: 'Volunteer' })
+    expect(link).toHaveAttribute('href', href)
+    expect(link).not.toHaveAttribute('target')
+  })
+
   it("links a charity's site to its own volunteer page, never the supporter's", () => {
     asCharitySite({ volunteerUrl: 'https://www.idealist.org/en/nonprofit/riverbend-test' })
     const { container } = render(<Volunteer />)
