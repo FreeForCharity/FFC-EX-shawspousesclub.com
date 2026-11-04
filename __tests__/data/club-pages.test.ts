@@ -3,7 +3,7 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import { clubEvents, clubPages, formMailto } from '@/data/club-pages'
+import { PAYPAL_DONATE, clubEvents, clubPages, formMailto } from '@/data/club-pages'
 import { siteConfig } from '@/lib/site.config'
 import { programs } from '@/data/programs'
 import { routes } from '@/app/sitemap'
@@ -108,5 +108,14 @@ describe('formMailto', () => {
     const href = formMailto('a@b.org', 'Q&A: 100% #1?', ['Name'])
     expect(href).not.toMatch(/[ #]/)
     expect(new URL(href).searchParams.get('subject')).toBe('Q&A: 100% #1?')
+  })
+})
+
+describe('general donation route', () => {
+  it('sends the homepage Donate button and the /giving PayPal button to the same place', () => {
+    expect(siteConfig.donationUrl).toBe(PAYPAL_DONATE)
+    const giving = clubPages.find((p) => p.slug === 'giving')!
+    const hrefs = giving.sections.flatMap((s) => s.links ?? []).map((l) => l.href)
+    expect(hrefs).toContain(PAYPAL_DONATE)
   })
 })

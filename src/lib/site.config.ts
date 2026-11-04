@@ -275,6 +275,8 @@ export const siteConfig: SiteConfig = {
   // Charitable Giving page; account "Shaw Spouses' Club", verified live
   // 2026-11-03). Auction donations and sponsorships stay on the club's Zeffy
   // auction page, linked from /auction. Volunteer emails the club.
+  // Kept equal to PAYPAL_DONATE in src/data/club-pages.ts (the /giving button);
+  // __tests__/data/club-pages.test.ts fails if the two drift apart.
   donationUrl: 'https://www.paypal.com/donate/?hosted_button_id=VGJBWZYWR5J2G',
   volunteerUrl: '',
   description:
