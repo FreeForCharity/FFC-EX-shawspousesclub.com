@@ -77,171 +77,105 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            <strong>3.1. Comments</strong>
+            This site is a static website. It has no comment forms, user accounts or logins, and it
+            does not store anything you type on it. You share information with us in the following
+            ways.
           </p>
-          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            When visitors leave comments on the site, we collect:
-          </p>
-          <ul className="list-disc list-inside space-y-[4px] pb-[1em]">
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Data from the comments form:</strong> This includes your name, email address,
-              website, and the comment itself.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>IP Address and Browser User Agent String:</strong> To assist with spam
-              detection and enhance security.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Gravatar Service:</strong> An anonymized string created from your email
-              address (also called a hash) may be provided to the Gravatar service to see if you are
-              using it. After approval of your comment, your profile picture (if available) is
-              visible to the public in the context of your comment. The Gravatar service privacy
-              policy is available here: Gravatar Privacy Policy
-            </li>
-          </ul>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.2. Media</strong>
+            <strong>3.1. Email You Send Us</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            If you upload images to the website:
+            Buttons such as &quot;Email a membership question&quot; open your own email app with a
+            pre-filled message. Nothing is sent until you press send, and the message then goes to
+            the club&apos;s Gmail mailbox for that topic. We receive what you write, plus your name
+            and email address.
+          </p>
+
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
+            <strong>3.2. Payment, Sign-Up and RSVP Providers</strong>
+          </p>
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
+            Membership dues, auction tickets, donations and event RSVPs are handled by the providers
+            below. These are links, not embedded forms: you leave this site, and the provider
+            collects your details under its own privacy policy. We receive the details you give
+            them, such as your name, email address and payment amount. We never see your full card
+            or bank details.
           </p>
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Embedded Location Data:</strong> Please avoid uploading images with embedded
-              location data (EXIF GPS) included. Visitors can download and extract any location data
-              from images on the website.
-            </li>
-          </ul>
-
-          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.3. Cookies</strong>
-          </p>
-          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            Our website uses cookies to enhance your browsing experience:
-          </p>
-          <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Comments Cookies:</strong> When you leave a comment, you may opt-in to saving
-              your name, email address, and website in cookies. These are for your convenience for
-              future comments and last for one year.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Login Cookies:</strong> When you log in, we set up cookies to save your login
-              information and screen display choices.
-              <ul className="list-disc list-inside ml-[1rem] mt-[4px] pb-[1em] space-y-[2px]">
-                <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-                  Login cookies last for two days.
-                </li>
-                <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-                  Screen options cookies last for one year.
-                </li>
-                <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-                  Selecting “Remember Me” extends login retention to two weeks.
-                </li>
-                <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-                  Logging out removes login cookies.
-                </li>
-              </ul>
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Temporary Cookies:</strong> Visiting our login page sets a temporary cookie to
-              determine if your browser accepts cookies. It contains no personal data and is
-              discarded when you close your browser.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Editing or Publishing Articles:</strong> This sets an additional cookie in
-              your browser, indicating the post ID of the article you just edited. It expires after
-              one day.
-            </li>
-          </ul>
-
-          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.4. Microsoft Forms - Application Forms</strong>
-          </p>
-          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            We use Microsoft Forms (forms.office.com) for our charity application process. When you
-            submit an application through our website:
-          </p>
-          <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Data Collected:</strong> Information you provide in the application form
-              (name, email, organization details, etc.)
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Third-Party Processing:</strong> Microsoft Forms is a service provided by
-              Microsoft Corporation. Your form submissions are processed according to
-              Microsoft&apos;s privacy policies.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Additional Third-Party Services:</strong> Microsoft Forms may use additional
-              services (including HubSpot) for form analytics and feedback collection. These are
-              controlled by Microsoft, not {siteConfig.name}.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Privacy Policy:</strong> Review Microsoft&apos;s privacy practices at{' '}
+              <strong>Zeffy</strong> (membership sign-up, auction and donations):{' '}
               <a
-                href="https://privacy.microsoft.com/"
+                href="https://support.zeffy.com/legal-data-privacy-security"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#0062CC] underline"
               >
-                https://privacy.microsoft.com/
+                https://support.zeffy.com/legal-data-privacy-security
+              </a>
+            </li>
+            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
+              <strong>PayPal</strong> (donations):{' '}
+              <a
+                href="https://www.paypal.com/us/legalhub/privacy-full"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0062CC] underline"
+              >
+                https://www.paypal.com/us/legalhub/privacy-full
+              </a>
+            </li>
+            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
+              <strong>Google Forms</strong> (event RSVPs):{' '}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0062CC] underline"
+              >
+                https://policies.google.com/privacy
               </a>
             </li>
           </ul>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.5. Embedded Content from Other Websites</strong>
+            <strong>3.3. Videos</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            Articles on this site may include embedded content (e.g., videos, images, articles).
-            Embedded content from other websites behaves as if you have visited the other website
-            directly. These websites may:
+            Club videos are hosted on YouTube. Until you press play, the page shows a picture hosted
+            on this site and makes no request to YouTube or Google. When you press play, the video
+            loads from YouTube&apos;s privacy-enhanced domain (youtube-nocookie.com), and
+            Google&apos;s privacy policy applies to that playback:{' '}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0062CC] underline"
+            >
+              https://policies.google.com/privacy
+            </a>
           </p>
-          <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              Collect data about you.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">Use cookies.</li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              Embed additional third-party tracking.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              Monitor your interaction with the embedded content, including tracking your
-              interaction if you have an account and are logged in to that website.
-            </li>
-          </ul>
 
-          <h3 className="text-[18px] leading-[26px] font-[700] text-[#333] mt-[20px] mb-[10px]">
-            Events Aggregation
-          </h3>
-          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            The &quot;Upcoming Events&quot; section aggregates events from our Google Calendar,
-            Microsoft 365 calendar, and Facebook page. These sources are fetched server-side at
-            build time (every six hours via an automated workflow) and stored as a static JSON
-            snapshot in our public source repository. As a result:
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
+            <strong>3.4. Fonts</strong>
           </p>
-          <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              No third-party cookies, scripts, or tracking pixels are loaded by the events section
-              when you view our site.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              We never send your IP address, browser fingerprint, or any other identifier to Google,
-              Microsoft, or Meta as part of displaying events.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              When you click &quot;View on Facebook/Google/Microsoft&quot; or &quot;Add to
-              calendar&quot;, you leave our site and the destination&apos;s own privacy policy
-              applies.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              If an event is deleted at the source, it is removed from our snapshot at the next
-              scheduled refresh (up to six hours). For immediate deletion of personal data shown on
-              an event, contact us at the address below.
-            </li>
-          </ul>
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
+            All fonts are served from this site itself. No font request goes to Google or any other
+            third party.
+          </p>
+
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
+            <strong>3.5. Cookies and Analytics</strong>
+          </p>
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
+            Analytics (Google Analytics, through Google Tag Manager) loads only once it has been set
+            up for this site, and only as your consent choices allow. The cookies involved, and how
+            to control them, are described in our{' '}
+            <Link href="/cookie-policy" className="text-[#0062CC] underline">
+              Cookie Policy
+            </Link>
+            .
+          </p>
 
           {/* Section 4 */}
           <h2 className="text-[26px] leading-[26px] font-[700] text-[#333] mb-[10px]">
@@ -288,10 +222,6 @@ export default function PrivacyPolicy() {
               behalf, such as sending out newsletters or surveys.
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Spam Detection Services:</strong> Visitor comments may be checked through
-              automated spam detection services.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Legal Obligations:</strong> We may disclose your information if required to do
               so by law or in response to valid requests by public authorities.
             </li>
@@ -303,28 +233,24 @@ export default function PrivacyPolicy() {
           </h2>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            <strong>6.1. Comments</strong>
+            <strong>6.1. Email</strong>
           </p>
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Retention Period:</strong> Comments and their metadata are retained
-              indefinitely. This allows us to recognize and approve any follow-up comments
-              automatically.
+              <strong>Retention Period:</strong> Email you send the club stays in the club&apos;s
+              mailbox for as long as the board needs it to answer you and keep club records. Ask us
+              and we will delete it.
             </li>
           </ul>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>6.2. Registered Users</strong>
+            <strong>6.2. Payment, Sign-Up and RSVP Records</strong>
           </p>
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>User Profiles:</strong> For users that register on our website, we store the
-              personal information provided in their user profile.
-            </li>
-            <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>User Rights:</strong> All users can see, edit, or delete their personal
-              information at any time (except for changing their username). Website administrators
-              can also view and edit this information.
+              <strong>Records:</strong> Zeffy, PayPal and Google Forms keep their records under
+              their own retention policies. The club keeps membership and donation records for as
+              long as it needs them for club and tax records.
             </li>
           </ul>
 
