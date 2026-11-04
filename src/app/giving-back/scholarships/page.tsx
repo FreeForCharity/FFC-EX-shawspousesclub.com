@@ -1,4 +1,11 @@
+import { pageMetadata } from '@/lib/page-metadata'
 import ClubProgramPage from '@/components/site-pages/ClubProgramPage'
+
+export const metadata = pageMetadata({
+  title: 'Scholarships',
+  description: 'Learn about the Shaw Spouses’ Club scholarship program.',
+  canonical: '/giving-back/scholarships',
+})
 
 export default function ScholarshipsPage() {
   return (

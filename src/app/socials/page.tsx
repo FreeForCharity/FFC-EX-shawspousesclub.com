@@ -1,7 +1,14 @@
+import { pageMetadata } from '@/lib/page-metadata'
 import ClubProgramPage from '@/components/site-pages/ClubProgramPage'
 import SocialPhotoReels from '@/components/site-pages/SocialPhotoReels'
 import Image from 'next/image'
 import { assetPath } from '@/lib/assetPath'
+
+export const metadata = pageMetadata({
+  title: 'Monthly Socials',
+  description: 'Find upcoming Shaw Spouses’ Club socials and browse photos from past events.',
+  canonical: '/socials',
+})
 
 export default function SocialsPage() {
   return (

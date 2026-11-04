@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/page-metadata'
 import { siteConfig } from '@/lib/site.config'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Golf Tournament',
   description: 'Learn about the Shaw Spouses’ Club Golf Tournament and how to get involved.',
-}
+  canonical: '/giving-back/golf-tournament',
+})
 
 export default function GolfTournamentPage() {
   return (

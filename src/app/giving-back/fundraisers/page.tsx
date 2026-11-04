@@ -1,5 +1,12 @@
+import { pageMetadata } from '@/lib/page-metadata'
 import ClubProgramPage from '@/components/site-pages/ClubProgramPage'
 import Link from 'next/link'
+
+export const metadata = pageMetadata({
+  title: 'Fundraisers',
+  description: 'Explore Shaw Spouses’ Club fundraisers and support the club’s community programs.',
+  canonical: '/giving-back/fundraisers',
+})
 
 export default function FundraisersPage() {
   return (

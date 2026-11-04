@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/page-metadata'
 import Image from 'next/image'
 import { siteConfig } from '@/lib/site.config'
 import { assetPath } from '@/lib/assetPath'
@@ -8,11 +8,12 @@ import auctionGalleries from '@/data/auction-galleries.json'
 import auctionSponsors from '@/data/auction-sponsors.json'
 import AuctionSponsorshipForm from '@/components/site-pages/AuctionSponsorshipForm'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Charity Auction',
   description:
     'Support scholarships and charitable giving through the Shaw Spouses’ Club Charity Auction.',
-}
+  canonical: '/giving-back/auction',
+})
 
 export default function AuctionPage() {
   const contact = `mailto:${siteConfig.contactEmail}?subject=Charity%20Auction`

@@ -1,13 +1,14 @@
 import Link from 'next/link'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/page-metadata'
 import { assetPath } from '@/lib/assetPath'
 import { siteConfig } from '@/lib/site.config'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Charitable Donation Requests',
   description:
     'Learn about eligibility, funding guidelines, and the charitable donation request process for the Shaw Spouses’ Club.',
-}
+  canonical: '/giving-back/charitable-requests',
+})
 
 const eligibility = [
   'Requesting organizations must be nonprofit organizations, schools, or military organizations. Funds cannot be given to individuals or for-profit businesses.',

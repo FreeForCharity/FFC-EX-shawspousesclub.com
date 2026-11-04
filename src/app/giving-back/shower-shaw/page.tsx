@@ -1,6 +1,13 @@
+import { pageMetadata } from '@/lib/page-metadata'
 import ClubProgramPage from '@/components/site-pages/ClubProgramPage'
 import PhotoReels from '@/components/site-pages/SocialPhotoReels'
 import cookieDriveGalleries from '@/data/cookie-drive-galleries.json'
+
+export const metadata = pageMetadata({
+  title: 'Shower Shaw',
+  description: 'Explore Shaw Spouses’ Club community service and Annual Cookie Drive memories.',
+  canonical: '/giving-back/shower-shaw',
+})
 
 export default function ShowerShawPage() {
   return (

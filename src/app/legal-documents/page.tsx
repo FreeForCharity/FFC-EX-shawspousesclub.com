@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/page-metadata'
 import { assetPath } from '@/lib/assetPath'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Legal Documents',
   description: 'Governing documents and tax-exempt documentation for the Shaw Spouses’ Club.',
-}
+  canonical: '/legal-documents',
+})
 
 export default function LegalDocumentsPage() {
   return (

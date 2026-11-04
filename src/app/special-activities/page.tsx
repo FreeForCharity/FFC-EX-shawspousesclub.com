@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/page-metadata'
 import ClubProgramPage from '@/components/site-pages/ClubProgramPage'
 import InquiryForm from '@/components/site-pages/AuctionSponsorshipForm'
 
@@ -20,6 +21,12 @@ const clubs = [
     color: '#EEEAFB',
   },
 ]
+
+export const metadata = pageMetadata({
+  title: 'Special Activities',
+  description: 'Explore special activities and interest groups at the Shaw Spouses’ Club.',
+  canonical: '/special-activities',
+})
 
 export default function SpecialActivitiesPage() {
   return (
