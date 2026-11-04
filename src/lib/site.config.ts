@@ -471,9 +471,11 @@ export function isPending(field: PendingField): boolean {
 }
 
 /**
- * A configured https URL, or a `mailto:` to `contactEmail` with `subject`.
- * Anything that is not an https URL (including a `javascript:` value) falls
- * back to the email, so a bad config can never ship a dangerous or dead link.
+ * The configured link when it is an https URL or a complete `mailto:` link
+ * (e.g. a pre-filled email), used as-is. Otherwise a `mailto:` to
+ * `contactEmail` with `subject`: anything else (including a `javascript:`
+ * value) falls back to that email, so a bad config can never ship a dangerous
+ * or dead link.
  */
 function linkOrEmail(url: string, subject: string): string {
   const trimmed = url.trim()
