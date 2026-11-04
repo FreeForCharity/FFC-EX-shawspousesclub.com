@@ -335,7 +335,7 @@ Starting your contribution journey with a fresh review:
 
 1. Visit [https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/](https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/)
 2. Explore thoroughly and take notes
-3. [Create your review issue](https://github.com/FreeForCharity/FFC-IN-FFC_Single_Page_Template/issues/new?assignees=&labels=documentation%2Creview%2Conboarding&template=reviewer-onboarding.md)
+3. [Create your review issue](https://github.com/FreeForCharity/FFC-EX-shawspousesclub.org/issues/new?assignees=&labels=documentation%2Creview%2Conboarding&template=reviewer-onboarding.md)
 4. Report individual issues you discover
 5. Engage with the team on your findings
 
