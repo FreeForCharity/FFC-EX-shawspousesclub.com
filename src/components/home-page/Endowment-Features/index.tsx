@@ -41,7 +41,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-[95%] mt-[50px] mx-auto border border-[#0b6cb8]"></div>
+      <div className="w-[95%] mt-[50px] mx-auto border border-[#234F93]"></div>
     </div>
   )
 }

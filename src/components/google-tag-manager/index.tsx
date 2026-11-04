@@ -3,17 +3,13 @@
 import { scriptString } from '@/lib/script-string'
 
 import Script from 'next/script'
-import { analyticsConfig, isConfigured } from '@/lib/analytics.config'
+import { analyticsConfig } from '@/lib/analytics.config'
 
 // Google Tag Manager container ID. Edit it in src/lib/analytics.config.ts —
 // the single, easy-to-find place for all analytics IDs.
 const GTM_ID = analyticsConfig.gtmId
 
 export default function GoogleTagManager() {
-  // A placeholder container ID means "no GTM": render nothing, so the page
-  // makes no request to googletagmanager.com at all (the same rule
-  // isConfigured() applies to GA, Meta and Clarity).
-  if (!isConfigured(GTM_ID)) return null
   return (
     <>
       {/* Google Tag Manager Script - loaded with lazyOnload for better performance */}

@@ -18,27 +18,7 @@ export type TeamMember = {
   linkedinUrl?: string
 }
 
-// The club's 2026-2027 Governing Board, as published on the Board page of
-// shawspousesclub.com. Open positions (Parliamentarian, Social Media Manager,
-// Ways and Means, Golf Tournament Chair) are left out.
-export const team: TeamMember[] = [
-  { name: 'Nancy Galas', role: 'President' },
-  { name: 'Jennifer Craven', role: 'Vice President' },
-  { name: 'Kelsie Perez', role: 'Treasurer' },
-  { name: 'Angel McPeek', role: 'Secretary' },
-  { name: 'Kristin Walker', role: 'Honorary Advisor' },
-  { name: 'Lauren Getz', role: 'Honorary Advisor' },
-  { name: 'Thomasena Days', role: 'Philanthropy' },
-  { name: 'Yasmin Hoffman', role: 'Membership' },
-  { name: 'Cristi Ryan', role: 'Public Relations and Scholarship' },
-  { name: 'Eleana Lynch', role: 'Social Events' },
-  { name: 'Sarah Hughes', role: 'Hospitality' },
-  { name: 'Eboni Montilus', role: 'Special Activities Coordinator' },
-  { name: 'Cleyardis McDonald-Amaker', role: 'Member At Large' },
-  { name: 'April Johns', role: 'Auction Chair' },
-  { name: 'Angela Menghini', role: 'Cookie Drive Chair' },
-  { name: 'Alysha Murphy', role: 'Retiree Liaison' },
-]
+export const team: TeamMember[] = []
 
 // `team` is assembled from a fixed list of JSON imports, so its length never
 // drops to 0 when a fork blanks those JSON files (rather than deleting entries).

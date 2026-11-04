@@ -23,7 +23,7 @@ const EFFECTIVE_DATE = 'October 14, 2026'
 // per-page OG/Twitter handling is documented in src/lib/page-metadata.ts.
 export const metadata: Metadata = pageMetadata({
   title: PAGE_NAME,
-  description: `Donation Policy for ${siteConfig.name}: tax deductibility, receipts, refunds and how donations are used`,
+  description: `Donation Policy for ${siteConfig.name}: tax deductibility, receipts, refunds, and how donations are used`,
   canonical: CANONICAL_PATH,
 })
 
@@ -65,7 +65,7 @@ export default function DonationPolicy() {
             <strong>Effective Date:</strong> {EFFECTIVE_DATE}
           </p>
           <p>
-            This policy explains how {name} accepts, acknowledges and uses donations, and what
+            This policy explains how {name} accepts, acknowledges, and uses donations, and what
             donors can expect from us. It applies to every gift made to {name}, online or offline.
           </p>
 
@@ -97,7 +97,7 @@ export default function DonationPolicy() {
           <h2 className={h2}>Gifts We Accept</h2>
           <p>
             {name} gratefully accepts gifts of money through its donation page and by the other
-            methods it offers. Gifts of securities, real estate, vehicles or other property, and
+            methods it offers. Gifts of securities, real estate, vehicles, or other property, and
             in-kind goods or services are considered case by case: please contact us before making
             one so we can confirm we are able to accept it.
           </p>

@@ -4,8 +4,6 @@
     "^https://www.linkedin.com/.*",
     "^https://twitter.com/.*",
     "^https://www.facebook.com/.*",
-    "^https://www.bjs.com/.*",
-    "^https://(www\\.)?instagram\\.com/.*",
     "^https://forms.monday.com/.*",
     "^mailto:.*",
     "^tel:.*"

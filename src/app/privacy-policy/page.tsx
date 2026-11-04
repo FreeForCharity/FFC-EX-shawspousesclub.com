@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
   // organization. The phone follows the footer's rule: shown only when both
   // halves are configured.
   const phone = publishedPhone()
-  const link = 'text-[#0062CC] underline'
+  const link = 'text-[#234F93] underline'
   const contact = (
     <>
       <ContactEmail email={legal.email} className={link} />
@@ -184,7 +184,7 @@ export default function PrivacyPolicy() {
                 href="https://privacy.microsoft.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0062CC] underline"
+                className="text-[#234F93] underline"
               >
                 https://privacy.microsoft.com/
               </a>
@@ -192,7 +192,62 @@ export default function PrivacyPolicy() {
           </ul>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.5. Embedded Content from Other Websites</strong>
+            <strong>3.5. Google Forms - Board Interest Form</strong>
+          </p>
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
+            We embed a Google Form on our Board page to collect expressions of interest in board
+            positions. Information submitted through the form is processed by Google and available
+            to the form owner. Email notifications depend on the form owner&apos;s settings. The
+            form is subject to{' '}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#234F93] underline"
+            >
+              Google&apos;s Privacy Policy
+            </a>
+            .
+          </p>
+
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
+            <strong>3.6. Formspree - Contact, Sub-Club, and Auction Sponsorship Inquiries</strong>
+          </p>
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
+            Our contact, sub-club, and auction sponsorship forms send your first name, last name,
+            email address, and comment to Formspree for processing and delivery to the club. Auction
+            sponsorship inquiries go to the treasurer. We use this information to respond to your
+            inquiry. Please review{' '}
+            <a
+              href="https://formspree.io/legal/privacy-policy"
+              className="text-[#234F93] underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Formspree’s Privacy Policy
+            </a>
+            .
+          </p>
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
+            <strong>3.7. Zeffy - Donations and SSC Merch</strong>
+          </p>
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
+            We embed Zeffy forms for donations and Shaw Spouses&apos; Club T-shirt orders.
+            Information you submit in these forms, including order and payment details, is processed
+            by Zeffy. Review{' '}
+            <a
+              href="https://support.zeffy.com/legal-data-privacy-security"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#234F93] underline"
+            >
+              Zeffy&apos;s privacy information
+            </a>{' '}
+            for details.
+          </p>
+
+          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
+            <strong>3.7. Embedded Content from Other Websites</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
             Articles on this site may include embedded content (e.g., videos, images, articles).
@@ -375,7 +430,7 @@ export default function PrivacyPolicy() {
           </p>
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              <strong>Consent:</strong> In the European Economic Area, the United Kingdom and
+              <strong>Consent:</strong> In the European Economic Area, the United Kingdom, and
               Switzerland, Google&apos;s tags set no analytics or advertising cookies and read no
               identifiers from your device until you accept through the cookie consent banner —
               until then they only count visits in an aggregate, cookie-free way. Elsewhere,
@@ -417,7 +472,7 @@ export default function PrivacyPolicy() {
             so the ad can still be credited if you accept — until you do, it is stripped from what
             the tags send. You can change your mind at any time via the Cookie Preferences link in
             the footer. See our{' '}
-            <Link href="/cookie-policy" className="text-[#0062CC] underline">
+            <Link href="/cookie-policy" className="text-[#234F93] underline">
               Cookie Policy
             </Link>{' '}
             for details.
@@ -467,7 +522,7 @@ export default function PrivacyPolicy() {
             signal we treat it as an opt-out automatically, and you need do nothing else. Opting out
             stops advertising data sharing; it does not switch off the basic analytics we use to see
             how the site performs, which you control separately through Cookie Preferences. Visitors
-            in the EEA, the UK and Switzerland are never opted in to begin with — nothing is shared
+            in the EEA, the UK, and Switzerland are never opted in to begin with — nothing is shared
             there until you accept.
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
@@ -509,7 +564,7 @@ export default function PrivacyPolicy() {
             undo afterwards. Because GPC is a statutory signal, this site does not override it: if
             your browser sends it, the opt-out stands even if you also press Accept. Do Not Track
             (DNT) is a separate, deprecated signal with no agreed meaning, and we do not act on it.
-            GPC opts you out of sale and sharing, not of basic analytics: outside the EEA, the UK
+            GPC opts you out of sale and sharing, not of basic analytics: outside the EEA, the UK,
             and Switzerland analytics cookies are set automatically, and any visitor, anywhere, can
             turn them off at any time via the Cookie Preferences link in the footer — we delete the
             cookies we set when you do. Session recording (Microsoft Clarity) and marketing (Meta

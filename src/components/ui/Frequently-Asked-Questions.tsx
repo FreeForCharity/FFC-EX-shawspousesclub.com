@@ -75,7 +75,7 @@ const FrequentlyAskedQuestions: React.FC<AccordionItemProps> = ({ title, childre
       >
         <div
           ref={contentRef}
-          className="px-4 pb-4 pt-2 transition-colors duration-300 text-[#555555] text-[20px] md:text-[25px] font-[400] lato-font"
+          className="px-4 pb-4 pt-2 transition-colors duration-300 text-[#26394D] text-[20px] md:text-[25px] font-[400] lato-font"
         >
           {children}
         </div>

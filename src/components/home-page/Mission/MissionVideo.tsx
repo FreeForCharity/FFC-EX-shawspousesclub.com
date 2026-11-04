@@ -66,7 +66,7 @@ const MissionVideo = () => {
             className="w-full"
           />
           <span className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-            <span className="flex h-[72px] w-[72px] items-center justify-center rounded-full bg-black/60 transition-colors group-hover:bg-[#b35000]">
+            <span className="flex h-[72px] w-[72px] items-center justify-center rounded-full bg-[#26394D]/60 transition-colors group-hover:bg-[#376BCD]">
               <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
                 <path d="M28 16 0 32V0l28 16Z" fill="#fff" />
               </svg>

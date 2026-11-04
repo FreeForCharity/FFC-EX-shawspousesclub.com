@@ -1,8 +1,8 @@
 {
   "schemaVersion": "ffc.site-profile.v1",
-  "siteId": "https://shawspousesclub.org",
+  "siteId": "https://freeforcharity.github.io",
   "siteName": "Shaw Spouses' Club",
-  "canonicalUrl": "https://shawspousesclub.org",
+  "canonicalUrl": "https://freeforcharity.github.io",
   "organization": {
     "name": "Shaw Spouses' Club",
     "ein": "57-0643096",
@@ -18,14 +18,14 @@
     "branch": "main"
   },
   "contacts": {
-    "primaryEmail": "publicrelations.ShawSC@gmail.com",
-    "vulnerabilityDisclosureUrl": "https://shawspousesclub.org/vulnerability-disclosure-policy"
+    "primaryEmail": "shawspousesclub@outlook.com",
+    "vulnerabilityDisclosureUrl": "https://freeforcharity.github.io/vulnerability-disclosure-policy"
   },
   "profileEndpoints": {
-    "siteProfile": "https://shawspousesclub.org/site-profile.json",
-    "securityTxt": "https://shawspousesclub.org/security.txt",
-    "sitemap": "https://shawspousesclub.org/sitemap.xml",
-    "robots": "https://shawspousesclub.org/robots.txt"
+    "siteProfile": "https://freeforcharity.github.io/site-profile.json",
+    "securityTxt": "https://freeforcharity.github.io/security.txt",
+    "sitemap": "https://freeforcharity.github.io/sitemap.xml",
+    "robots": "https://freeforcharity.github.io/robots.txt"
   },
   "trust": {
     "generatedBy": "Free For Charity template factory",

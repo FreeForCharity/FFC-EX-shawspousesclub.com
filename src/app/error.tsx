@@ -34,7 +34,7 @@ export default function GlobalError({
           persists, please report it via our{' '}
           <Link
             href={siteConfig.vulnerabilityDisclosurePath}
-            className="text-[#0073e6] underline decoration-dotted hover:decoration-solid"
+            className="text-[#4F83E5] underline decoration-dotted hover:decoration-solid"
           >
             disclosure form
           </Link>
@@ -47,13 +47,13 @@ export default function GlobalError({
           <button
             type="button"
             onClick={reset}
-            className="inline-flex items-center justify-center bg-[#0073e6] hover:bg-[#005BB7] text-white px-6 py-3 text-[16px] font-semibold transition-colors"
+            className="inline-flex items-center justify-center bg-[#4F83E5] hover:bg-[#376BCD] text-white px-6 py-3 text-[16px] font-semibold transition-colors"
           >
             Try again
           </button>
           <Link
             href="/"
-            className="inline-flex items-center justify-center border border-[#0073e6] text-[#0073e6] hover:bg-[#0073e6] hover:text-white px-6 py-3 text-[16px] font-semibold transition-colors"
+            className="inline-flex items-center justify-center border border-[#4F83E5] text-[#4F83E5] hover:bg-[#4F83E5] hover:text-white px-6 py-3 text-[16px] font-semibold transition-colors"
           >
             Go home
           </Link>

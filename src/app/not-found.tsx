@@ -15,7 +15,7 @@ export default function NotFound() {
       aria-labelledby="not-found-heading"
     >
       <div className="w-[90%] md:w-[80%] mx-auto text-center">
-        <p className="text-[14px] font-semibold tracking-widest text-[#0073e6] uppercase">404</p>
+        <p className="text-[14px] font-semibold tracking-widest text-[#4F83E5] uppercase">404</p>
         <h1
           id="not-found-heading"
           className="mt-4 text-[34px] md:text-[42px] font-bold text-[#333]"
@@ -29,13 +29,13 @@ export default function NotFound() {
         <div className="mt-10 flex items-center justify-center gap-4 flex-wrap">
           <Link
             href="/"
-            className="inline-flex items-center justify-center bg-[#0073e6] hover:bg-[#005BB7] text-white px-6 py-3 text-[16px] font-semibold transition-colors"
+            className="inline-flex items-center justify-center bg-[#4F83E5] hover:bg-[#376BCD] text-white px-6 py-3 text-[16px] font-semibold transition-colors"
           >
             Go to homepage
           </Link>
           <Link
             href={siteConfig.vulnerabilityDisclosurePath}
-            className="inline-flex items-center justify-center border border-[#0073e6] text-[#0073e6] hover:bg-[#0073e6] hover:text-white px-6 py-3 text-[16px] font-semibold transition-colors"
+            className="inline-flex items-center justify-center border border-[#4F83E5] text-[#4F83E5] hover:bg-[#4F83E5] hover:text-white px-6 py-3 text-[16px] font-semibold transition-colors"
           >
             Report an issue
           </Link>

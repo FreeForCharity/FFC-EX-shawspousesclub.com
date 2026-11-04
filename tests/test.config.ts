@@ -125,7 +125,7 @@ export const testConfig = {
   logo: {
     // The header logo's alt text is the site name (src/components/header).
     headerAlt: siteConfig.name,
-    heroAlt: `${siteConfig.name} logo`,
+    heroAlt: 'Hero image',
     navBarAriaLabel: `${siteConfig.name} home`,
   },
 

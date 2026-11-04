@@ -59,14 +59,14 @@ const Index = () => {
                 ? 'By donating you help drive our mission and allow us to support more charities with our Domain, Website, and other services.'
                 : `By donating you help drive ${siteConfig.name}'s mission.`}
             </p>
-            {/* Club photo: Team Shaw airmen with donated goods */}
+            {/* Pointing hands image - flipped horizontally to point toward the form on the right */}
             <div className="w-full flex justify-center lg:justify-end">
               <div className="relative w-full max-w-[400px] aspect-[578/386]">
                 <Image
                   src={assetPath('/Images/support-free-for-charity.webp')}
-                  alt={`Airmen with goods donated through ${siteConfig.name}`}
+                  alt="support free for charity image"
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-contain scale-x-[-1]"
                   loading="lazy"
                 />
               </div>
@@ -96,7 +96,7 @@ const Index = () => {
                   {...(/^https:/i.test(donateLink)
                     ? { target: '_blank', rel: 'noopener noreferrer' }
                     : {})}
-                  className="rounded-[27px] flex items-center justify-center px-[32px] py-[18px] text-white bg-[#0b6cb8] text-[20px] font-[400] lato-font"
+                  className="rounded-[27px] flex items-center justify-center px-[32px] py-[18px] text-white bg-[#4F83E5] text-[20px] font-[400] lato-font"
                 >
                   Donate to {siteConfig.name}
                 </a>
