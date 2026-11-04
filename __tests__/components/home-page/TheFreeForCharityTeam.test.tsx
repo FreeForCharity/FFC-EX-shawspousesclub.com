@@ -35,9 +35,53 @@ describe('TheFreeForCharityTeam', () => {
     // provisioned charity may list a single board member.
     // queryAll, not getAll: a pending roster has no configured member yet.
     const names = screen.queryAllByRole('heading', { level: 3 })
-    expect(names.map((n) => n.textContent)).toEqual(configuredTeam.map((m) => m.name))
+    const preview = siteConfig.teamPreview
+    const expected =
+      preview && preview.count > 0 && configuredTeam.length > preview.count
+        ? configuredTeam.slice(0, preview.count)
+        : configuredTeam
+    expect(names.map((n) => n.textContent)).toEqual(expected.map((m) => m.name))
     // No portrait images anywhere in the team section.
     expect(container.querySelectorAll('img').length).toBe(0)
+  })
+})
+
+describe('TheFreeForCharityTeam preview', () => {
+  afterEach(restoreSiteConfig)
+
+  it('shows only the first `count` members and links to the full roster', () => {
+    // Needs a roster larger than the preview; the club's has 16 members.
+    expect(configuredTeam.length).toBeGreaterThan(2)
+    siteConfig.teamPreview = {
+      count: 2,
+      label: 'Meet the full board',
+      href: '/board#governing-board',
+    }
+    render(<Team />)
+    const names = screen.getAllByRole('heading', { level: 3 }).map((n) => n.textContent)
+    expect(names).toEqual(configuredTeam.slice(0, 2).map((m) => m.name))
+    const link = screen.getByRole('link', { name: 'Meet the full board' })
+    expect(link.getAttribute('href')).toMatch(/\/board#governing-board$/)
+  })
+
+  it('shows everyone, with no link, when the roster fits within the preview', () => {
+    siteConfig.teamPreview = { count: 999, label: 'Meet the full board', href: '/board' }
+    render(<Team />)
+    expect(screen.queryAllByRole('heading', { level: 3 })).toHaveLength(configuredTeam.length)
+    expect(screen.queryByRole('link', { name: 'Meet the full board' })).toBeNull()
+  })
+
+  it('ignores a non-positive count', () => {
+    siteConfig.teamPreview = { count: 0, label: 'Meet the full board', href: '/board' }
+    render(<Team />)
+    expect(screen.queryAllByRole('heading', { level: 3 })).toHaveLength(configuredTeam.length)
+    expect(screen.queryByRole('link', { name: 'Meet the full board' })).toBeNull()
+  })
+
+  it('shows everyone when no preview is configured', () => {
+    delete siteConfig.teamPreview
+    render(<Team />)
+    expect(screen.queryAllByRole('heading', { level: 3 })).toHaveLength(configuredTeam.length)
   })
 })
 

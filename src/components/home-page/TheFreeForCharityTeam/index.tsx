@@ -4,6 +4,7 @@ import PendingNote from '@/components/ui/PendingNote'
 import { configuredTeam } from '@/data/team'
 import { teamSectionVisible } from '@/lib/section-visibility'
 import { siteConfig } from '@/lib/site.config'
+import { assetPath } from '@/lib/assetPath'
 
 // Team members are sourced from src/data/team/*.json (aggregated in
 // src/data/team.ts). To change the team, edit those JSON files — no need to
@@ -30,8 +31,16 @@ const index = () => {
   // a visible "awaiting information" placeholder instead — see PendingField.
   if (!teamSectionVisible()) return null
 
-  const topRow = configuredTeam.slice(0, 3)
-  const bottomRow = configuredTeam.slice(3)
+  // A preview shows the first `count` members (the officers) in one row and
+  // links to the page with the full roster; without one, everyone is shown.
+  const preview = siteConfig.teamPreview
+  const previewing = !!preview && preview.count > 0 && configuredTeam.length > preview.count
+  const shown = previewing ? configuredTeam.slice(0, preview.count) : configuredTeam
+  const topRow = previewing ? shown : shown.slice(0, 3)
+  const bottomRow = previewing ? [] : shown.slice(3)
+  const topGrid = previewing
+    ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch justify-center mb-[50px] gap-[30px]'
+    : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  items-stretch justify-center mb-[50px] gap-[30px]'
 
   return (
     <div id="team" className="py-[50px]">
@@ -43,7 +52,7 @@ const index = () => {
         <PendingNote className="text-center text-[20px] text-gray-700 lato-font" />
       )}
       <div className="w-[90%] mx-auto py-[40px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  items-stretch justify-center mb-[50px] gap-[30px]">
+        <div className={topGrid}>
           {topRow.map((member) => (
             <TeamMemberCard
               key={member.name}
@@ -63,6 +72,16 @@ const index = () => {
                 linkedinUrl={member.linkedinUrl}
               />
             ))}
+          </div>
+        )}
+        {previewing && preview && (
+          <div className="text-center">
+            <a
+              href={assetPath(preview.href)}
+              className="inline-flex items-center justify-center rounded-[27px] px-[32px] py-[14px] bg-[#0b6cb8] text-white text-[20px] font-[400] lato-font hover:bg-[#08528f]"
+            >
+              {preview.label}
+            </a>
           </div>
         )}
       </div>
