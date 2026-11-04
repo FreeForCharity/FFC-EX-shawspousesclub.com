@@ -48,10 +48,7 @@ describe('nav links respect section visibility', () => {
     siteConfig.sections.showPrograms = false
     render(<Header />)
 
-    expect(screen.getByRole('link', { name: 'Membership' })).toHaveAttribute(
-      'href',
-      '/membership'
-    )
+    expect(screen.getByRole('link', { name: 'Membership' })).toHaveAttribute('href', '/membership')
     expect(screen.getByRole('link', { name: 'Giving Back' })).toHaveAttribute(
       'href',
       '/giving-back'

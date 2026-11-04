@@ -38,9 +38,9 @@ describe("a charity's own programs", () => {
     expect(screen.getByText('First paragraph of program one.')).toBeInTheDocument()
     expect(screen.getByText('A bullet for program one.')).toBeInTheDocument()
     expect(screen.getByText('Sample intro for the programs section.')).toBeInTheDocument()
-    expect(
-        screen.getAllByRole('link').map((link) => link.getAttribute('href'))
-    ).toContain('/giving-back/scholarships')
+    expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toContain(
+      '/giving-back/scholarships'
+    )
   })
 
   it("never shows the supporting organization's program copy", () => {

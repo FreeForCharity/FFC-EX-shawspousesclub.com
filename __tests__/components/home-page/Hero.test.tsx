@@ -30,7 +30,7 @@ describe('Hero', () => {
     expect(container.querySelector('#hero')).not.toBeNull()
   })
 
-  it("keeps the supporting organization strapline and shows the Donate link", () => {
+  it('keeps the supporting organization strapline and shows the Donate link', () => {
     asSupporterSite()
     render(<Hero />)
     expect(screen.getByText(/Connecting Students, Professionals/)).toBeInTheDocument()

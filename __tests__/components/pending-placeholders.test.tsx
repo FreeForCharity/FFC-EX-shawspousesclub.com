@@ -44,7 +44,7 @@ describe('pending footer fields', () => {
     // As checked in: none on the template itself, one per pending footer field
     // on a charity site that has some ('team' renders in its own section).
     const shipped = (siteConfig.pending ?? []).filter(
-    (field) => field !== 'team' && field !== 'volunteerUrl'
+      (field) => field !== 'team' && field !== 'volunteerUrl'
     )
     const asShipped = render(<Footer />)
     expect(placeholders(asShipped.container)).toHaveLength(shipped.length)
