@@ -37,7 +37,7 @@ describe('TheFreeForCharityTeam', () => {
     const names = screen.queryAllByRole('heading', { level: 3 })
     const preview = siteConfig.teamPreview
     const expected =
-      preview && configuredTeam.length > preview.count
+      preview && preview.count > 0 && configuredTeam.length > preview.count
         ? configuredTeam.slice(0, preview.count)
         : configuredTeam
     expect(names.map((n) => n.textContent)).toEqual(expected.map((m) => m.name))
