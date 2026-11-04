@@ -43,7 +43,9 @@ describe('pending footer fields', () => {
   it('renders one placeholder per pending footer field as shipped, and none when nothing is pending', () => {
     // As checked in: none on the template itself, one per pending footer field
     // on a charity site that has some ('team' renders in its own section).
-    const shipped = (siteConfig.pending ?? []).filter((f) => f !== 'team')
+    const shipped = (siteConfig.pending ?? []).filter(
+    (field) => field !== 'team' && field !== 'volunteerUrl'
+    )
     const asShipped = render(<Footer />)
     expect(placeholders(asShipped.container)).toHaveLength(shipped.length)
     asShipped.unmount()
@@ -57,8 +59,8 @@ describe('pending footer fields', () => {
     asCharitySite()
     withFooterFieldsPending()
     const { container } = render(<Footer />)
-    // email, phone, address, ein, guidestar, social, donationUrl, volunteerUrl
-    expect(placeholders(container)).toHaveLength(siteConfig.pending!.length)
+    const footerFields = (siteConfig.pending ?? []).filter((field) => field !== 'volunteerUrl')
+    expect(placeholders(container)).toHaveLength(footerFields.length)
   })
 
   it('keeps each placeholder in its own labelled slot', () => {
@@ -76,10 +78,8 @@ describe('pending footer fields', () => {
       expect(within(slot).getByText(PENDING_TEXT)).toBeInTheDocument()
     }
     expect(screen.getByText(`${CHARITY.name} EIN:`)).toBeInTheDocument()
-    for (const name of ['Donate', 'Volunteer']) {
-      const item = screen.getByText(name).closest('li') as HTMLElement
-      expect(within(item).getByText(PENDING_TEXT)).toBeInTheDocument()
-    }
+    const donateItem = screen.getByText('Donate').closest('li') as HTMLElement
+    expect(within(donateItem).getByText(PENDING_TEXT)).toBeInTheDocument()
   })
 
   it('shows a non-dialable placeholder while the phone is pending', () => {

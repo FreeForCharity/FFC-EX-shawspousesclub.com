@@ -30,11 +30,14 @@ describe('Hero', () => {
     expect(container.querySelector('#hero')).not.toBeNull()
   })
 
-  it("keeps the supporting organization's strapline and Programs link on its own site", () => {
+  it("keeps the supporting organization strapline and shows the Donate link", () => {
     asSupporterSite()
     render(<Hero />)
     expect(screen.getByText(/Connecting Students, Professionals/)).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Our Programs' })).toHaveAttribute('href', '#programs')
+    expect(screen.getByRole('link', { name: 'Donate' })).toHaveAttribute(
+      'href',
+      'https://www.zeffy.com/en-US/donation-form/donate-to-the-shaw-spouses-club'
+    )
   })
 
   it("welcomes visitors to a charity's own site in the charity's own words", () => {

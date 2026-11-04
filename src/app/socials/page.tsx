@@ -34,11 +34,11 @@ export default function SocialsPage() {
           RSVP for Movie Night
         </a>
         <a
-          href={assetPath('/Images/movie-on-the-lawn.png')}
+          href={assetPath('/Images/movie-on-the-lawn.webp')}
           aria-label="Open the full-size Movie Night on the Lawn flyer"
         >
           <Image
-            src={assetPath('/Images/movie-on-the-lawn.png')}
+            src={assetPath('/Images/movie-on-the-lawn.webp')}
             alt="Shaw Spouses’ Club Movie Night on the Lawn flyer. November 12, 6 PM, free entry at The Cabin at Alice Drive Baptist Church, 1305 Loring Mill Road. RSVP QR code included."
             width={1545}
             height={2000}

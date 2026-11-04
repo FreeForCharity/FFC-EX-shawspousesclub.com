@@ -135,7 +135,7 @@ describe('Footer component', () => {
     expect(hubLink).toHaveAttribute('href', siteConfig.supportedBy.hubUrl)
   })
 
-  it('links exactly the six policy pages of the footer standard, each branded to the site', () => {
+  it('links to Legal Documents and the six branded policy pages', () => {
     render(<Footer />)
     const policyNav = screen.getByRole('navigation', { name: 'Policy links' })
     const links = Array.from(policyNav.querySelectorAll('a')).map((a) => ({
@@ -143,6 +143,7 @@ describe('Footer component', () => {
       href: a.getAttribute('href'),
     }))
     expect(links).toEqual([
+      { name: 'Legal Documents', href: '/legal-documents' },
       { name: `${siteConfig.name} Donation Policy`, href: '/donation-policy' },
       { name: `${siteConfig.name} Privacy Policy`, href: '/privacy-policy' },
       { name: `${siteConfig.name} Cookie Policy`, href: '/cookie-policy' },

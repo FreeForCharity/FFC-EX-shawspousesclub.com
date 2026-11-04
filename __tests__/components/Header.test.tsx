@@ -20,8 +20,8 @@ describe('Header component', () => {
 
   it("should display the site's logo, named for the site", () => {
     render(<Header />)
-    // The logo's alt text is the site's own name, so it follows a rebrand.
-    expect(screen.getByAltText(siteConfig.name)).toBeInTheDocument()
+    // The banner's alt text includes the site's name.
+    expect(screen.getByAltText(`${siteConfig.name} banner`)).toBeInTheDocument()
   })
 
   it('should display Home navigation link', () => {

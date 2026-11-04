@@ -70,14 +70,14 @@ export default function AuctionPage() {
           </div>
           <p className="mb-6 text-[#26394D]">Ticket information will be posted when available.</p>
           <a
-            href={assetPath('/Images/auction/auction-save-the-date_orig.png')}
+            href={assetPath('/Images/auction/auction-save-the-date_orig.webp')}
             target="_blank"
             rel="noopener noreferrer"
             className="mb-10 block"
             aria-label="Open the Charity Auction save-the-date flyer (new tab)"
           >
             <Image
-              src={assetPath('/Images/auction/auction-save-the-date_orig.png')}
+              src={assetPath('/Images/auction/auction-save-the-date_orig.webp')}
               alt="Annual Charity Auction: Jungle Safari, February 20, 2027, doors open at 5 PM at The Magnolia Club. Silent and live auctions support grants and scholarships."
               width={1080}
               height={1350}

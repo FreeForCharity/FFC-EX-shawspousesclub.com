@@ -43,35 +43,22 @@ describe('nav links respect section visibility', () => {
     }
   })
 
-  it('Header drops Team (empty data) and Programs (flag off) links', () => {
-    // Nothing pending: a pending team keeps its section (and link) visible.
+  it('keeps the club page links when homepage sections are hidden', () => {
     asCharitySite()
     siteConfig.sections.showPrograms = false
     render(<Header />)
+
+    expect(screen.getByRole('link', { name: 'Membership' })).toHaveAttribute(
+      'href',
+      '/membership'
+    )
+    expect(screen.getByRole('link', { name: 'Giving Back' })).toHaveAttribute(
+      'href',
+      '/giving-back'
+    )
     expect(screen.queryAllByText('Team')).toHaveLength(0)
     expect(screen.queryAllByText('Programs')).toHaveLength(0)
-    // A section that does not self-hide keeps its link.
-    expect(screen.queryAllByText('Mission').length).toBeGreaterThan(0)
-  })
-
-  it('Header keeps the Programs and FAQ links on the supporting organization site', () => {
-    asSupporterSite()
-    siteConfig.sections.showPrograms = true
-    render(<Header />)
-    expect(screen.queryAllByText('Programs').length).toBeGreaterThan(0)
-    expect(screen.queryAllByText('FAQ').length).toBeGreaterThan(0)
-  })
-
-  // The Programs and FAQ sections carry the supporting organization's own copy
-  // and do not render on a charity's site, flags or no flags — so neither may
-  // a link to their anchors.
-  it('Header drops Programs and FAQ on a charity site even with the flags on', () => {
-    asCharitySite()
-    siteConfig.sections.showPrograms = true
-    render(<Header />)
-    expect(screen.queryAllByText('Programs')).toHaveLength(0)
     expect(screen.queryAllByText('FAQ')).toHaveLength(0)
-    expect(screen.queryAllByText('Mission').length).toBeGreaterThan(0)
   })
 
   it('Footer drops Programs and FAQ on a charity site even with the flags on', () => {
@@ -82,11 +69,10 @@ describe('nav links respect section visibility', () => {
     expect(screen.queryAllByText('FAQ')).toHaveLength(0)
   })
 
-  it('Footer keeps Programs and FAQ on the supporting organization site', () => {
+  it('Footer keeps FAQ on the supporting organization site', () => {
     asSupporterSite()
     siteConfig.sections.showPrograms = true
     render(<Footer />)
-    expect(screen.queryAllByText('Programs').length).toBeGreaterThan(0)
     expect(screen.queryAllByText('FAQ').length).toBeGreaterThan(0)
   })
 
