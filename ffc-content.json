@@ -1,12 +1,12 @@
 {
-  "domain": "shawspousesclub.org",
+  "domain": "shawspousesclub.com",
   "charityName": "Shaw Spouses' Club",
   "websiteSituation": "Existing domain name and existing website (WordPress / formal hosting)",
   "currentWebsiteUrl": "https://www.shawspousesclub.com",
   "domainRegistrar": "Other / another registrar",
   "requesterGitHubUsername": "clarkemoyer",
   "technicalPocGitHubUsername": "",
-  "cloudflareZoneControlled": true,
+  "cloudflareZoneControlled": false,
   "footer": {
     "email": "",
     "phone": "",

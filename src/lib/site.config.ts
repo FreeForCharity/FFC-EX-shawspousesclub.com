@@ -167,30 +167,6 @@ export type SiteConfig = {
    */
   parentOrg?: { name: string; url: string; hubUrl: string }
   /**
-   * Third-party memberships or recognitions the charity itself displays (e.g. a
-   * chamber-of-commerce member badge). Rendered as images in the footer's
-   * Endorsements column. `imageFile` is a file name under public/Images. Only list
-   * what the charity already publishes; this is a public claim.
-   */
-  endorsements?: readonly { name: string; imageFile: string; href?: string }[]
-  /**
-   * Optional YouTube video id shown under the mission on a charity's site
-   * (embedded via youtube-nocookie.com, which the CSP already allows).
-   */
-  missionYouTubeId?: string
-  /**
-   * Optional primary hero button (e.g. "Join the Club"). When set it replaces
-   * the template's Volunteer button as the large hero call to action, and
-   * Volunteer moves into the smaller button row beside Donate.
-   */
-  heroPrimaryCta?: { label: string; href: SitePath }
-  /** Extra header menu items, e.g. a Join page. Site paths (`/membership`). */
-  headerLinks?: readonly { label: string; path: SitePath }[]
-  /** Extra footer Quick Links, e.g. the site's content pages. Site paths. */
-  footerLinks?: readonly { name: string; href: SitePath }[]
-  /** Optional intro for the Volunteer section; the template's generic copy otherwise. */
-  volunteerIntro?: string
-  /**
    * Footer-standard fields still awaiting the charity. Each listed field keeps
    * an EMPTY value and renders a visible plain-text placeholder
    * (`PENDING_TEXT`) in its slot, never a link. An empty value NOT listed here
@@ -262,18 +238,13 @@ export type SiteConfig = {
   }
 }
 
-/** A same-site path such as '/membership' (never a full URL or a bare slug). */
-export type SitePath = `/${string}`
-
 export const siteConfig: SiteConfig = {
   name: "Shaw Spouses' Club",
   tagline: 'Supporting military families at Shaw AFB',
   mission:
     "The Shaw Spouses' Club is a non-profit private organization dedicated to promoting a supportive atmosphere to our military families and community through camaraderie, social activities, scholarships, and charitable giving.",
   // Empty = a charity's Donate / Volunteer sections email contactEmail instead.
-  // The club's own Zeffy page for auction and scholarship donations (linked
-  // from the .com Sponsors page). No volunteer page: Volunteer emails the club.
-  donationUrl: 'https://www.zeffy.com/en-US/ticketing/ssc-auction-donations',
+  donationUrl: 'https://www.zeffy.com/en-US/donation-form/donate-to-the-shaw-spouses-club',
   volunteerUrl: '',
   description:
     "The Shaw Spouses' Club is a non-profit private organization dedicated to promoting a supportive atmosphere to our military families and community through camaraderie, social activities, scholarships, and charitable giving.",
@@ -285,8 +256,7 @@ export const siteConfig: SiteConfig = {
   // A fork with a custom domain sets its own origin here (and no basePath).
   url: 'https://shawspousesclub.org',
   twitterHandle: '',
-  // The club's public contact address, as listed on every .com page.
-  contactEmail: 'publicrelations.ShawSC@gmail.com',
+  contactEmail: 'shawspousesclub@outlook.com',
   keywords: [
     "Shaw Spouses' Club",
     'Shaw AFB',
@@ -296,13 +266,13 @@ export const siteConfig: SiteConfig = {
     'military scholarships',
     'nonprofit',
   ],
-  themeColor: '#0b6cb8',
+  themeColor: '#F4F7FF',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
   social: [
     { label: 'Facebook', href: 'https://www.facebook.com/shawsc' },
     { label: 'Instagram', href: 'https://instagram.com/shawspousesclub' },
     { label: 'YouTube', href: 'https://www.youtube.com/channel/UCF5ssxoB8YrSw7-vyVBP4qw' },
-    { label: 'Pinterest', href: 'https://www.pinterest.com/publicrelationsshawsc/boards/' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/shaw-spouses-club' },
   ],
   ein: '57-0643096',
   nonprofitStatus: 'https://schema.org/Nonprofit501c3',
@@ -315,9 +285,6 @@ export const siteConfig: SiteConfig = {
         'https://www.google.com/maps/search/?api=1&query=PO%20Box%2052337%20Shaw%20AFB%2C%20SC%2029152',
     },
   ],
-  // profileUrl is empty on purpose: it drives the footer's Platinum Seal
-  // artwork, and the club's seal level is not verified. The direct profile
-  // link below is the club's real Candid profile.
   guidestar: {
     profileUrl: '',
     directProfileUrl: 'https://app.candid.org/profile/7874261/shaw-spouses-club-57-0643096',
@@ -331,37 +298,11 @@ export const siteConfig: SiteConfig = {
     cookieContactEmail: 'clarkemoyer@freeforcharity.org',
   },
   taxStatusLabel: 'a US 501c3 Non Profit',
-  // The "About Us" video embedded on the club's .com home page.
-  missionYouTubeId: 'jxdcAdVtVdE',
-  // Membership is the club's primary ask, so it leads the hero and header.
-  heroPrimaryCta: { label: 'Join the Club', href: '/membership' },
-  headerLinks: [{ label: 'Join', path: '/membership' }],
-  footerLinks: [
-    { name: 'Membership', href: '/membership' },
-    { name: 'Socials', href: '/socials' },
-    { name: 'Scholarships', href: '/scholarships' },
-    { name: 'Auction and Fundraisers', href: '/auction' },
-    { name: 'Charitable Giving', href: '/giving' },
-    { name: 'Board and Governance', href: '/board' },
-  ],
-  volunteerIntro:
-    'Lend a hand at our Annual Scholarship Auction, Shower Shaw and our monthly socials, or serve on the board. Several 2026-2027 board positions are open. Email us and we will find the right fit for you.',
-  endorsements: [
-    {
-      name: 'Proud 2026 member of the Greater Sumter Chamber of Commerce',
-      imageFile: 'sumter-chamber-member-2026.webp',
-      href: 'https://www.sumterchamber.com/',
-    },
-  ],
   sections: {
-    showEndowment: true, // renders only on the supporting organization's site
+    showEndowment: true,
     showPrograms: true,
     showEvents: true,
   },
-  // These are the supporting organization's own integrations. The template
-  // uses them only on that organization's site (see donationEmbedUrl and
-  // eventsFacebookPageUrl), so they never render here; they are kept because
-  // the shared tests exercise that site's branch.
   integrations: {
     zeffyDonationUrl: 'https://www.zeffy.com/embed/donation-form/free-for-charity-endowment-fund',
     idealistUrl:
@@ -370,9 +311,9 @@ export const siteConfig: SiteConfig = {
     microsoftFormUrl: 'https://forms.office.com/r/vePxGq6JqG',
   },
 
-  // Nothing pending: the club publishes no phone number, so the footer omits
-  // the Call Us block.
-  pending: [],
+  // Footer-standard fields still awaiting the charity; each renders a visible
+  // 'awaiting information' placeholder until it is filled in.
+  pending: ['volunteerUrl', 'phone', 'team'],
 }
 
 /**

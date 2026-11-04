@@ -273,11 +273,6 @@ async function smoke() {
     for (const r of failed) console.error(`  - ${r.name}${r.detail ? ` (${r.detail})` : ''}`)
     process.exit(1)
   }
-  // Exit explicitly on success too. Waiting for the event loop to drain lets
-  // a lingering keep-alive socket hold the process open: on 2026-11-03 the
-  // deploy job printed "24/24 checks passed" and then sat until the step's
-  // 5-minute timeout killed it, turning a clean deploy red.
-  process.exit(0)
 }
 
 smoke().catch((err) => {

@@ -1,17 +1,10 @@
-import type { Metadata } from 'next'
-import ClubPage from '@/components/club-page'
-import { clubPage } from '@/data/club-pages'
 import { pageMetadata } from '@/lib/page-metadata'
+import MembershipPage from '@/components/site-pages/MembershipPage'
 
-const page = clubPage('membership')
-
-// Bare page name as title (the root layout template appends the brand).
-export const metadata: Metadata = pageMetadata({
-  title: page.title,
-  description: page.description,
+export const metadata = pageMetadata({
+  title: 'Membership',
+  description: 'Learn who can join the Shaw Spouses’ Club and how to become a member.',
   canonical: '/membership',
 })
 
-export default function Page() {
-  return <ClubPage page={page} />
-}
+export default MembershipPage

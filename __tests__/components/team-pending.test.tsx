@@ -11,7 +11,6 @@ jest.mock('@/data/team', () => ({
 }))
 
 import Team, { teamHeading } from '@/components/home-page/TheFreeForCharityTeam'
-import Header from '@/components/header'
 import Footer from '@/components/footer'
 import { PENDING_TEXT, siteConfig } from '@/lib/site.config'
 import { asCharitySite, CHARITY, restoreSiteConfig } from '../helpers/site-identity'
@@ -28,16 +27,10 @@ describe('pending team', () => {
     expect(note.closest('a')).toBeNull()
   })
 
-  it('keeps the Header and Footer Team links, since the #team section renders', () => {
+  it('keeps the footer Team link when the team is pending', () => {
     asCharitySite({ pending: ['team'] })
-    render(<Header />)
-    expect(screen.queryAllByText('Team').length).toBeGreaterThan(0)
     render(<Footer />)
-    const footerTeam = screen
-      .getAllByText('Team')
-      .map((el) => el.closest('a'))
-      .filter((a) => a?.getAttribute('href') === '/#team')
-    expect(footerTeam.length).toBeGreaterThan(0)
+    expect(screen.getByRole('link', { name: 'Team' })).toHaveAttribute('href', '/board')
   })
 
   it('self-hides (with its nav links) when the empty team is NOT pending', () => {

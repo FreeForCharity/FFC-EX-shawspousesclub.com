@@ -38,7 +38,9 @@ describe("a charity's own programs", () => {
     expect(screen.getByText('First paragraph of program one.')).toBeInTheDocument()
     expect(screen.getByText('A bullet for program one.')).toBeInTheDocument()
     expect(screen.getByText('Sample intro for the programs section.')).toBeInTheDocument()
-    expect(screen.getByText('Sample disclaimer line.')).toBeInTheDocument()
+    expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toContain(
+      '/giving-back/scholarships'
+    )
   })
 
   it("never shows the supporting organization's program copy", () => {
@@ -46,16 +48,12 @@ describe("a charity's own programs", () => {
     expect(container.textContent).not.toMatch(/FFC Domains|Free For Charity|Ready to Get Started/)
   })
 
-  it('links to the section from the header, footer and hero', () => {
-    render(
-      <>
-        <Header />
-        <Hero />
-        <Footer />
-      </>
+  it('links to Giving Back from the header', () => {
+    render(<Header />)
+    expect(screen.getByRole('link', { name: 'Giving Back' })).toHaveAttribute(
+      'href',
+      '/giving-back'
     )
-    expect(screen.getAllByText('Programs').length).toBeGreaterThan(0)
-    expect(screen.getByRole('link', { name: 'Our Programs' })).toHaveAttribute('href', '#programs')
   })
 
   it('hides the section when showPrograms is off', () => {

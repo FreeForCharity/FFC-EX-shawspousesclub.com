@@ -59,12 +59,12 @@ export default function CookiePolicy() {
               Remember your cookie consent preferences
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              Understand how you use our website (in the EEA, the UK and Switzerland only after you
+              Understand how you use our website (in the EEA, the UK, and Switzerland only after you
               accept; elsewhere from your first visit — see &quot;When we ask permission first&quot;
               in Section 3.3)
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
-              Analyze website traffic and user behavior (in the EEA, the UK and Switzerland only
+              Analyze website traffic and user behavior (in the EEA, the UK, and Switzerland only
               after you accept; elsewhere from your first visit — see &quot;When we ask permission
               first&quot; in Section 3.3)
             </li>
@@ -155,7 +155,7 @@ export default function CookiePolicy() {
                 href="https://privacy.microsoft.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-[#234F93] underline"
               >
                 https://privacy.microsoft.com/
               </a>
@@ -166,7 +166,7 @@ export default function CookiePolicy() {
                 href="https://legal.hubspot.com/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-[#234F93] underline"
               >
                 https://legal.hubspot.com/privacy-policy
               </a>
@@ -175,9 +175,10 @@ export default function CookiePolicy() {
 
           {/* Zeffy */}
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <h3 className="font-semibold mb-2 text-[#333]">Zeffy Donation Platform</h3>
+            <h3 className="font-semibold mb-2 text-[#333]">Zeffy Payments and Ordering</h3>
             <p className="text-sm mb-2 text-[#666]">
-              Zero-fee donation processing platform embedded on our website to accept donations.
+              Zeffy provides donation and T-shirt ordering forms embedded on our website. Form and
+              payment information is processed by Zeffy.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -191,8 +192,10 @@ export default function CookiePolicy() {
                 <tbody>
                   <tr>
                     <td className="py-2 pr-4 font-mono text-[#666]">Zeffy</td>
-                    <td className="py-2 pr-4 text-[#666]">Donation form and payment processing</td>
-                    <td className="py-2 text-[#666]">Embedded on donation section</td>
+                    <td className="py-2 pr-4 text-[#666]">
+                      Donation and merchandise form processing
+                    </td>
+                    <td className="py-2 text-[#666]">When a Zeffy form is viewed</td>
                   </tr>
                 </tbody>
               </table>
@@ -203,7 +206,7 @@ export default function CookiePolicy() {
                 href="https://support.zeffy.com/legal-data-privacy-security"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-[#234F93] underline"
               >
                 https://support.zeffy.com/legal-data-privacy-security
               </a>
@@ -219,13 +222,13 @@ export default function CookiePolicy() {
             and reporting information anonymously. We use this information to improve our website
             and user experience.
           </p>
-          <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
+          <div className="bg-[#F4F7FF] border-l-4 border-[#4F83E5] p-4 mb-4">
             <p className="text-sm text-[#333] mb-2">
               <strong>When we ask permission first</strong>
             </p>
             <p className="text-sm text-[#666] mb-2">
               We use Google Consent Mode, and what it does depends on where you are. In the European
-              Economic Area, the United Kingdom and Switzerland, Google&apos;s tags set{' '}
+              Economic Area, the United Kingdom, and Switzerland, Google&apos;s tags set{' '}
               <strong>
                 no analytics or advertising cookies and collect no identifiers from your device
               </strong>{' '}
@@ -294,7 +297,7 @@ export default function CookiePolicy() {
                 href="https://policies.google.com/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-[#234F93] underline"
               >
                 https://policies.google.com/privacy
               </a>
@@ -337,7 +340,7 @@ export default function CookiePolicy() {
                 href="https://privacy.microsoft.com/en-us/privacystatement"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-[#234F93] underline"
               >
                 https://privacy.microsoft.com/privacystatement
               </a>
@@ -390,7 +393,7 @@ export default function CookiePolicy() {
                 href="https://www.facebook.com/privacy/policy/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-[#234F93] underline"
               >
                 https://www.facebook.com/privacy/policy/
               </a>
@@ -522,7 +525,7 @@ export default function CookiePolicy() {
                 href="https://tools.google.com/dlpage/gaoptout"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-[#234F93] underline"
               >
                 Google Analytics Opt-out Browser Add-on
               </a>
@@ -533,7 +536,7 @@ export default function CookiePolicy() {
                 href="https://www.facebook.com/settings/?tab=ads"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-[#234F93] underline"
               >
                 Facebook Ad Settings
               </a>
@@ -553,7 +556,7 @@ export default function CookiePolicy() {
             the <em>Do Not Sell or Share My Personal Information</em> link in the footer. Do Not
             Track is a separate, deprecated signal with no agreed meaning, and we do not act on it.
             GPC does not switch off basic analytics, which you control separately: outside the EEA,
-            the UK and Switzerland analytics cookies are set automatically (see &quot;When we ask
+            the UK, and Switzerland analytics cookies are set automatically (see &quot;When we ask
             permission first&quot; in Section 3.3), and any visitor can turn them off at any time
             via the Cookie Preferences link in the footer — we delete the cookies we set when you
             do. Microsoft Clarity and the Meta Pixel stay off everywhere unless you explicitly opt
@@ -583,7 +586,7 @@ export default function CookiePolicy() {
             </li>
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Email:</strong>{' '}
-              <ContactEmail email={legal.email} className="text-blue-600 underline" />
+              <ContactEmail email={legal.email} className="text-[#234F93] underline" />
             </li>
             {legal.name && (
               <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
@@ -594,7 +597,7 @@ export default function CookiePolicy() {
             {phone && (
               <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
                 <strong>Phone:</strong>{' '}
-                <a href={`tel:${phone.tel}`} className="text-blue-600 underline">
+                <a href={`tel:${phone.tel}`} className="text-[#234F93] underline">
                   {phone.display}
                 </a>
               </li>
@@ -612,7 +615,7 @@ export default function CookiePolicy() {
           </h2>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
             For more information about how we handle your personal data, please see our{' '}
-            <Link href="/privacy-policy" className="text-blue-600 underline">
+            <Link href="/privacy-policy" className="text-[#234F93] underline">
               Privacy Policy
             </Link>
             .

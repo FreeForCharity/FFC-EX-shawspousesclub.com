@@ -12,13 +12,11 @@
 # `.well-known/` (Cloudflare Pages, Netlify, plain nginx, etc.) serve both.
 # The drift checker enforces that /security.txt stays in sync with this file.
 #
-# Contact is the charity's own address. While the site's email is still
-# awaiting the charity (listed in siteConfig.pending), leave the Contact line
-# out entirely rather than list another organization's address, and add
-# `Contact: mailto:<address>` once the charity supplies one.
+# Contact is the club's own address. This temporary Outlook address should
+# be replaced when the club's .org email is available.
 
-Contact: mailto:publicrelations.ShawSC@gmail.com
-Expires: 2027-11-01T00:00:00.000Z
+Contact: mailto:shawspousesclub@outlook.com
+Expires: 2027-10-25T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://shawspousesclub.org/.well-known/security.txt
 Canonical: https://shawspousesclub.org/security.txt

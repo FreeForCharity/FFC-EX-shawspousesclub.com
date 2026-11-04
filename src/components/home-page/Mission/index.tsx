@@ -1,6 +1,5 @@
 import React from 'react'
 import MissionVideo from './MissionVideo'
-import YouTubeFacade from '@/components/ui/YouTubeFacade'
 import { isSupportingOrgSite, siteConfig } from '@/lib/site.config'
 
 const index = () => {
@@ -16,14 +15,9 @@ const index = () => {
           <p className="font-[500] text-[25px] leading-[150%] tracking-[0] text-center lato-font">
             {siteConfig.description}
           </p>
-          {siteConfig.missionYouTubeId && (
-            <div className="mt-[26px]">
-              <YouTubeFacade id={siteConfig.missionYouTubeId} title={`About ${siteConfig.name}`} />
-            </div>
-          )}
         </div>
 
-        <div className="w-[95%] mt-[50px] mx-auto border border-[#0b6cb8]"></div>
+        <div className="w-[95%] mt-[50px] mx-auto border border-[#234F93]"></div>
       </div>
     )
   }
@@ -48,7 +42,7 @@ const index = () => {
         </div>
       </div>
 
-      <div className="w-[95%] mt-[50px] mx-auto border border-[#0b6cb8]"></div>
+      <div className="w-[95%] mt-[50px] mx-auto border border-[#234F93]"></div>
     </div>
   )
 }

@@ -56,7 +56,7 @@ export default function AddToCalendarMenu({ event }: Props) {
         aria-expanded={open}
         aria-controls={menuId}
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-1 rounded-md border border-[#0b6cb8] px-3 py-2 text-sm font-[500] text-[#0b6cb8] hover:bg-[#0b6cb8] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0b6cb8] lato-font"
+        className="inline-flex items-center gap-1 rounded-md border border-[#234F93] px-3 py-2 text-sm font-[500] text-[#234F93] hover:bg-[#234F93] hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#234F93] lato-font"
       >
         Add to calendar
         <span aria-hidden="true" className="ml-1">

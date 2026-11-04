@@ -17,16 +17,10 @@ This document explains how the Free For Charity website is deployed to GitHub Pa
 
 ## Overview
 
-The Shaw Spouses' Club website is a static Next.js application deployed to GitHub Pages. The site is accessible at:
+The Free For Charity website is a static Next.js application deployed to GitHub Pages. The site is accessible at:
 
-- **Custom Domain**: https://shawspousesclub.org/ (`public/CNAME` = `shawspousesclub.org`, live since 2026-11-03)
-- **DNS**: Free For Charity Cloudflare zone, apex A/AAAA to the GitHub Pages IPs and `www` CNAME to `freeforcharity.github.io`, all DNS-only (not proxied)
-- **HTTPS**: Enforced in Settings → Pages. `http://` and `www` both 301 to `https://shawspousesclub.org/`
-- **Email**: none on `shawspousesclub.org` yet; the club's Gmail mailboxes (listed in `src/data/club-pages.ts`) are its contact points
-- **Former site**: `shawspousesclub.com` (Weebly, register.com) is being retired and pointed at this site. Everything it held lives in this repository: its pages under `/membership`, `/socials`, `/scholarships`, `/auction`, `/giving` and `/board` (content in `src/data/club-pages.ts`), its images in `public/Images/club/`, its documents in `public/docs/`, and its web forms replaced by pre-filled emails. `__tests__/data/club-pages.test.ts` fails if any of that starts depending on the old host again.
-- **Old URLs**: `public/*.html` holds redirect stubs for the 15 old `.com` page paths without a same-named route (e.g. `/cookiedrive.html` → `/giving#shower-shaw`). They take effect once `shawspousesclub.com` forwards to `shawspousesclub.org` **with the path preserved**
-
-The repository was renamed from `FFC-EX-shawspousesclub.com` to `FFC-EX-shawspousesclub.org` at cutover. GitHub redirects the old name. Because a custom domain is set, the build uses an empty basePath and the `freeforcharity.github.io/<repo>/` URL is not a working copy of the site.
+- **GitHub Pages URL**: https://freeforcharity.github.io/FFC-IN-FFC_Single_Page_Template/
+- **Custom Domain**: none — the template deploys, smoke-tests, and runs live footer checks entirely on the default URL. Forks can add one (see Custom Domain Setup below).
 
 ### Technology Stack
 

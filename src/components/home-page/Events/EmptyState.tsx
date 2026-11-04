@@ -23,7 +23,7 @@ export default function EmptyState() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Follow us on Facebook (opens in new tab)"
-          className="inline-flex items-center justify-center rounded-md bg-[#0b6cb8] px-5 py-2.5 text-sm font-[500] text-white hover:bg-[#08528f] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0b6cb8] lato-font"
+          className="inline-flex items-center justify-center rounded-md bg-[#234F93] px-5 py-2.5 text-sm font-[500] text-white hover:bg-[#376BCD] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#234F93] lato-font"
         >
           Follow us on Facebook
         </a>
