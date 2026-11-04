@@ -108,12 +108,13 @@ export default function CookiePolicy() {
 
           {/* 3.2 Functional Cookies */}
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.2 Functional Cookies (Always Active)</strong>
+            <strong>3.2 Payment, Sign-Up and RSVP Providers (Linked)</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            These cookies enable essential functionality such as membership sign-up and donation
-            processing. They are necessary for these services to work and cannot be disabled if you
-            wish to use these features.
+            Membership sign-up, auction tickets, donations and event RSVPs happen on the
+            providers&apos; own websites, which this site links to. This site sets no cookies for
+            them. When you follow one of these links, that provider may set its own cookies on its
+            own domain, under its own policy.
           </p>
 
           {/* Zeffy */}
@@ -152,6 +153,45 @@ export default function CookiePolicy() {
                 className="text-blue-600 underline"
               >
                 https://support.zeffy.com/legal-data-privacy-security
+              </a>
+            </p>
+          </div>
+
+          {/* PayPal */}
+          <div className="bg-gray-50 p-4 rounded-lg mb-4">
+            <h3 className="font-semibold mb-2 text-[#333]">PayPal</h3>
+            <p className="text-sm mb-2 text-[#666]">
+              Donations, through the club&apos;s PayPal donate button. Cookies are set on paypal.com
+              when you follow the link.
+            </p>
+            <p className="text-xs mt-2 text-gray-600">
+              Privacy Policy:{' '}
+              <a
+                href="https://www.paypal.com/us/legalhub/privacy-full"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline"
+              >
+                https://www.paypal.com/us/legalhub/privacy-full
+              </a>
+            </p>
+          </div>
+
+          {/* Google Forms */}
+          <div className="bg-gray-50 p-4 rounded-lg mb-4">
+            <h3 className="font-semibold mb-2 text-[#333]">Google Forms</h3>
+            <p className="text-sm mb-2 text-[#666]">
+              Event RSVPs. Cookies are set on google.com when you open the form.
+            </p>
+            <p className="text-xs mt-2 text-gray-600">
+              Privacy Policy:{' '}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline"
+              >
+                https://policies.google.com/privacy
               </a>
             </p>
           </div>
