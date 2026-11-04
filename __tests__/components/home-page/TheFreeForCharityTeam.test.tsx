@@ -50,12 +50,13 @@ describe('TheFreeForCharityTeam preview', () => {
   afterEach(restoreSiteConfig)
 
   it('shows only the first `count` members and links to the full roster', () => {
+    // Needs a roster larger than the preview; the club's has 16 members.
+    expect(configuredTeam.length).toBeGreaterThan(2)
     siteConfig.teamPreview = {
       count: 2,
       label: 'Meet the full board',
       href: '/board#governing-board',
     }
-    if (configuredTeam.length <= 2) return
     render(<Team />)
     const names = screen.getAllByRole('heading', { level: 3 }).map((n) => n.textContent)
     expect(names).toEqual(configuredTeam.slice(0, 2).map((m) => m.name))
@@ -65,6 +66,13 @@ describe('TheFreeForCharityTeam preview', () => {
 
   it('shows everyone, with no link, when the roster fits within the preview', () => {
     siteConfig.teamPreview = { count: 999, label: 'Meet the full board', href: '/board' }
+    render(<Team />)
+    expect(screen.queryAllByRole('heading', { level: 3 })).toHaveLength(configuredTeam.length)
+    expect(screen.queryByRole('link', { name: 'Meet the full board' })).toBeNull()
+  })
+
+  it('ignores a non-positive count', () => {
+    siteConfig.teamPreview = { count: 0, label: 'Meet the full board', href: '/board' }
     render(<Team />)
     expect(screen.queryAllByRole('heading', { level: 3 })).toHaveLength(configuredTeam.length)
     expect(screen.queryByRole('link', { name: 'Meet the full board' })).toBeNull()

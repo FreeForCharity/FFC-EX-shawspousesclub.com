@@ -34,7 +34,7 @@ const index = () => {
   // A preview shows the first `count` members (the officers) in one row and
   // links to the page with the full roster; without one, everyone is shown.
   const preview = siteConfig.teamPreview
-  const previewing = !!preview && configuredTeam.length > preview.count
+  const previewing = !!preview && preview.count > 0 && configuredTeam.length > preview.count
   const shown = previewing ? configuredTeam.slice(0, preview.count) : configuredTeam
   const topRow = previewing ? shown : shown.slice(0, 3)
   const bottomRow = previewing ? [] : shown.slice(3)
@@ -74,7 +74,7 @@ const index = () => {
             ))}
           </div>
         )}
-        {previewing && (
+        {previewing && preview && (
           <div className="text-center">
             <a
               href={assetPath(preview.href)}
