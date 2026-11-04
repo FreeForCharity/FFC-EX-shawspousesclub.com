@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import Volunteer from '../../../src/components/home-page/Volunteer-with-Us'
-import { siteConfig } from '@/lib/site.config'
+import { siteConfig, volunteerHref } from '@/lib/site.config'
 import {
   asCharitySite,
   asSupporterSite,
@@ -38,6 +38,23 @@ describe('Volunteer-with-Us', () => {
     const link = screen.getByRole('link', { name: 'Volunteer' })
     expect(link).toHaveAttribute('href', href)
     expect(link).not.toHaveAttribute('target')
+  })
+
+  it("accepts the club's own pre-filled volunteer email as-is", () => {
+    expect(volunteerHref()).toBe(siteConfig.volunteerUrl)
+  })
+
+  it.each([
+    ['no recipient', 'mailto:?subject=Hi'],
+    ['two recipients', 'mailto:a@example.org,b@example.org?subject=Hi'],
+    ['an extra header', 'mailto:club@example.org?subject=Hi&bcc=x@example.org'],
+    ['an encoded address', 'mailto:club%40example.org?subject=Hi'],
+  ])('falls back to the contact email for a mailto: volunteerUrl with %s', (_case, href) => {
+    asCharitySite({ volunteerUrl: href })
+    render(<Volunteer />)
+    expect(screen.getByRole('link', { name: 'Volunteer' }).getAttribute('href')).toMatch(
+      new RegExp(`^mailto:${CHARITY.contactEmail}\\?subject=`)
+    )
   })
 
   it("links a charity's site to its own volunteer page, never the supporter's", () => {

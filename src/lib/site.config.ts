@@ -477,11 +477,24 @@ export function isPending(field: PendingField): boolean {
  * value) falls back to that email, so a bad config can never ship a dangerous
  * or dead link.
  */
+/**
+ * A complete mailto: link to exactly one plain address, carrying at most a
+ * `subject` and a `body`. Anything else (no or several recipients, an encoded
+ * address, cc/bcc or other headers, whitespace) is rejected, so a pre-filled
+ * link can never add recipients or headers the site did not intend.
+ */
+export function isPrefilledMailto(value: string): boolean {
+  const m = /^mailto:([A-Za-z0-9._+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+)(?:\?(\S*))?$/i.exec(value)
+  if (!m) return false
+  if (m[2] === undefined) return true
+  return m[2].split('&').every((pair) => /^(subject|body)=[^&]*$/i.test(pair))
+}
+
 function linkOrEmail(url: string, subject: string): string {
   const trimmed = url.trim()
   // An https page, or a complete mailto: link the site composed itself (for
   // example one that pre-fills the fields a volunteer email should carry).
-  if (/^https:\/\/\S+$/i.test(trimmed) || /^mailto:\S+$/i.test(trimmed)) return trimmed
+  if (/^https:\/\/\S+$/i.test(trimmed) || isPrefilledMailto(trimmed)) return trimmed
   return mailtoHref(subject)
 }
 
