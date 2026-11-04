@@ -3,7 +3,7 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import { clubEvents, clubPages, formMailto } from '@/data/club-pages'
+import { clubEvents, clubPages, currentSections, formMailto } from '@/data/club-pages'
 import { siteConfig } from '@/lib/site.config'
 import { programs } from '@/data/programs'
 import { routes } from '@/app/sitemap'
@@ -90,6 +90,36 @@ describe('videos and events', () => {
       expect(page!.sections.some((s) => s.id === e.section)).toBe(true)
       expect(Number.isNaN(Date.parse(e.startDate))).toBe(false)
       expect(e.startDate).toMatch(/[+-]\d\d:\d\d$/)
+    }
+  })
+})
+
+describe('currentSections', () => {
+  const page = {
+    slug: 'x',
+    title: 'X',
+    description: 'x',
+    intro: 'x',
+    sections: [
+      { id: 'always', heading: 'Always' },
+      { id: 'soon', heading: 'Soon', until: '2026-11-12T23:59:00-05:00' },
+    ],
+  }
+
+  it('keeps a dated section until its moment passes', () => {
+    const ids = currentSections(page, new Date('2026-11-12T20:00:00-05:00')).map((s) => s.id)
+    expect(ids).toEqual(['always', 'soon'])
+  })
+
+  it('drops a dated section after its moment passes', () => {
+    const ids = currentSections(page, new Date('2026-11-13T09:00:00-05:00')).map((s) => s.id)
+    expect(ids).toEqual(['always'])
+  })
+
+  it('gives every dated section in the real data a valid, timezone-qualified date', () => {
+    for (const s of clubPages.flatMap((p) => p.sections).filter((s) => s.until)) {
+      expect(Number.isNaN(Date.parse(s.until!))).toBe(false)
+      expect(s.until).toMatch(/[+-]\d\d:\d\d$/)
     }
   })
 })

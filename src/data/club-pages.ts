@@ -32,6 +32,12 @@ export type ClubSection = {
   youtubeId?: string
   /** Show the Governing Board roster (src/data/team.ts) here. */
   showBoard?: boolean
+  /**
+   * ISO date-time after which this section is out of date. It is left out of
+   * the page from the first build after that moment, so an "Upcoming" notice
+   * never outlives its event. Use for one-off announcements only.
+   */
+  until?: string
 }
 
 export type ClubPage = {
@@ -129,6 +135,8 @@ export const clubPages: readonly ClubPage[] = [
       {
         id: 'upcoming',
         heading: 'Upcoming: November Social, Movie on the Lawn',
+        // Drops off the page once the social is over (Nov 12, 2026, ET).
+        until: '2026-11-12T23:59:00-05:00',
         paragraphs: [
           'Our Friendsgiving theme is Flannel and Friends. Bring your blankets and cozy clothes and join us at The Cabin at Alice Drive Baptist Church, 1305 Loring Mill Road, on November 12 at 6 PM, featuring The Devil Wears Prada 2. Snacks and cider will be provided, entry is free, and we will be there rain or shine (we have a backup plan).',
           'RSVP is requested. If you are not feeling well, please do not attend the social.',
@@ -595,14 +603,14 @@ export const clubPages: readonly ClubPage[] = [
         heading: 'Shower Shaw with Cookies',
         paragraphs: [
           "For the last three decades, Sumter Volunteers Inc., together with the Sumter community and the Shaw Spouses' Club, has been expressing heartfelt gratitude to Shaw AFB. We used to celebrate the tradition by sharing homemade cookies with the military personnel at Shaw Air Force Base. More recently we have adapted, showering the dedicated servicemen and women of Shaw with an array of delightful goodies instead.",
-          '2025 Dorm Airmen Cookie Drive: Tuesday, December 9, 2025, at the Shaw AFB Palmetto Chapel, 433 Shaw Dr. Drop-off 8 to 10 AM, assembly 10 AM to 2 PM.',
+          'Our most recent drive, the 2025 Dorm Airmen Cookie Drive, was held on Tuesday, December 9, 2025, at the Shaw AFB Palmetto Chapel. Thank you to every baker, volunteer and donor who helped. Details of the next drive will be posted here.',
         ],
         links: [
           {
-            label: 'Volunteer or donate cookies',
-            href: formMailto(CLUB_EMAILS.general, 'Shower Shaw cookie drive', [
+            label: 'Help with the next cookie drive',
+            href: formMailto(CLUB_EMAILS.general, 'Shower Shaw: next cookie drive', [
               'Name',
-              'How I would like to help',
+              'How I would like to help (bake, donate goodies, volunteer at assembly)',
             ]),
           },
         ],
@@ -798,6 +806,11 @@ export const clubEvents: readonly ClubEvent[] = [
     location: { name: 'The Magnolia Club' },
   },
 ]
+
+/** The page's sections that are still current at build time (see `until`). */
+export function currentSections(page: ClubPage, now: Date = new Date()): ClubSection[] {
+  return page.sections.filter((s) => !s.until || Date.parse(s.until) >= now.getTime())
+}
 
 export function clubPage(slug: string): ClubPage {
   const page = clubPages.find((p) => p.slug === slug)

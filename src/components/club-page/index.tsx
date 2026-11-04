@@ -3,7 +3,7 @@ import Image from 'next/image'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import { assetPath } from '@/lib/assetPath'
 import { configuredTeam } from '@/data/team'
-import { clubEvents } from '@/data/club-pages'
+import { clubEvents, currentSections } from '@/data/club-pages'
 import type { ClubLink, ClubPage as ClubPageData, ClubSection } from '@/data/club-pages'
 import EventSchema from '@/components/seo/EventSchema'
 import { programsDisclaimer } from '@/data/programs'
@@ -126,6 +126,7 @@ function Section({ section }: { section: ClubSection }) {
 /** Renders one of the content pages carried over from the club's former site. */
 export default function ClubPage({ page }: { page: ClubPageData }) {
   const path = `/${page.slug}`
+  const sections = currentSections(page)
   return (
     <div className="pt-[130px] pb-[54px]">
       <BreadcrumbSchema name={page.title} path={path} />
@@ -137,7 +138,7 @@ export default function ClubPage({ page }: { page: ClubPageData }) {
         <p className="mb-[24px] text-[21px] leading-[160%] lato-font">{page.intro}</p>
         <nav aria-label={`${page.title} sections`} className="mb-[12px]">
           <ul className="flex flex-wrap gap-x-[18px] gap-y-[6px] text-[16px] lato-font">
-            {page.sections.map((s) => (
+            {sections.map((s) => (
               <li key={s.id}>
                 <a href={`#${s.id}`} className="text-[#0b6cb8] underline">
                   {s.heading}
@@ -146,7 +147,7 @@ export default function ClubPage({ page }: { page: ClubPageData }) {
             ))}
           </ul>
         </nav>
-        {page.sections.map((s) => (
+        {sections.map((s) => (
           <Section key={s.id} section={s} />
         ))}
         {programsDisclaimer && (
