@@ -286,7 +286,7 @@ export const siteConfig: SiteConfig = {
     },
   ],
   guidestar: {
-    profileUrl: 'https://app.candid.org/profile/7874261/shaw-spouses-club-57-0643096',
+    profileUrl: '',
     directProfileUrl: 'https://app.candid.org/profile/7874261/shaw-spouses-club-57-0643096',
   },
   supportedBy: {

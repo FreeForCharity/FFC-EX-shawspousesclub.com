@@ -14,7 +14,7 @@ export default function BoardPage() {
           Governance
         </Link>
         <header className="mb-9 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#4F83E5]">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#2F5FB8]">
             Shaw Spouses&apos; Club
           </p>
           <h1 className="faustina-font mb-3 text-3xl font-semibold text-[#234F93] sm:text-4xl">
@@ -63,7 +63,7 @@ export default function BoardPage() {
         </section>
 
         <div className="grid gap-6 lg:grid-cols-3">
-          {boardGroups.map((group, groupIndex) => (
+          {boardGroups.map((group) => (
             <section
               key={group.title}
               aria-labelledby={`board-${group.title.toLowerCase().replace(/\s+/g, '-')}`}
@@ -77,14 +77,13 @@ export default function BoardPage() {
               </h2>
               <ul className="space-y-3">
                 {group.positions.map((position, index) => (
-                  <li key={`${position.role}-${position.name}-${index}`} className="group relative">
+                  <li key={`${position.role}-${position.name}-${index}`}>
                     <a
                       href={assetPath(position.documentPath)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-start justify-between gap-3 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F83E5]"
-                      aria-label={`${position.role} position description (Word document)`}
-                      aria-describedby={`board-position-overview-${groupIndex}-${index}`}
+                      aria-label={`${position.role}: ${position.name}, position description (Word document)`}
                     >
                       <span className="text-sm leading-6 text-[#26394D]">{position.role}</span>
                       <span
@@ -96,13 +95,7 @@ export default function BoardPage() {
                         {position.name === 'Open' && <span className="sr-only"> position</span>}
                       </span>
                     </a>
-                    <span
-                      id={`board-position-overview-${groupIndex}-${index}`}
-                      role="tooltip"
-                      className="pointer-events-none invisible absolute left-0 top-full z-20 mt-2 block w-72 max-w-[calc(100vw-3rem)] rounded-xl bg-[#234F93] px-4 py-3 text-sm leading-6 text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
-                    >
-                      {position.overview}
-                    </span>
+                    <p className="mt-1 text-sm leading-6 text-[#26394D]">{position.overview}</p>
                   </li>
                 ))}
               </ul>
@@ -114,7 +107,7 @@ export default function BoardPage() {
           aria-labelledby="board-bios-heading"
           className="mx-auto mt-12 max-w-5xl rounded-2xl border border-[#D9E5FA] bg-white p-6 text-center shadow-sm sm:p-8"
         >
-          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#4F83E5]">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#2F5FB8]">
             Get to know the team
           </p>
           <h2

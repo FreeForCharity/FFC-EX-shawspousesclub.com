@@ -173,45 +173,6 @@ export default function CookiePolicy() {
             </p>
           </div>
 
-          {/* Google Forms */}
-          <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <h3 className="font-semibold mb-2 text-[#333]">Google Forms</h3>
-            <p className="text-sm mb-2 text-[#666]">
-              Used to collect board position interest responses on the Board page. The embedded form
-              is served by Google and may use Google technologies according to Google&apos;s privacy
-              practices.
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-2 pr-4 text-[#333]">Service</th>
-                    <th className="text-left py-2 pr-4 text-[#333]">Purpose</th>
-                    <th className="text-left py-2 text-[#333]">Load Trigger</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="py-2 pr-4 font-mono text-[#666]">Google Forms</td>
-                    <td className="py-2 pr-4 text-[#666]">Board interest form responses</td>
-                    <td className="py-2 text-[#666]">When the form comes into view</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-xs mt-2 text-gray-600">
-              Privacy Policy:{' '}
-              <a
-                href="https://policies.google.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#234F93] underline"
-              >
-                https://policies.google.com/privacy
-              </a>
-            </p>
-          </div>
-
           {/* Zeffy */}
           <div className="bg-gray-50 p-4 rounded-lg mb-4">
             <h3 className="font-semibold mb-2 text-[#333]">Zeffy Payments and Ordering</h3>

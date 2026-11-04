@@ -65,7 +65,7 @@ export default function GolfTournamentPage() {
           </div>
           <a
             href={`mailto:${siteConfig.contactEmail}?subject=Golf%20Tournament`}
-            className="mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-[#4F83E5] px-6 py-3 font-semibold text-white hover:bg-[#376BCD]"
+            className="mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-[#2F5FB8] px-6 py-3 font-semibold text-white hover:bg-[#376BCD]"
           >
             Contact Us About the Golf Tournament
           </a>

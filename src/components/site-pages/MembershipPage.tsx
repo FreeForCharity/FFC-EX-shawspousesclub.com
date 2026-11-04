@@ -124,7 +124,7 @@ export default function MembershipPage() {
                 Explore Special Activities
               </Link>
               <Link
-                href="/#volunteer"
+                href="/board#board-openings-heading"
                 className="font-semibold text-[#234F93] underline underline-offset-4"
               >
                 Explore Volunteer Opportunities

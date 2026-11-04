@@ -97,7 +97,7 @@ export default function AuctionSponsorshipForm({
           </p>
           <button
             type="submit"
-            className="min-h-11 rounded-full bg-[#4F83E5] px-7 py-3 font-semibold text-white hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
+            className="min-h-11 rounded-full bg-[#2F5FB8] px-7 py-3 font-semibold text-white hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
           >
             {status === 'sending' ? 'Sending…' : 'Submit'}
           </button>

@@ -21,7 +21,7 @@ export default function ClubProgramPage({
         <Link href="/" className="mb-5 inline-block font-semibold text-[#234F93] underline">
           Home
         </Link>
-        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#4F83E5]">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#2F5FB8]">
           {title === 'Membership' ||
           title === 'Monthly Socials' ||
           title === 'Special Activity Groups'
@@ -69,7 +69,7 @@ export default function ClubProgramPage({
               ? '/'
               : '/giving-back'
           }
-          className="mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-[#4F83E5] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
+          className="mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-[#2F5FB8] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
         >
           {title === 'Membership' ||
           title === 'Monthly Socials' ||

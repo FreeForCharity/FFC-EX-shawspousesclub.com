@@ -192,32 +192,13 @@ export default function PrivacyPolicy() {
           </ul>
 
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.5. Google Forms - Board Interest Form</strong>
+            <strong>3.5. Formspree - Contact, Sub-Club, and Auction Sponsorship Inquiries</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            We embed a Google Form on our Board page to collect expressions of interest in board
-            positions. Information submitted through the form is processed by Google and available
-            to the form owner. Email notifications depend on the form owner&apos;s settings. The
-            form is subject to{' '}
-            <a
-              href="https://policies.google.com/privacy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#234F93] underline"
-            >
-              Google&apos;s Privacy Policy
-            </a>
-            .
-          </p>
-
-          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.6. Formspree - Contact, Sub-Club, and Auction Sponsorship Inquiries</strong>
-          </p>
-          <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            Our contact, sub-club, and auction sponsorship forms send your first name, last name,
-            email address, and comment to Formspree for processing and delivery to the club. Auction
-            sponsorship inquiries go to the treasurer. We use this information to respond to your
-            inquiry. Please review{' '}
+            Board-interest inquiries go through our Contact Us form. Our contact, sub-club, and
+            auction sponsorship forms send your first name, last name, email address, and comment to
+            Formspree for processing and delivery to the club. Auction sponsorship inquiries go to
+            the treasurer. We use this information to respond to your inquiry. Please review{' '}
             <a
               href="https://formspree.io/legal/privacy-policy"
               className="text-[#234F93] underline"
@@ -229,7 +210,7 @@ export default function PrivacyPolicy() {
             .
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500] mt-[1em]">
-            <strong>3.7. Zeffy - Donations and SSC Merch</strong>
+            <strong>3.6. Zeffy - Donations and SSC Merch</strong>
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
             We embed Zeffy forms for donations and Shaw Spouses&apos; Club T-shirt orders.

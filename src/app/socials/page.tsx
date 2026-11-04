@@ -36,7 +36,7 @@ export default function SocialsPage() {
         </div>
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSeY7x2tBBBQ3t-HsReylDhLz4POBIcDmepmorWUco-y4bLeyg/viewform"
-          className="mb-6 inline-flex min-h-11 items-center justify-center rounded-full bg-[#4F83E5] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
+          className="mb-6 inline-flex min-h-11 items-center justify-center rounded-full bg-[#2F5FB8] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#376BCD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#234F93]"
         >
           RSVP for Movie Night
         </a>

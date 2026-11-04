@@ -15,7 +15,7 @@ export default function SscMerchPage() {
         </Link>
 
         <header className="mb-9 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#4F83E5]">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#2F5FB8]">
             Shaw Spouses&apos; Club
           </p>
           <h1 className="faustina-font mb-3 text-3xl font-semibold text-[#234F93] sm:text-4xl">
