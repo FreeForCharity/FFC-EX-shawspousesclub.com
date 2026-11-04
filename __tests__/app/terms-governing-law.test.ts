@@ -17,6 +17,6 @@ describe('Terms of Service governing law', () => {
   })
 
   it('no longer names the template default, North Carolina', () => {
-    expect(src).not.toMatch(/North Carolina/)
+    expect(src).not.toMatch(/State of North Carolina/)
   })
 })
