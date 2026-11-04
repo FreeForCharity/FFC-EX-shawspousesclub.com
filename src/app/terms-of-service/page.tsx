@@ -217,7 +217,7 @@ export default function TermsOfService() {
           </h2>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
             These Terms shall be governed by and construed in accordance with the laws of the United
-            States and the State of North Carolina, without regard to its conflict of law
+            States and the State of South Carolina, without regard to its conflict of law
             principles.
           </p>
 
