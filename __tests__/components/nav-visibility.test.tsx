@@ -62,24 +62,24 @@ describe('nav links respect section visibility', () => {
     expect(screen.queryAllByText('FAQ').length).toBeGreaterThan(0)
   })
 
-  // The Programs and FAQ sections carry the supporting organization's own copy
-  // and do not render on a charity's site, flags or no flags — so neither may
-  // a link to their anchors.
-  it('Header drops Programs and FAQ on a charity site even with the flags on', () => {
+  // The Programs section carries the supporting organization's own copy
+  // and does not render on a charity's site, flags or no flags, so neither may
+  // a link to its anchor. The FAQ is the site's own and keeps its link.
+  it('Header drops Programs but keeps the club FAQ on a charity site', () => {
     asCharitySite()
     siteConfig.sections.showPrograms = true
     render(<Header />)
     expect(screen.queryAllByText('Programs')).toHaveLength(0)
-    expect(screen.queryAllByText('FAQ')).toHaveLength(0)
+    expect(screen.queryAllByText('FAQ').length).toBeGreaterThan(0)
     expect(screen.queryAllByText('Mission').length).toBeGreaterThan(0)
   })
 
-  it('Footer drops Programs and FAQ on a charity site even with the flags on', () => {
+  it('Footer drops Programs but keeps the club FAQ on a charity site', () => {
     asCharitySite()
     siteConfig.sections.showPrograms = true
     render(<Footer />)
     expect(screen.queryAllByText('Programs')).toHaveLength(0)
-    expect(screen.queryAllByText('FAQ')).toHaveLength(0)
+    expect(screen.queryAllByText('FAQ').length).toBeGreaterThan(0)
   })
 
   it('Footer keeps Programs and FAQ on the supporting organization site', () => {

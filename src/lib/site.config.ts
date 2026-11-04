@@ -212,7 +212,7 @@ export type SiteConfig = {
    * Data-driven sections (Team, Testimonials, Results) self-hide on their own
    * when their data files are emptied and need no flag here.
    *
-   * Endowment and Programs (and the FAQ, which has no flag) additionally
+   * Endowment and Programs additionally
    * render only on the supporting organization's own site — see
    * src/lib/section-visibility.ts — so a charity site never shows them even
    * with these left at true.
@@ -417,7 +417,7 @@ export function cardDescription(): string {
  * shipped, where `name` still equals `supportedBy.name`.
  *
  * The template carries copy that is about the supporting organization itself
- * (its endowment, its FAQ, its mission statement and video). On any other
+ * (its endowment, its mission statement and video). On any other
  * site that copy would make the supporter's claims in the charity's name, so
  * the components that carry it render only when this returns true. A charity
  * site never needs to change anything for that to happen: setting `name` is
