@@ -12,9 +12,15 @@
 export const analyticsConfig = {
   // Google Tag Manager container ID, e.g. 'GTM-ABC1234'. GTM is the umbrella
   // that can load the others, so this is the main one most sites set.
-  gtmId: '',
+  // shawspousesclub.org container, provisioned by hub workflow 503 (#34).
+  gtmId: 'GTM-TCKXJD59',
 
   // Google Analytics 4 measurement ID, e.g. 'G-ABC1234567'.
+  // Left as the placeholder on purpose. GA4 for this site is
+  // 'shawspousesclub.org - GA4' (G-3CP8DJ6RBJ, FFC Supported Sites, hub
+  // workflow 505), and it is delivered by the GTM container above, which
+  // carries a GA4 tag for that ID. Setting it here as well would load GA4 a
+  // second time and count every pageview twice.
   gaMeasurementId: 'G-XXXXXXXXXX',
 
   // Meta (Facebook) Pixel ID.
