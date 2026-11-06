@@ -1,4 +1,6 @@
 import React from 'react'
+import { isSupportingOrgSite } from '@/lib/site.config'
+import AnnouncementBanner from '@/components/home-page/AnnouncementBanner'
 import Hero from '@/components/home-page/Hero'
 import ClubWelcome from '@/components/home-page/ClubWelcome'
 import Mission from '@/components/home-page/Mission'
@@ -11,9 +13,10 @@ import Events from '@/components/home-page/Events'
 const index = () => {
   return (
     <div>
-      <Hero />
+      {!isSupportingOrgSite() && <AnnouncementBanner />}
+      {isSupportingOrgSite() && <Hero />}
       <ClubWelcome />
-      <Mission />
+      {isSupportingOrgSite() && <Mission />}
       <Results2023 />
       <Testimonials />
       <Events />

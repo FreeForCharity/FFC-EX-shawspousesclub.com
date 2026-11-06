@@ -24,28 +24,17 @@ test.describe('Logo and Image Visibility', () => {
 })
 
 test.describe('Header scroll layout', () => {
-  test('keeps a continuous patterned surround on desktop navigation', async ({ page }) => {
+  test('keeps the compact navigation at the top after the image scrolls away', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
     await page.goto('/')
     await page.evaluate(() => window.scrollTo(0, 700))
-
-    const header = page.locator('#header')
-    await expect.poll(async () => Math.round((await header.boundingBox())!.y)).toBe(-320)
-
-    const headerBox = (await header.boundingBox())!
-    const navigationBox = (await page.locator('#header > div').boundingBox())!
+    const navigation = page.locator('#header > div')
+    await expect.poll(async () => Math.round((await navigation.boundingBox())!.y)).toBe(0)
+    await expect(page.locator('.club-nav-brand')).toBeVisible()
+    const headerBox = (await page.locator('#header').boundingBox())!
     const bannerBox = (await page.locator('.club-banner').boundingBox())!
-    const imageBox = (await page.locator('.club-banner-image').boundingBox())!
-
-    expect(navigationBox.y).toBeCloseTo(15, 0)
-    expect(headerBox.y + headerBox.height - navigationBox.y - navigationBox.height).toBeCloseTo(
-      15,
-      0
-    )
     expect(bannerBox.y).toBeCloseTo(headerBox.y, 0)
-    expect(bannerBox.height).toBeCloseTo(headerBox.height, 0)
-    expect(imageBox.y).toBeLessThanOrEqual(headerBox.y)
-    expect(imageBox.y + imageBox.height).toBeGreaterThanOrEqual(headerBox.y + headerBox.height)
+    expect(headerBox.height - bannerBox.height).toBeCloseTo(70, 0)
   })
 
   test('scrolls the entire mobile header away', async ({ page }) => {

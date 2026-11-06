@@ -62,9 +62,9 @@ const Header: React.FC = () => {
         href="/"
         onClick={handleLinkClick}
         aria-label={`${siteConfig.name} home`}
-        className="club-banner absolute inset-0 block w-full"
+        className="club-banner absolute inset-x-0 top-0 block w-full"
       >
-        <span className="absolute inset-x-0 bottom-0 top-[-70px]">
+        <span className="absolute inset-0">
           <Image
             src={assetPath('/Images/shaw-spouses-club-banner.png')}
             alt="Shaw Spouses' Club banner"
@@ -76,15 +76,19 @@ const Header: React.FC = () => {
         </span>
       </Link>
 
-      <div className="absolute inset-x-0 bottom-[15px] h-[55px] w-full bg-white/95 shadow-sm">
-        <div className="mx-auto flex h-full max-w-[1080px] items-center px-2">
+      <div className="absolute inset-x-0 bottom-0 h-[70px] w-full bg-white/95 shadow-sm">
+        <div className="mx-auto flex h-full max-w-[1400px] items-center gap-6 px-5">
+          <Link href="/" onClick={handleLinkClick} className="club-nav-brand">
+            SHAW SPOUSES CLUB
+            <span>COMMUNITY • CONNECTION • SERVICE</span>
+          </Link>
           {/* Menu or Search */}
           {!isSearchOpen ? (
-            <div className="flex w-full items-center justify-end lg:justify-center">
+            <div className="flex w-full items-center justify-end">
               {/* Desktop Menu */}
               <nav
                 aria-label="Primary navigation"
-                className="relative hidden h-full lg:block transition-all duration-300"
+                className="relative hidden h-full xl:block transition-all duration-300"
               >
                 <ul className="flex h-full items-center space-x-[1px] font-navbar font-[600]">
                   {menuItems.map((item) => (
@@ -93,7 +97,7 @@ const Header: React.FC = () => {
                         href={item.path}
                         onClick={handleLinkClick}
                         aria-current={isActive(item) ? 'page' : undefined}
-                        className={`flex items-center gap-1 whitespace-nowrap px-3 py-2 text-[14px] transition-colors duration-200 ${
+                        className={`flex items-center gap-1 whitespace-nowrap px-2 py-2 text-[12px] transition-colors duration-200 ${
                           isActive(item) ? 'text-[#234F93]' : 'text-gray-600 hover:text-gray-500'
                         }`}
                       >
@@ -133,7 +137,7 @@ const Header: React.FC = () => {
               </nav>
 
               {/* Search Icon */}
-              <div className="hidden lg:flex items-center">
+              <div className="hidden xl:flex items-center">
                 <button
                   onClick={handleSearchToggle}
                   className="p-2 text-gray-600 hover:text-[#234F93] transition-colors"
@@ -146,7 +150,7 @@ const Header: React.FC = () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-gray-600 hover:text-[#234F93]"
+                className="xl:hidden p-2 text-gray-600 hover:text-[#234F93]"
                 aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-menu"
@@ -185,7 +189,7 @@ const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="lg:hidden absolute left-0 top-full z-40 w-full animate-menuExpand overflow-hidden"
+          className="xl:hidden absolute left-0 top-full z-40 w-full animate-menuExpand overflow-hidden"
         >
           <div
             className={`max-w-[700px] mx-auto px-6 py-4 bg-white border-t-[3px] border-[#4F83E5] shadow-[0_2px_5px_rgba(0,0,0,0.1)] max-h-[80vh] overflow-auto`}
