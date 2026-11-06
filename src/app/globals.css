@@ -47,16 +47,16 @@ body {
 }
 
 :root {
-  --club-banner-height: clamp(240px, 25vw, 400px);
+  --club-banner-height: clamp(170px, 24vw, 330px);
 }
 
 .club-header {
-  height: calc(var(--club-banner-height) + 85px);
+  height: calc(var(--club-banner-height) + 70px);
   top: calc(-1 * var(--club-banner-height));
 }
 
 .club-banner {
-  height: 100%;
+  height: var(--club-banner-height);
   overflow: hidden;
   background: #7099eb;
 }
@@ -66,7 +66,7 @@ body {
   object-position: center;
 }
 
-@media (width < 1024px) {
+@media (width < 1280px) {
   :root {
     --club-banner-height: clamp(180px, 50vw, 240px);
   }
@@ -243,7 +243,7 @@ main {
   scrollbar-width: none;
 }
 
-/* WCAG 2.3.3 — respect the user's reduced-motion preference. Collapses
+/* WCAG 2.3.3 â€” respect the user's reduced-motion preference. Collapses
    CSS transitions and animations to near-instant. JS-driven animations
    (e.g., AnimatedNumber's count-up via the useReducedMotion hook, and the
    setInterval auto-scroll in VoicesofGratitude) read prefers-reduced-motion
@@ -256,5 +256,99 @@ main {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Compact club identity stays at the left of the navigation band. */
+.club-nav-brand {
+  flex-shrink: 0;
+  color: #234f93;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.club-nav-brand span {
+  display: block;
+  margin-top: 5px;
+  font-size: 9px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.club-announcement {
+  background: #234f93;
+  color: #fff;
+  border-bottom: 3px solid #4f83e5;
+}
+.club-announcement-inner {
+  max-width: 1400px;
+  margin: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.club-announcement-tag {
+  color: #d9e5fa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.club-announcement-message {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.club-announcement-message strong {
+  font-size: 15px;
+}
+.club-announcement-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+.club-announcement-links a {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.club-announcement-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.club-announcement-close:hover {
+  background: #ffffff18;
+}
+.club-announcement :focus-visible,
+.club-nav-brand:focus-visible {
+  outline: 3px solid #4f83e5;
+  outline-offset: 4px;
+}
+@media (width < 1000px) {
+  .club-announcement-inner {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+  .club-announcement-tag {
+    flex-basis: 100%;
+  }
+  .club-announcement-message {
+    flex-basis: calc(100% - 60px);
+  }
+  .club-announcement-close {
+    order: 2;
+  }
+  .club-announcement-links {
+    order: 3;
+    flex-basis: 100%;
   }
 }
