@@ -84,11 +84,11 @@ const Header: React.FC = () => {
           </Link>
           {/* Menu or Search */}
           {!isSearchOpen ? (
-            <div className="flex w-full items-center justify-end">
+            <div className="flex h-full w-full items-center justify-end">
               {/* Desktop Menu */}
               <nav
                 aria-label="Primary navigation"
-                className="relative hidden h-full xl:block transition-all duration-300"
+                className="hidden h-full xl:block transition-all duration-300"
               >
                 <ul className="flex h-full items-center space-x-[1px] font-navbar font-[600]">
                   {menuItems.map((item) => (
