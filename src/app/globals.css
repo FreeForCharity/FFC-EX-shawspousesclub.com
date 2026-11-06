@@ -51,12 +51,12 @@ body {
 }
 
 .club-header {
-  height: calc(var(--club-banner-height) + 55px);
+  height: calc(var(--club-banner-height) + 85px);
   top: calc(-1 * var(--club-banner-height));
 }
 
 .club-banner {
-  height: var(--club-banner-height);
+  height: 100%;
   overflow: hidden;
   background: #7099eb;
 }
