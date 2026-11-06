@@ -44,10 +44,10 @@ export default function ClubWelcome() {
             id="club-welcome-heading"
             className="faustina-font mb-4 text-3xl font-semibold leading-tight text-[#234F93] sm:text-4xl"
           >
-            A place to connect, grow, and give back
+            Where friendship meets purpose.
           </h2>
           <p className="lato-font text-base leading-7 text-[#26394D] sm:text-lg">
-            Where friendship meets purpose
+            A place to connect, grow, and give back
           </p>
         </div>
 
