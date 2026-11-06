@@ -31,3 +31,32 @@ test('mobile navigation and announcement fit the viewport', async ({ page }) => 
   await page.getByRole('button', { name: 'Open menu' }).click()
   await expect(page.locator('#mobile-menu')).toBeVisible()
 })
+
+test('desktop dropdowns fit and fragment headings clear the sticky navigation', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 800 })
+  await page.goto('/')
+  for (const [label, group] of [
+    ['Giving Back', 'Giving Back pages'],
+    ['Governance', 'Governance pages'],
+  ]) {
+    await page
+      .getByRole('navigation', { name: 'Primary navigation' })
+      .getByRole('link', { name: label, exact: true })
+      .focus()
+    const panel = page.getByRole('group', { name: group })
+    await expect(panel).toBeVisible()
+    const box = (await panel.boundingBox())!
+    expect(box.x).toBeGreaterThanOrEqual(0)
+    expect(box.x + box.width).toBeLessThanOrEqual(1280)
+  }
+  await page.goto('/#mission')
+  await expect
+    .poll(async () => (await page.locator('#mission').boundingBox())!.y)
+    .toBeGreaterThanOrEqual(70)
+  await page.goto('/giving-back/shower-shaw#christmas-cookie-drive-heading')
+  await expect
+    .poll(async () => (await page.locator('#christmas-cookie-drive-heading').boundingBox())!.y)
+    .toBeGreaterThanOrEqual(70)
+})

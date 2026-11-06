@@ -243,7 +243,7 @@ main {
   scrollbar-width: none;
 }
 
-/* WCAG 2.3.3 â€” respect the user's reduced-motion preference. Collapses
+/* WCAG 2.3.3 — respect the user's reduced-motion preference. Collapses
    CSS transitions and animations to near-instant. JS-driven animations
    (e.g., AnimatedNumber's count-up via the useReducedMotion hook, and the
    setInterval auto-scroll in VoicesofGratitude) read prefers-reduced-motion
@@ -328,9 +328,12 @@ main {
 .club-announcement-close:hover {
   background: #ffffff18;
 }
-.club-announcement :focus-visible,
+.club-announcement :focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
 .club-nav-brand:focus-visible {
-  outline: 3px solid #4f83e5;
+  outline: 3px solid #234f93;
   outline-offset: 4px;
 }
 @media (width < 1000px) {
@@ -350,5 +353,11 @@ main {
   .club-announcement-links {
     order: 3;
     flex-basis: 100%;
+  }
+}
+
+@media (width >= 1280px) {
+  html {
+    scroll-padding-top: 86px;
   }
 }
