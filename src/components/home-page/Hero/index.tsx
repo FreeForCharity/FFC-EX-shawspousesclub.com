@@ -1,12 +1,12 @@
 import React from 'react'
-import { cardDescription, donateHref, isSupportingOrgSite, siteConfig } from '@/lib/site.config'
+import { donateHref, isSupportingOrgSite, siteConfig } from '@/lib/site.config'
 
 const CharityHeroBackground = () => {
   // The strapline is the supporting organization's own positioning; any other
-  // site leads with its own description instead.
+  // site welcomes visitors with an invitation to participate.
   const strapline = isSupportingOrgSite()
     ? 'Connecting Students, Professionals, & Businesses with Charities in Need'
-    : cardDescription()
+    : 'Meet fellow spouses, explore club activities, and get involved in the Shaw AFB community.'
   return (
     <section id="hero" className="w-full bg-[#f4f7ff]">
       <div className="hero-container mx-auto flex w-[90%] max-w-[1280px] flex-col items-start py-[72px] text-[#26394d] lg:px-[20px]">
