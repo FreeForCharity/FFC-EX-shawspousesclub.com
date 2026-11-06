@@ -89,7 +89,7 @@ export default function ClubWelcome() {
               </a>
             )}
           </section>
-          <section className="rounded-xl border border-[#D9E5FA] p-6 sm:p-8">
+          <section className="rounded-xl border border-[#D9E5FA] bg-[#F4F7FF] p-6 sm:p-8">
             <h3 className="mb-2 text-2xl font-semibold text-[#234F93]">
               Curious about membership?
             </h3>
