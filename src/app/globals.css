@@ -51,7 +51,7 @@ body {
 }
 
 .club-header {
-  height: calc(var(--club-banner-height) + 55px);
+  height: calc(var(--club-banner-height) + 85px);
   top: calc(-1 * var(--club-banner-height));
 }
 
@@ -64,6 +64,19 @@ body {
 .club-banner-image {
   object-fit: cover;
   object-position: center;
+}
+
+.club-navigation {
+  background-color: #7099eb;
+  background-position: left top;
+  background-size: auto 400px;
+}
+
+.club-navigation::before {
+  content: '';
+  position: absolute;
+  inset: 15px 0;
+  background: rgb(255 255 255 / 95%);
 }
 
 @media (width < 1024px) {
