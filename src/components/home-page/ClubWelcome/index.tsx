@@ -44,10 +44,10 @@ export default function ClubWelcome() {
             id="club-welcome-heading"
             className="faustina-font mb-4 text-3xl font-semibold leading-tight text-[#234F93] sm:text-4xl"
           >
-            A place to connect, grow, and give back
+            Where friendship meets purpose.
           </h2>
           <p className="lato-font text-base leading-7 text-[#26394D] sm:text-lg">
-            Where friendship meets purpose
+            A place to connect, grow, and give back
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export default function ClubWelcome() {
               </a>
             )}
           </section>
-          <section className="rounded-xl border border-[#D9E5FA] p-6 sm:p-8">
+          <section className="rounded-xl border border-[#D9E5FA] bg-[#F4F7FF] p-6 sm:p-8">
             <h3 className="mb-2 text-2xl font-semibold text-[#234F93]">
               Curious about membership?
             </h3>
