@@ -22,7 +22,7 @@ describe('Homepage announcement', () => {
       'href',
       '/giving-back/auction'
     )
-    expect((await axe(container)).violations).toEqual([])
+    expect(await axe(container)).toHaveNoViolations()
   })
 
   it('remembers dismissal after remount but shows a new announcement', () => {
