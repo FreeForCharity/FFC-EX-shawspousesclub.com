@@ -62,7 +62,7 @@ const Header: React.FC = () => {
         href="/"
         onClick={handleLinkClick}
         aria-label={`${siteConfig.name} home`}
-        className="club-banner absolute inset-x-0 top-0 block w-full"
+        className="club-banner relative block w-full"
       >
         <Image
           src={assetPath('/Images/shaw-spouses-club-banner.png')}
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
         />
       </Link>
 
-      <div className="absolute inset-x-0 bottom-[15px] h-[55px] w-full bg-white/95 shadow-sm">
+      <div className="relative h-[55px] w-full bg-white/95 shadow-sm">
         <div className="mx-auto flex h-full max-w-[1080px] items-center px-2">
           {/* Menu or Search */}
           {!isSearchOpen ? (
