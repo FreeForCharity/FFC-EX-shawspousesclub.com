@@ -47,7 +47,7 @@ export default function ClubWelcome() {
             A place to connect, grow, and give back
           </h2>
           <p className="lato-font text-base leading-7 text-[#26394D] sm:text-lg">
-            {siteConfig.shortDescription}
+            Where friendship meets purpose
           </p>
         </div>
 
