@@ -30,9 +30,7 @@ test.describe('Header scroll layout', () => {
     await page.evaluate(() => window.scrollTo(0, 700))
 
     const header = page.locator('#header')
-    await expect
-      .poll(async () => Math.round((await header.boundingBox())!.y))
-      .toBe(-320)
+    await expect.poll(async () => Math.round((await header.boundingBox())!.y)).toBe(-320)
 
     const headerBox = (await header.boundingBox())!
     const navigationBox = (await page.locator('#header > div').boundingBox())!
