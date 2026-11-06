@@ -74,8 +74,13 @@ const Header: React.FC = () => {
         />
       </Link>
 
-      <div className="relative h-[55px] w-full bg-white/95 shadow-sm">
-        <div className="mx-auto flex h-full max-w-[1080px] items-center px-2">
+      <div
+        className="club-navigation relative h-[85px] w-full py-[15px] shadow-sm"
+        style={{
+          backgroundImage: `url(${assetPath('/Images/shaw-spouses-club-banner.png')})`,
+        }}
+      >
+        <div className="relative mx-auto flex h-full max-w-[1080px] items-center px-2">
           {/* Menu or Search */}
           {!isSearchOpen ? (
             <div className="flex w-full items-center justify-end lg:justify-center">
