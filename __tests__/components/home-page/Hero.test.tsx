@@ -40,11 +40,16 @@ describe('Hero', () => {
     )
   })
 
-  it("welcomes visitors to a charity's own site in the charity's own words", () => {
+  it('welcomes visitors with an invitation instead of repeating the mission', () => {
     asCharitySite()
     const { container } = render(<Hero />)
     expect(screen.getByRole('heading', { level: 1 }).textContent).toContain(CHARITY.name)
-    expect(screen.getByText(CHARITY.shortDescription as string)).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        'Meet fellow spouses, explore club activities, and get involved in the Shaw AFB community.'
+      )
+    ).toBeInTheDocument()
+    expect(screen.queryByText(CHARITY.shortDescription as string)).not.toBeInTheDocument()
     expect(container.textContent).not.toMatch(/Free For Charity|Connecting Students/)
     // The Programs section does not render on a charity site, so neither may
     // the button that scrolls to it.
