@@ -31,8 +31,26 @@ export default function ShowerShawPage() {
           <li>Cookie drop-off and repackaging on Tuesday, December 15, from 8 am–2 pm.</li>
         </ul>
         <p className="mb-4 text-base leading-7 text-[#26394D]">
-          Scan the baker or volunteer signup QR code on the flyer to participate.
+          Sign up as a baker or volunteer using the links below or the QR codes on the flyer.
         </p>
+        <ul className="mb-6 flex flex-wrap gap-4">
+          <li>
+            <a
+              href="https://www.signupgenius.com/go/20F0D44ACAD29A7FECF8-66602089-shaw#/"
+              className="inline-flex min-h-11 items-center rounded-full bg-[#234F93] px-5 py-3 font-semibold text-white underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#234F93]"
+            >
+              Baker signup
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.signupgenius.com/go/20F0D44ACAD29A7FECF8-66602770-shaw#/"
+              className="inline-flex min-h-11 items-center rounded-full bg-[#234F93] px-5 py-3 font-semibold text-white underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#234F93]"
+            >
+              Volunteer signup
+            </a>
+          </li>
+        </ul>
         <a
           href={assetPath('/Images/christmas-cookie-drive-2026.webp')}
           className="block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#234F93]"
