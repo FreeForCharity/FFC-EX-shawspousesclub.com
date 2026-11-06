@@ -34,12 +34,12 @@ export default function ShowerShawPage() {
           Scan the baker or volunteer signup QR code on the flyer to participate.
         </p>
         <a
-          href={assetPath('/Images/christmas-cookie-drive-2026.png')}
+          href={assetPath('/Images/christmas-cookie-drive-2026.webp')}
           className="block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#234F93]"
           aria-label="Open the full-size Christmas Cookie Drive flyer with baker and volunteer signup QR codes"
         >
           <img
-            src={assetPath('/Images/christmas-cookie-drive-2026.png')}
+            src={assetPath('/Images/christmas-cookie-drive-2026.webp')}
             alt="Christmas Cookie Drive flyer with baker and volunteer signup QR codes. Setup December 14, 5–7 pm. Drop-off and repackaging December 15, 8 am–2 pm, at Palmetto Chapel, 433 Shaw Dr, Shaw AFB."
             width={982}
             height={1271}
