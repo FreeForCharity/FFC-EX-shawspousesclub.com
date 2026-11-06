@@ -50,6 +50,18 @@ test('desktop dropdowns fit and fragment headings clear the sticky navigation', 
     const box = (await panel.boundingBox())!
     expect(box.x).toBeGreaterThanOrEqual(0)
     expect(box.x + box.width).toBeLessThanOrEqual(1280)
+    // Test hover separately: keyboard focus must not keep the panel open.
+    await page.evaluate(() => (document.activeElement as HTMLElement)?.blur())
+    const trigger = page
+      .getByRole('navigation', { name: 'Primary navigation' })
+      .getByRole('link', { name: label, exact: true })
+    await trigger.hover()
+    const triggerBox = (await trigger.boundingBox())!
+    const bandBox = (await page.locator('#header > div').boundingBox())!
+    await page.mouse.move(triggerBox.x + triggerBox.width / 2, bandBox.y + bandBox.height - 1)
+    await expect(panel).toBeVisible()
+    await page.mouse.move(triggerBox.x + triggerBox.width / 2, box.y + 2)
+    await expect(panel).toBeVisible()
   }
   await page.goto('/#mission')
   await expect
