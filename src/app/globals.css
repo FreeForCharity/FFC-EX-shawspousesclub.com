@@ -51,12 +51,12 @@ body {
 }
 
 .club-header {
-  height: calc(var(--club-banner-height) + 85px);
+  height: calc(var(--club-banner-height) + 55px);
   top: calc(-1 * var(--club-banner-height));
 }
 
 .club-banner {
-  height: 100%;
+  height: var(--club-banner-height);
   overflow: hidden;
   background: #7099eb;
 }
@@ -64,6 +64,17 @@ body {
 .club-banner-image {
   object-fit: cover;
   object-position: center;
+}
+
+@media (width < 1024px) {
+  :root {
+    --club-banner-height: clamp(180px, 50vw, 240px);
+  }
+
+  .club-header {
+    position: relative;
+    top: auto;
+  }
 }
 
 /* The header occupies normal page space; only its navigation band remains
