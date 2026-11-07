@@ -84,10 +84,10 @@ export default function ClubWelcome() {
         </div>
 
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          <section className="rounded-xl bg-[#F4F7FF] p-6 sm:p-8">
-            <h3 className="mb-2 text-2xl font-semibold text-[#234F93]">Club updates</h3>
+          <section className="rounded-xl border border-[#D9E5FA] bg-white p-6 sm:p-8">
+            <h3 className="mb-2 text-2xl font-semibold text-[#234F93]">Connect with us</h3>
             <p className="mb-5 leading-6 text-[#26394D]">
-              Check the club&apos;s Facebook page for current announcements and event information.
+              Follow us on Facebook for club news, photos, and community updates.
             </p>
             {facebookUrl && (
               <a
@@ -100,7 +100,7 @@ export default function ClubWelcome() {
               </a>
             )}
           </section>
-          <section className="rounded-xl border border-[#D9E5FA] bg-[#F4F7FF] p-6 sm:p-8">
+          <section className="rounded-xl border border-[#D9E5FA] bg-white p-6 sm:p-8">
             <h3 className="mb-2 text-2xl font-semibold text-[#234F93]">
               Curious about membership?
             </h3>
