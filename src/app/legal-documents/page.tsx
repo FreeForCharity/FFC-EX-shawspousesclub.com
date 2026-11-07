@@ -25,7 +25,7 @@ export default function LegalDocumentsPage() {
         <div className="grid gap-5 sm:grid-cols-2">
           {[
             {
-              title: 'Constitution',
+              title: 'Constitution (2026–2028)',
               description: 'The foundation of the club’s purpose, membership, and governance.',
               tagline: 'This is who we are',
               path: '/documents/ssc-constitution.pdf',
