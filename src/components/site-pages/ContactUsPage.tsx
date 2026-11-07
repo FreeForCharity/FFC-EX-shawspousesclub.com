@@ -30,15 +30,17 @@ export default function ContactUsPage() {
               </a>
             </p>
 
-            <h2 className="mb-2 text-xl font-semibold text-[#234F93]">Mailing address</h2>
             {siteConfig.addresses.map((address) => (
-              <address key={address.label} className="not-italic leading-7 text-[#26394D]">
-                {address.lines.map((line) => (
-                  <span key={line} className="block">
-                    {line}
-                  </span>
-                ))}
-              </address>
+              <div key={address.label} className="mb-6">
+                <h2 className="mb-2 text-xl font-semibold text-[#234F93]">{address.label}</h2>
+                <address className="not-italic leading-7 text-[#26394D]">
+                  {address.lines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
+              </div>
             ))}
 
             <h2 className="mb-3 mt-8 text-xl font-semibold text-[#234F93]">Follow us</h2>

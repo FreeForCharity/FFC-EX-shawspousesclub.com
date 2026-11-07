@@ -279,10 +279,16 @@ export const siteConfig: SiteConfig = {
   phone: { display: '', tel: '' },
   addresses: [
     {
-      label: 'Main Address',
+      label: 'Mailing Address (mail received here)',
       lines: ['PO Box 52337', 'Shaw AFB, SC 29152'],
       mapUrl:
         'https://www.google.com/maps/search/?api=1&query=PO%20Box%2052337%20Shaw%20AFB%2C%20SC%2029152',
+    },
+    {
+      label: 'Physical Address',
+      lines: ['510 Nelson Avenue', 'Shaw AFB, SC 29152'],
+      mapUrl:
+        'https://www.google.com/maps/search/?api=1&query=510%20Nelson%20Avenue%20Shaw%20AFB%2C%20SC%2029152',
     },
   ],
   guidestar: {

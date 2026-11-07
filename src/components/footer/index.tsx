@@ -251,12 +251,20 @@ const Footer: React.FC = () => {
                 {isPending('email') ? (
                   <PendingNote className={PENDING_NOTE_CLASS} />
                 ) : (
-                  <a
-                    href={mailtoHref()}
-                    className="font-[500] text-[15px] hover:text-[#234F93] transition-colors break-all aria-font"
-                  >
-                    {siteConfig.contactEmail}
-                  </a>
+                  <div className="space-y-2">
+                    <a
+                      href={mailtoHref()}
+                      className="block font-[500] text-[15px] hover:text-white transition-colors break-all aria-font"
+                    >
+                      {siteConfig.contactEmail}
+                    </a>
+                    <a
+                      href={mailtoHref(undefined, 'admin@shawspousesclub.org')}
+                      className="block font-[500] text-[15px] hover:text-white transition-colors break-all aria-font"
+                    >
+                      admin@shawspousesclub.org
+                    </a>
+                  </div>
                 )}
               </div>
             </div>
